@@ -1,0 +1,155 @@
+<p><span style="font-size: medium;"><b>Lớp Object trong Java&nbsp;</b></span></p><p><span style="font-size: medium;"><span style="text-align: justify;">Theo mặc định, lớp
+Object là lớp cha của tất cả các lớp trong Java. Nói cách khác, nó là lớp cao
+nhất của Java. Lớp Object là khá lợi ích nếu bạn muốn tham chiếu bất cứ đối tượng
+nào có kiểu mà bạn không biết. Chú ý rằng biến tham chiếu của lớp cha có thể
+tham chiếu tới đối tượng lớp con, và được gọi là&nbsp;</span><b style="text-align: justify;">Upcasting</b><span style="text-align: justify;">.</span></span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bạn theo dõi ví
+dụ sau, có phương thức getObject() mà trả về một đối tượng nhưng nó có thể là bất
+cứ kiểu nào như Employee, Student, … Chúng ta có thể sử dụng tham chiếu lớp
+Object để tham chiếu tới đối tượng đó. Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">Object</span><span class="pln" style="box-sizing: border-box;"> obj</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;">getObject</span><span class="pun" style="box-sizing: border-box; color: #666600;">();
+</span><span class="com" style="box-sizing: border-box; color: #880000;">//Chung ta khong biet doi tuong nao se duoc tra ve tu phuong thuc nay </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Lớp Object cung
+cấp một số hành vi chung cho tất cẩ đối tượng, chẳng hạn như đối tượng có thể
+được so sánh, có thể được mô phỏng, có thể được thông báo, …<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><o:p><span style="font-size: medium;">&nbsp;</span></o:p></p><div class="separator" style="clear: both; text-align: center;"><span style="font-size: medium;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZzJ1n7yU8_FKWDpKlfu2N7Kw96P0yt-zVfmdBht31qQPT5iSye8pM1-jpdj2jfUu4RnLF1lzwX62EwUKeCuWmbw_5BUoW6quyEQ4VuZHu9a3SD83jTp95e5LcGCIrf3hU688guvyYYzDWbqimx8_xDfLT-I-m-xzov9yZYWRwfReFF8vy9CyLEVkjOQ/s612/objectclass.gif" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="314" data-original-width="612" height="205" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZzJ1n7yU8_FKWDpKlfu2N7Kw96P0yt-zVfmdBht31qQPT5iSye8pM1-jpdj2jfUu4RnLF1lzwX62EwUKeCuWmbw_5BUoW6quyEQ4VuZHu9a3SD83jTp95e5LcGCIrf3hU688guvyYYzDWbqimx8_xDfLT-I-m-xzov9yZYWRwfReFF8vy9CyLEVkjOQ/w400-h205/objectclass.gif" width="400" /></a></span></div><p></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Phương thức của
+lớp Object trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bảng dưới liệt
+kê một số phương thức mà lớp Object cung cấp, đó là:<o:p></o:p></span></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 100%;">
+ <tbody><tr style="height: 22.15pt; mso-yfti-firstrow: yes; mso-yfti-irow: 0;">
+  <td style="background: rgb(238, 238, 238); border: 1pt solid rgb(221, 221, 221); height: 22.15pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><b><span style="font-size: medium;">Phương thức<o:p></o:p></span></b></p>
+  </td>
+  <td style="background: rgb(238, 238, 238); border-left: none; border: 1pt solid rgb(221, 221, 221); height: 22.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6pt; width: 291.4pt;" valign="top" width="486">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><b><span style="font-size: medium;">Miêu tả<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style="height: 30.6pt; mso-yfti-irow: 1;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 30.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">public final
+  ClassgetClass()<o:p></o:p></span></p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 30.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 291.4pt;" valign="top" width="486">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Trả về đối tượng
+  lớp Class của đối tượng này. Lớp Class có thể được sử dụng để lấy metadata của
+  lớp này<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 37.25pt; mso-yfti-irow: 2;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 37.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">public int
+  hashCode()<o:p></o:p></span></p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 37.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 291.4pt;" valign="top" width="486">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Trả về
+  hashcode cho đối tượng này<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 20.25pt; mso-yfti-irow: 3;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 20.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">public boolean
+  equals(Object obj)<o:p></o:p></span></p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 20.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 291.4pt;" valign="top" width="486">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">So sánh đối tượng
+  đã cho với đối tượng này<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 36.25pt; mso-yfti-irow: 4;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">protected
+  Object clone() throws CloneNotSupportedException<o:p></o:p></span></p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 291.4pt;" valign="top" width="486">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Tạo và trả về
+  bản sao (bản mô phỏng) của đối tượng này<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 18.9pt; mso-yfti-irow: 5;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 18.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">public String
+  toString()<o:p></o:p></span></p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 18.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 291.4pt;" valign="top" width="486">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Trả về biểu diễn
+  chuỗi của đối tượng này<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 33.3pt; mso-yfti-irow: 6;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 33.3pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">public final
+  void notify()<o:p></o:p></span></p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 33.3pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 291.4pt;" valign="top" width="486">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Thông báo
+  Thread đơn, đợi trên monitor của đối tượng này<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 36.75pt; mso-yfti-irow: 7;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.75pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">public final
+  void notifyAll()<o:p></o:p></span></p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.75pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 291.4pt;" valign="top" width="486">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Thông báo tất
+  cả Thread, đợi trên monitor của đối tượng này<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 49.05pt; mso-yfti-irow: 8;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 49.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">public final
+  void wait(long timeout)throws InterruptedException<o:p></o:p></span></p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 49.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 291.4pt;" valign="top" width="486">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Làm cho Thread
+  hiện tại đợi trong khoảng thời gian là số mili giây cụ thể, tới khi Thread
+  khác thông báo (triệu hồi phương thức notify() hoặc notifyAll())<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 55.35pt; mso-yfti-irow: 9;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 55.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">public final
+  void wait(long timeout,int nanos)throws InterruptedException<o:p></o:p></span></p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 55.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 291.4pt;" valign="top" width="486">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Làm cho Thread
+  hiện tại đợi trong khoảng thời gian là số mili giây và nano giây cụ thể, tới
+  khi Thread khác thông báo (triệu hồi phương thức notify() hoặc notifyAll())<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 0.45in; mso-yfti-irow: 10;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 0.45in; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">public final
+  void wait()throws InterruptedException<o:p></o:p></span></p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 0.45in; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 291.4pt;" valign="top" width="486">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Làm Thread hiện
+  tại đợi, tới khi Thread khác thông báo (invokes notify() or notifyAll()
+  method).<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 27pt; mso-yfti-irow: 11; mso-yfti-lastrow: yes;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 27pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">protected void
+  finalize()throws Throwable<o:p></o:p></span></p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 27pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 291.4pt;" valign="top" width="486">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Được triệu hồi
+  bởi Garbage Collector trước khi đối tượng bị dọn rác<o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Ps:</b> Lớp Object
+là một lớp mặc định của Java và là lớp đặc biệt. Tất cả các class khác trong
+Java phải kế thừa nó. Nhưng để cho gọn chúng ta hay ẩn đi, ví dụ không cần viết
+class Student extends Object, thực tế là vẫn mặc định extends</span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><br /></span></p>

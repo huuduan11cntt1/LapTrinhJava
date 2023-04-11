@@ -1,0 +1,67 @@
+<p></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Tính bao đóng trong Java</b></span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Tính bao đóng
+trong Java là một tiến trình đóng gói code và dữ liệu lại với nhau vào trong một
+đơn vị unit đơn, ví dụ như một gói bột giặt là hỗn hợp của các hạt bột giặt
+khác nhau. Chúng ta có thể tạo một lớp được bao đóng hoàn toàn trong Java bằng
+việc tạo tất cả thành viên dữ liệu của lớp là private. Bây giờ, chúng ta sử dụng
+phương thức setter và getter để thiết lập và lấy dữ liệu trong nó. Lớp Java
+Bean là ví dụ về một lớp được bao đóng hoàn toàn.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Tính bao đóng là
+kỹ thuật tạo một trường của lớp private và cung cấp khả năng truy cập trường
+này qua các phương thức pullic. Nếu một trường được khai báo là private, nó
+không thể được truy cập bởi bên ngoài lớp, do đó có thể che dấu các trường có lớp
+này. Vì lý do này, tính bao đóng được ám chỉ như việc dấu dữ liệu (data
+hiding).<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Tính bao đóng có
+thể được mô tả như là một tấm bảo vệ code và tránh code và dữ liệu của bạn bị
+truy cập một cách ngẫu nhiên bởi các code khác bên ngoài class. Truy cập dữ liệu
+và code được điều khiển một cách chặt chẽ bởi một interface.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Lợi thế của tính
+bao đóng trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bởi cung cấp
+phương thức setter hoặc getter, bạn có thể làm cho lớp là read-only hoặc
+write-only. Nó cung cấp cho bạn sự điều khiển thông qua dữ liệu. Giả sử bạn muốn
+thiết lập giá trị của id là lớn hơn 100, thì bạn có thể viết biểu thức logic
+bên trong phương thức setter.</span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: large;">Tất cả các lớp có thể có chế độ chỉ đọc hoặc chỉ ghi
+     (chỉ có hàm getter hoặc setter)&nbsp;</span><span style="font-size: large;">Một lớp có thể có toàn bộ điều khiển thông qua những
+     gì được lưu giữ trong các trường của nó.</span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: large;">Người sử dụng của class không biết cách các class lưu
+     trữ dữ liệu. Một class có thể thay đổi kiểu dữ liệu của một trường và người
+     dùng class không cần sự thay đổi trong code.</span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bạn theo dõi ví
+dụ sau về tính bao đóng mà chỉ có một trường với phương thức setter và getter của
+nó.</span></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">//Luu duoi dang Student.java&nbsp;
+package</span><span class="pln" style="box-sizing: border-box;"> com</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">vietjack</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Student</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">private</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> name</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+   
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> getName</span><span class="pun" style="box-sizing: border-box; color: #666600;">(){</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">return</span><span class="pln" style="box-sizing: border-box;"> name</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> setName</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> name</span><span class="pun" style="box-sizing: border-box; color: #666600;">){</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">this</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">name</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;">name  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">   </span></pre><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width:100%; word-break: break-all;"><span class="com" style="box-sizing: border-box; color: #880000;">//Luu duoi dang Test.java  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">package</span><span class="pln" style="box-sizing: border-box;"> com</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">vietjack</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Test</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">){</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Student</span><span class="pln" style="box-sizing: border-box;"> s</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Student</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">  
+s</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">setname</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"vietjackteam"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">s</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">getName</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  </span></pre>
+
+<i><span style="font-size: large; text-align: justify;">Để biên dịch: javac -d . Test.java</span><br /><span style="font-size: large; text-align: justify;">Để chạy: java com.vietjack.Test</span></i><br /><ul style="margin-top: 0in;" type="disc">
+</ul>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Chương trình
+Java trên sẽ cho kết quả:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">output</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> vietjackteam</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><br /></p><p></p>

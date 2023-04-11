@@ -1,0 +1,341 @@
+<p>&nbsp;<b style="text-align: justify;"><span style="font-size: 18.0pt; line-height: 150%; mso-bidi-font-size: 11.0pt;">Number trong Java</span></b></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;">Thường thì, khi
+ làm việc với Number, chúng ta sử dụng các kiểu dữ liệu gốc như byte, int, long,
+ double, …<o:p></o:p></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;">Ví dụ:<o:p></o:p></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">int</span><span class="pln" style="box-sizing: border-box;"> i </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">5000</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">float</span><span class="pln" style="box-sizing: border-box;"> gpa </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">13.65</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">byte</span><span class="pln" style="box-sizing: border-box;"> mask </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">0xaf</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;">Tuy nhiên, khi mở
+ rộng, chúng ta cũng gặp các tình huống mà chúng ta cần sử dụng các đối tượng
+ thay cho các kiểu dữ liệu gốc. Để thực hiện điều này, Java cung cấp các lớp
+ wrapper (lớp bọc) cho mỗi kiểu dữ liệu gốc.<o:p></o:p></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;">Tất cả các lớp
+ wrapper (Integer, Long, Byte, Double, Float, Short) là lớp phụ của lớp trừu tượng
+ Number.</p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGEyHmMmlMCCOEWCJAuJZb03lUhN2dNSlRtpatyV2kslNA3S6wXJfWYArdmn9TkryacQpAWpQvALOZimueOi35JLUqiQSq-sdtULD5Y2b0BXN7fEEtHbT8WTR1qOvQBKWLQh5_YDLK_QM1QWDjro6g-7V3Z2VYZthkEraMLuL90z6Ztx404rnSWEy4Cw/s400/number_classes.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="167" data-original-width="400" height="168" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGEyHmMmlMCCOEWCJAuJZb03lUhN2dNSlRtpatyV2kslNA3S6wXJfWYArdmn9TkryacQpAWpQvALOZimueOi35JLUqiQSq-sdtULD5Y2b0BXN7fEEtHbT8WTR1qOvQBKWLQh5_YDLK_QM1QWDjro6g-7V3Z2VYZthkEraMLuL90z6Ztx404rnSWEy4Cw/w400-h168/number_classes.jpg" width="400" /></a></div><p></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;">Sự bao bọc này
+ được chăm sóc bởi bộ biên dịch, tiến trình này được gọi là boxing. Vì thế khi một
+ kiểu dữ liệu gốc được sử dụng khi một đối tượng được yêu cầu, bộ biên dịch
+ "đóng hộp" kiểu dữ liệu gốc trong lớp wrapper của nó. Tương tự, bộ
+ biên dịch cũng "mở hộp" đối tượng thành một kiểu dữ liệu gốc.&nbsp;Number&nbsp;là
+ một phần của java.lang package.<o:p></o:p></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><i>Dưới đây là ví dụ
+ của box và unbox:</i></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">&nbsp;<span class="kwd" style="box-sizing: border-box; color: #000088; white-space: normal;">public</span><span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;</span><span class="kwd" style="box-sizing: border-box; color: #000088; white-space: normal;">class</span><span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;</span><span class="typ" style="box-sizing: border-box; color: #7f0055; white-space: normal;">Test</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">{</span>
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Integer</span><span class="pln" style="box-sizing: border-box;"> x </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">5</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;"> </span><span class="com" style="box-sizing: border-box; color: #880000;">// dong hop int thanh doi tuong Integer</span><span class="pln" style="box-sizing: border-box;">
+      x </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;">  x </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">10</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">   </span><span class="com" style="box-sizing: border-box; color: #880000;">// mo hop Integer thanh int</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">x</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;">Nó sẽ cho kết quả
+ sau:<o:p></o:p></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="lit" style="box-sizing: border-box; color: #006666;">15</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;">Khi x được gán
+ các giá trị integer, bộ biên dịch "đóng hộp" giá trị integer này bởi
+ vì x là đối tượng integer. Sau đó, x được "mở hộp" để mà chúng có thể
+ được cộng thêm các integer.<o:p></o:p></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;">Các phương thức
+ của lớp Number trong Java<o:p></o:p></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;">Bảng dưới liệt
+ kê các phương thức mà tất cả các lớp phụ của lớp Number thực thi:<o:p></o:p></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 100%;">
+ <tbody><tr style="height: 18.45pt; mso-yfti-firstrow: yes; mso-yfti-irow: 0;">
+  <td style="background: #EEEEEE; border: solid #DDDDDD 1.0pt; height: 18.45pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>STT<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; height: 18.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>Phương thức và miêu tả<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style="height: 37.35pt; mso-yfti-irow: 1;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">1</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>xxxValue()
+    trong Java</b></p>
+   <p class="MsoNormal">Biến đổi giá trị của đối tượng Number này thành kiểu dữ liệu
+    xxx mà được trả về từ phương thức</p>
+  </td>
+ </tr>
+ <tr style="height: 37.35pt; mso-yfti-irow: 2;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">2</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>compareTo()
+    trong Java</b></p>
+   <p class="MsoNormal">So sánh đối tượng Number này với tham số</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 3;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">3</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>equals()
+    trong Java</b></p>
+   <p class="MsoNormal">Kiểm tra có hay không đối tượng Number này là bằng với
+    tham số</p>
+  </td>
+ </tr>
+ <tr style="height: 37.35pt; mso-yfti-irow: 4;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">4</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>valueOf()
+    trong Java</b></p>
+   <p class="MsoNormal">Trả về một đối tượng integer giữ giá trị gốc đã xác định</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 5;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">5</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>toString()
+    trong Java</b></p>
+   <p class="MsoNormal">Trả về đối tượng String biểu diễn giá trị Integer đã xác định</p>
+  </td>
+ </tr>
+ <tr style="height: 37.35pt; mso-yfti-irow: 6;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">6</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>parseInt()
+    trong Java</b></p>
+   <p class="MsoNormal">Phương thức này được sử dụng để nhận kiểu dữ liệu gốc của
+    một String cụ thể</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 7;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">7</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>abs() trong
+    Java</b></p>
+   <p class="MsoNormal">Trả về giá trị tuyệt đối của tham số</p>
+  </td>
+ </tr>
+ <tr style="height: 37.35pt; mso-yfti-irow: 8;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">8</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>ceil() trong
+    Java</b></p>
+   <p class="MsoNormal">Trả về số integer nhỏ nhất mà lớn hơn hoặc bằng tham số.
+    Giá trị trả về ở dạng double.</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 9;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">9</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>floor() trong
+    Java</b></p>
+   <p class="MsoNormal">Trả về số integer lớn nhất mà nhỏ hơn hoặc bằng tham số.
+    Giá trị trả về ở dạng double.</p>
+  </td>
+ </tr>
+ <tr style="height: 37.85pt; mso-yfti-irow: 10;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 37.85pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">10</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.85pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>rint() trong
+    Java</b></p>
+   <p class="MsoNormal">Làm tròn số, trả về giá trị integer gần nhất với giá trị
+    tham số. Giá trị trả về ở dạng double.</p>
+  </td>
+ </tr>
+ <tr style="height: 37.35pt; mso-yfti-irow: 11;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">11</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>round() trong
+    Java</b></p>
+   <p class="MsoNormal">Trả về long hoặc int gần nhất, như kiểu dữ liệu được chỉ dẫn
+    bởi phương thức, với tham số.</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 12;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">12</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>min() trong
+    Java</b></p>
+   <p class="MsoNormal">Trả về số nhỏ nhất trong hai tham số</p>
+  </td>
+ </tr>
+ <tr style="height: 37.35pt; mso-yfti-irow: 13;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">13</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>max() trong
+    Java</b></p>
+   <p class="MsoNormal">Trả về số lớn nhất trong hai tham số</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 14;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">14</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>exp() trong
+    Java</b></p>
+   <p class="MsoNormal">Hàm mũ cơ số e.</p>
+  </td>
+ </tr>
+ <tr style="height: 37.35pt; mso-yfti-irow: 15;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">15</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>log() trong
+    Java</b></p>
+   <p class="MsoNormal">Hàm logarit cơ số e</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 16;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">16</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>pow() trong
+    Java</b></p>
+   <p class="MsoNormal">Trả về giá trị hàm mũ với cơ số là tham số đầu tiên và mũ
+    là tham số thứ hai</p>
+  </td>
+ </tr>
+ <tr style="height: 37.35pt; mso-yfti-irow: 17;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">17</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>sqrt() trong
+    Java</b></p>
+   <p class="MsoNormal">Trả về căn bậc hai của tham số</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 18;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">18</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>sin() trong
+    Java</b></p>
+   <p class="MsoNormal">Trả về sin của giá trị double đã cho.</p>
+  </td>
+ </tr>
+ <tr style="height: 37.35pt; mso-yfti-irow: 19;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">19</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>cos() trong
+    Java</b></p>
+   <p class="MsoNormal">Trả về cos của giá trị double đã cho.</p>
+  </td>
+ </tr>
+ <tr style="height: 37.35pt; mso-yfti-irow: 20;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">20</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>tan() trong
+    Java</b></p>
+   <p class="MsoNormal">Trả về tan của giá trị double đã cho.</p>
+  </td>
+ </tr>
+ <tr style="height: 37.35pt; mso-yfti-irow: 21;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">21</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>asin() trong
+    Java</b></p>
+   <p class="MsoNormal">Trả về arcsin của giá trị double đã cho.</p>
+  </td>
+ </tr>
+ <tr style="height: 37.35pt; mso-yfti-irow: 22;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">22</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>acos() trong
+    Java</b></p>
+   <p class="MsoNormal">Trả về arccos của giá trị double đã cho</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 23;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">23</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>atan() trong
+    Java</b></p>
+   <p class="MsoNormal">Trả về arctan của giá trị double đã cho</p>
+  </td>
+ </tr>
+ <tr style="height: 37.35pt; mso-yfti-irow: 24;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">24</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>atan2() trong
+    Java</b></p>
+   <p class="MsoNormal">Biến đổi tọa độ (x, y) thành tọa độ cực (r, theta) và trả
+    về theta.</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 25;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">25</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>toDegrees()
+    trong Java</b></p>
+   <p class="MsoNormal">Biến đổi tham số thành giá trị độ đo góc</p>
+  </td>
+ </tr>
+ <tr style="height: 37.35pt; mso-yfti-irow: 26;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">26</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>toRadians()
+    trong Java</b></p>
+   <p class="MsoNormal">Biến đổi tham số thành radian.</p>
+  </td>
+ </tr>
+ <tr style="height: 37.35pt; mso-yfti-irow: 27; mso-yfti-lastrow: yes;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">27</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal"><b>random()
+    trong Java</b></p>
+   <p class="MsoNormal">Trả về một số ngẫu nhiên</p>
+  </td>
+ </tr>
+ </tbody></table><br /></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><br /></p>
+

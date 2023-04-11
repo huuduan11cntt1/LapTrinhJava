@@ -1,0 +1,46 @@
+
+<p><span style="font-family: times; font-size: medium;"><b>&nbsp;Phân tích chương trình Hello World</b></span></p><p><span style="font-family: times; font-size: medium;"><b><br /></b></span></p>
+<p>&nbsp;<span style="text-align: justify;">Trong chương trước,
+chúng ta đã học cách viết, biên dịch và chạy chương trình Hello World trong
+Java. Ở đây, chúng ta tiếp tục tìm hiểu những gì xảy ra trong khi biên dịch và
+chạy một chương trình Java. Ngoài ra, bạn sẽ thấy một số câu hỏi liên quan đến
+chương trình Java đầu tiên này.</span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><o:p></o:p></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><b style="mso-bidi-font-weight: normal;">Những gì xảy ra tại Compile time?<o:p></o:p></b></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;">Tại compile time
+(thời gian biên dịch), java file được biên dịch bởi Java Compiler (Nó không
+tương tác với OS) và chuyển đổi Java code thành Bytecode.<o:p></o:p></p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTesOCzkoRmW250l_vaLSOPEy5TQmvX8uU3RWjSb0cEb_mX6lhr7G79tL_6tT6ZPaDDk_XdDin3Luvc74nzYJPUsluob7FQEL50YCiFa5BdXFjEF2GZ-6M57AN4x2WF0z7cg2V2kGmIwCOP7N-FJQRv6BG3DkqtPQWf532SVuDtvd9Hr4c2YuR1GD_Qw/s683/bien_dich_javacode.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="206" data-original-width="683" height="121" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTesOCzkoRmW250l_vaLSOPEy5TQmvX8uU3RWjSb0cEb_mX6lhr7G79tL_6tT6ZPaDDk_XdDin3Luvc74nzYJPUsluob7FQEL50YCiFa5BdXFjEF2GZ-6M57AN4x2WF0z7cg2V2kGmIwCOP7N-FJQRv6BG3DkqtPQWf532SVuDtvd9Hr4c2YuR1GD_Qw/w400-h121/bien_dich_javacode.png" width="400" /></a></div><br /><p class="MsoNormal" style="line-height: 150%; text-align: justify;">Biên dịch Java
+code</p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><o:p></o:p></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><b style="mso-bidi-font-weight: normal;">Điều gì xảy ra tại runtime?<o:p></o:p></b></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;">Tại Runtime (thời
+gian biên dịch), các bước sau được thực hiện:<o:p></o:p></p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLCSo7QB-KJ9V-3sFIy6zrcdL5Ryt3vEK4W80dX62THg2SN3gUg7doti4rUnIEbye3X1weoahwhxofAbFZ7N6j90ptKEmpvQqTnLjm4JlTwhGvhrXbbD6GDFS9q75lazyBu3UDA5zS2cPMoLg0oDBMNrJ7oxtmbkSXrtrB9nCLBQXq6mwUhVECGHO3EA/s549/run.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="549" data-original-width="512" height="320" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLCSo7QB-KJ9V-3sFIy6zrcdL5Ryt3vEK4W80dX62THg2SN3gUg7doti4rUnIEbye3X1weoahwhxofAbFZ7N6j90ptKEmpvQqTnLjm4JlTwhGvhrXbbD6GDFS9q75lazyBu3UDA5zS2cPMoLg0oDBMNrJ7oxtmbkSXrtrB9nCLBQXq6mwUhVECGHO3EA/s320/run.jpg" width="298" /></a></div><br /><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><b>Java Runtime</b></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><b style="mso-bidi-font-weight: normal;">Classloader:</b> Đây là hệ thống con của
+JVM được sử dụng để tải class file.<o:p></o:p></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><b style="mso-bidi-font-weight: normal;">Bytecode Vertifier</b>: Kiểm tra các đoạn
+code để xem có hay không các phần code không hợp lệ có truy cập không hợp lệ tới
+các đối tượng.<o:p></o:p></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><b style="mso-bidi-font-weight: normal;">ADVERTISING<o:p></o:p></b></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><b style="mso-bidi-font-weight: normal;">Interpreter:</b> Đọc Bytecode Stream, sau
+đó thực thi các chỉ thị.<o:p></o:p></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;">Câu hỏi: Bạn có
+thể lưu một source file bởi một tên khác ngoài tên lớp không?<o:p></o:p></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;">Có, nếu lớp
+không phải là public. Bạn có thể theo dõi ở sơ đồ dưới:<o:p></o:p></p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtmR0MKNeyvPO3sM_-4bfc15RBeEQGYVKzLHBb5Y3j64oh34Pnuk3-spLejHzjEn2tz7GUdYMb5SR_n9zi6rcNmwM9uqVOw4VrOt6BYlxzfYyREk5UDyLlRU4kDliQPF6zw3o5inIhv2Uf1tyBM_6rDG3gWljX-gt3YePxEc-KxDfdevyQ0pkgKMl-vA/s755/another.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="384" data-original-width="755" height="204" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtmR0MKNeyvPO3sM_-4bfc15RBeEQGYVKzLHBb5Y3j64oh34Pnuk3-spLejHzjEn2tz7GUdYMb5SR_n9zi6rcNmwM9uqVOw4VrOt6BYlxzfYyREk5UDyLlRU4kDliQPF6zw3o5inIhv2Uf1tyBM_6rDG3gWljX-gt3YePxEc-KxDfdevyQ0pkgKMl-vA/w400-h204/another.jpg" width="400" /></a></div><br /><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><i>&nbsp;Để
+biên dịch, gõ: javac Hard.java</i></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><i style="mso-bidi-font-style: normal;">Để thực thi, gõ: java Simple<o:p></o:p></i></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;">Bạn có thể có
+nhiều lớp trong một source file không?<o:p></o:p></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;">Có, sơ đồ sau
+minh họa điều này:<o:p></o:p></p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhWCOodkOFqoObAsttgiM2c3F1KT3iAjsu7Zkim2RL-sMNJ2fDzYInL7hZZnhOZK_WsmKg50z3RzGSFiqz5QrtM1Rz82Ttd_88MfdmfxPtneQtRINekzb1iro25WLM0zvx_HBtpAJvHXG7ZKZhWMGUpBfAVploY3f7J_HSex-u3LKPdmuhXyUNPsZGEOw/s653/save.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="384" data-original-width="653" height="235" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhWCOodkOFqoObAsttgiM2c3F1KT3iAjsu7Zkim2RL-sMNJ2fDzYInL7hZZnhOZK_WsmKg50z3RzGSFiqz5QrtM1Rz82Ttd_88MfdmfxPtneQtRINekzb1iro25WLM0zvx_HBtpAJvHXG7ZKZhWMGUpBfAVploY3f7J_HSex-u3LKPdmuhXyUNPsZGEOw/w400-h235/save.jpg" width="400" /></a></div><div><br /></div><div><br /></div><br /><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><br /></p>

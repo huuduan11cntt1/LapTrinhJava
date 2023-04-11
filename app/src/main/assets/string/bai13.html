@@ -1,0 +1,148 @@
+<p><span style="font-size: medium;"><b>&nbsp;Lớp StringTokenizer trong Java</b></span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="mso-bidi-font-family: &quot;Times New Roman&quot;;"><span style="font-size: medium;">Lớp&nbsp;java.util.StringTokenizer&nbsp;cho
+phép bạn chia một chuỗi thành các token. Đây là cách đơn giản để chia chuỗi. Lớp
+này không cung cấp phương tiện để phân biệt các số, các chuỗi đã được trích dẫn,
+các định danh indentifier, … giống như lớp StreamTokenizer. Chúng ta sẽ tìm hiểu
+về lớp StreamTokenizer trong chương về I/O.<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="mso-bidi-font-family: &quot;Times New Roman&quot;;"><span style="font-size: medium;"><b>Các Constructor của lớp
+StringTokenizer trong Java</b><o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="mso-bidi-font-family: &quot;Times New Roman&quot;;"><span style="font-size: medium;">Có 3 Constructor được định nghĩa
+trong lớp StringTokenizer.<o:p></o:p></span></span></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 100%;">
+ <tbody><tr>
+  <td style="background: rgb(238, 238, 238); border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; padding: 6pt; width: 148.1pt;" valign="top" width="247">
+  <p class="MsoNormal"><b>Constructor<o:p></o:p></b></p>
+  </td>
+  <td style="background: rgb(238, 238, 238); border-left: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6pt; width: 396.7pt;" valign="top" width="661">
+  <p class="MsoNormal"><b>Miêu tả<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 148.1pt;" valign="top" width="247">
+  <p class="MsoNormal">StringTokenizer(String str)</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 396.7pt;" valign="top" width="661">
+  <p class="MsoNormal">Tạo StringTokenizer với chuỗi string đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 148.1pt;" valign="top" width="247">
+  <p class="MsoNormal">StringTokenizer(String str, String delim)</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 396.7pt;" valign="top" width="661">
+  <p class="MsoNormal">Tạo StringTokenizer với chuỗi string và dấu phân tách
+  delimeter đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 148.1pt;" valign="top" width="247">
+  <p class="MsoNormal">StringTokenizer(String str, String delim, boolean
+  returnValue)</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 396.7pt;" valign="top" width="661">
+  <p class="MsoNormal">Tạo StringTokenizer với chuỗi string và dấu tách delimeter
+  và kiểu trả về returnValue đã cho. Nếu kiểu trả về là true, các ký tự phân
+  tách được xem như là các token. Nếu nó là false, các ký tự phân tách phục vụ
+  như là các token riêng rẽ</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="mso-bidi-font-family: &quot;Times New Roman&quot;;"><span style="font-size: medium;"><b>Các phương thức của lớp
+StringTokenizer trong Java</b><o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="mso-bidi-font-family: &quot;Times New Roman&quot;;"><span style="font-size: medium;">Lớp StringTokenizer có 6 phương
+thức hữu ích, được trình bày trong bảng dưới đây:<o:p></o:p></span></span></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 100%;">
+ <tbody><tr>
+  <td style="background: rgb(238, 238, 238); border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; padding: 6pt; width: 166.1pt;" valign="top" width="277">
+  <p class="MsoNormal"><b>Phương thức public<o:p></o:p></b></p>
+  </td>
+  <td style="background: rgb(238, 238, 238); border-left: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6pt; width: 378.7pt;" valign="top" width="631">
+  <p class="MsoNormal"><b>Miêu tả<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 166.1pt;" valign="top" width="277">
+  <p class="MsoNormal">boolean hasMoreTokens()</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 378.7pt;" valign="top" width="631">
+  <p class="MsoNormal">Kiểm tra xem có nhiều token có sẵn không</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 166.1pt;" valign="top" width="277">
+  <p class="MsoNormal">String nextToken()</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 378.7pt;" valign="top" width="631">
+  <p class="MsoNormal">Trả về token tiếp theo từ đối tượng StringTokenizer</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 166.1pt;" valign="top" width="277">
+  <p class="MsoNormal">String nextToken(String delim)</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 378.7pt;" valign="top" width="631">
+  <p class="MsoNormal">Trả về token tiếp theo dựa trên dấu phân tách delim</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 166.1pt;" valign="top" width="277">
+  <p class="MsoNormal">boolean hasMoreElements()</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 378.7pt;" valign="top" width="631">
+  <p class="MsoNormal">Giống như phương thức hasMoreTokens()</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 166.1pt;" valign="top" width="277">
+  <p class="MsoNormal">Object nextElement()</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 378.7pt;" valign="top" width="631">
+  <p class="MsoNormal">Giống như nextToken() nhưng kiểu trả về của nó là Object</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 166.1pt;" valign="top" width="277">
+  <p class="MsoNormal">int countTokens()</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt; width: 378.7pt;" valign="top" width="631">
+  <p class="MsoNormal">Trả về tổng số token</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="mso-bidi-font-family: &quot;Times New Roman&quot;;"><span style="font-family: times; font-size: medium;">Ví dụ đơn giản về lớp
+StringTokenizer trong Java<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="mso-bidi-font-family: &quot;Times New Roman&quot;;"><span style="font-size: medium;"><span style="font-family: times;">Ví dụ đơn giản sau sẽ chia một
+chuỗi "Toi lam viec o HaNoi" thành các token dựa vào các khoảng trắng
+whitespace.</span><o:p></o:p></span></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">util</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringTokenizer</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Simple</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+ </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">  
+   </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringTokenizer</span><span class="pln" style="box-sizing: border-box;"> st </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringTokenizer</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Toi lam viec o HaNoi"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="str" style="box-sizing: border-box; color: #008800;">" "</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+     </span><span class="kwd" style="box-sizing: border-box; color: #000088;">while</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">st</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">hasMoreTokens</span><span class="pun" style="box-sizing: border-box; color: #666600;">())</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">st</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">nextToken</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="pln" style="box-sizing: border-box;">  
+     </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  </span></pre><p style="box-sizing: border-box; font-size: 18px; line-height: 24px; margin: 0px 0.2em 1em; overflow-wrap: break-word; padding: 0px; text-align: justify;"><span style="font-family: times;">Chương trình trên sẽ cho kết quả dạng:</span></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">       </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Toi</span><span class="pln" style="box-sizing: border-box;">
+       lam
+       viec
+       o
+       </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">HaNoi</span></pre><h3 style="border: 0px; box-sizing: border-box; font-size: 1.3em; font-weight: normal; left: 0px; line-height: 1.5em; margin: 20px 0.2em 10px 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 10px !important; padding: 10px 0px 0px; position: relative; text-shadow: none;"><span style="font-family: times;">Ví dụ phương thức nextToken(String delim) của lớp StringTokenizer</span></h3><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">util</span><span class="pun" style="box-sizing: border-box; color: #666600;">.*;</span><span class="pln" style="box-sizing: border-box;">  
+  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Test</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+       </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringTokenizer</span><span class="pln" style="box-sizing: border-box;"> st </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringTokenizer</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Toi,lam,viec,o,HaNoi"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+        
+      </span><span class="com" style="box-sizing: border-box; color: #880000;">// in ra token tiep theo  </span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Token tiep theo la : "</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;"> st</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">nextToken</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">","</span><span class="pun" style="box-sizing: border-box; color: #666600;">));</span><span class="pln" style="box-sizing: border-box;">  
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">      
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">   </span></pre><p style="box-sizing: border-box; line-height: 24px; margin: 0px 0.2em 1em; overflow-wrap: break-word; padding: 0px; text-align: justify;"><span style="font-family: times; font-size: medium;">Chương trình trên sẽ cho kết quả dạng:</span></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">Token</span><span class="pln" style="box-sizing: border-box;"> tiep theo la </span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Toi</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><br /></p>

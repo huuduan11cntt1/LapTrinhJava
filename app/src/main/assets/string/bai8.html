@@ -1,0 +1,249 @@
+ 
+<p style="text-align: justify;"><span style="font-size: medium;"><b>&nbsp;StringBuilder trong Java</b></span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Lớp&nbsp;StringBuilder&nbsp;trong
+Java được sử dụng để tạo chuỗi có thể thay đổi (chuỗi dạng&nbsp;mutable). Lớp
+StringBuilder là giống như lớp StringBuffer ngoại trừ rằng nó là không đồng bộ.
+Lớp này có sẵn từ JDK 1.5.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Các Constructor
+quan trọng của lớp StringBuilder trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">StringBuilder():
+tạo một Builder trống với dung lượng capacity ban đầu là 16.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">StringBuilder(String
+str): tạo một Builder với chuỗi đã xác định.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">StringBuilder(int
+capacity): tạo một Builder trống với dung lượng capacity đã cho.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Các phương thức
+quan trọng của lớp StringBuffer trong Java<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bảng dưới đây liệt
+kê và miêu tả chi tiết một số phương thức quan trọng của lớp StringBuffer trong
+Java:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">&nbsp;</span></p><table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 908px;">
+ <tbody><tr>
+  <td style="background: #EEEEEE; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal"><b>Phương thức<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 356.2pt;" valign="top" width="594">
+  <p class="MsoNormal"><b>Miêu tả<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style="height: 47.25pt; mso-yfti-irow: 1;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 47.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal">public StringBuilder append(String s)</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 47.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 356.2pt;" valign="top" width="594">
+  <p class="MsoNormal">Được sử dụng để phụ thêm (append) chuỗi đã cho với chuỗi
+  này. Phương thức append() được nạp chồng giống dạng append(char),
+  append(boolean), append(int), append(float), append(double) ...</p>
+  </td>
+ </tr>
+ <tr style="height: 58.5pt; mso-yfti-irow: 2;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 58.5pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal">public StringBuilder insert(int offset, String s)</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 58.5pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 356.2pt;" valign="top" width="594">
+  <p class="MsoNormal">Được sử dụng để chèn chuỗi đã cho với chuỗi này tại vị trí
+  đã cho. Phương thức insert() được nạp chồng giống dạng insert(int, char),
+  insert(int, boolean), insert(int, int), insert(int, float), insert(int,
+  double) ...</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal">public StringBuilder replace(int startIndex, int endIndex,
+  String str)</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 356.2pt;" valign="top" width="594">
+  <p class="MsoNormal">Được sử dụng để thay thế chuỗi từ chỉ mục ban đầu
+  startIndex và chỉ mục kết thúc endIndex đã cho</p>
+  </td>
+ </tr>
+ <tr style="height: 35.55pt; mso-yfti-irow: 4;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 35.55pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal">public StringBuilder delete(int startIndex, int endIndex)</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 35.55pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 356.2pt;" valign="top" width="594">
+  <p class="MsoNormal">Được sử dụng để xóa chuỗi từ chỉ mục startIndex và
+  endIndex đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal">public StringBuilder reverse()</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 356.2pt;" valign="top" width="594">
+  <p class="MsoNormal">Được sử dụng để đảo ngược chuỗi</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal">public int capacity()</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 356.2pt;" valign="top" width="594">
+  <p class="MsoNormal">Được sử dụng để trả về dung lượng capacity hiện tại</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal">public void ensureCapacity(int minimumCapacity)</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 356.2pt;" valign="top" width="594">
+  <p class="MsoNormal">Được sử dụng để bảo đảm rằng capacity ít nhất bằng với
+  minimum đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal">public char charAt(int index)</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 356.2pt;" valign="top" width="594">
+  <p class="MsoNormal">Được sử dụng để trả về ký tự tại vị trí đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal">public int length()</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 356.2pt;" valign="top" width="594">
+  <p class="MsoNormal">Được sử dụng để trả về độ dài của chuỗi (chẳng hạn như tổng
+  số ký tự)</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal">public String substring(int beginIndex)</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 356.2pt;" valign="top" width="594">
+  <p class="MsoNormal">Được sử dụng để trả về chuỗi con từ chỉ mục bắt đầu
+  beginIndex đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 188.6pt;" valign="top" width="314">
+  <p class="MsoNormal">public String substring(int beginIndex, int endIndex)</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 356.2pt;" valign="top" width="594">
+  <p class="MsoNormal">Được sử dụng để trả về chuỗi con từ beginIndex đến
+  endIndex đã cho</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Phương thức
+append() của lớp StringBuffer trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Phương thức
+append() được sử dụng để nối chuỗi tham số đã cho với chuỗi này. Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> VIETJACK</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringBuilder</span><span class="pln" style="box-sizing: border-box;"> sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringBuilder</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Hello "</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">append</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Java"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="com" style="box-sizing: border-box; color: #880000;">//bay gio chuoi ban dau bi thay doi  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="com" style="box-sizing: border-box; color: #880000;">//in ra ket qua la Hello Java  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">   </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Phương thức
+insert() của lớp StringBuffer trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Phương thức
+insert() chèn chuỗi đã cho vào chuỗi này tại vị trí đã cho. Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> VIETJACK</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringBuilder</span><span class="pln" style="box-sizing: border-box;"> sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringBuilder</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Hello "</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">insert</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="lit" style="box-sizing: border-box; color: #006666;">1</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="str" style="box-sizing: border-box; color: #008800;">"Java"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="com" style="box-sizing: border-box; color: #880000;">//bay gio chuoi ban dau bi thay doi  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="com" style="box-sizing: border-box; color: #880000;">//in ra ket qua la HJavaello  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;"> </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Phương thức
+replace() của lớp StringBuffer trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Phương thức
+replace() thay thế chuỗi đã cho bắt đầu từ chỉ mục beginIndex tới endIndex. Ví
+dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> VIETJACK</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringBuilder</span><span class="pln" style="box-sizing: border-box;"> sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringBuilder</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Hello"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">replace</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="lit" style="box-sizing: border-box; color: #006666;">1</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="lit" style="box-sizing: border-box; color: #006666;">3</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="str" style="box-sizing: border-box; color: #008800;">"Java"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="com" style="box-sizing: border-box; color: #880000;">//in ra ket qua la HJavalo  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;"> </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Phương thức
+delete() của lớp StringBuffer trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Phương thức
+delete() xóa chuỗi bắt đầu từ chỉ mục beginIndex tới endIndex đã cho. Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> VIETJACK</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringBuilder</span><span class="pln" style="box-sizing: border-box;"> sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringBuilder</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Hello"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">delete</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="lit" style="box-sizing: border-box; color: #006666;">1</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="lit" style="box-sizing: border-box; color: #006666;">3</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="com" style="box-sizing: border-box; color: #880000;">//in ra ket qua la Hlo  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Phương thức
+reverse() của lớp StringBuffer trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Phương thức
+reverse() đảo ngược chuỗi hiện tại. Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> VIETJACK</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringBuilder</span><span class="pln" style="box-sizing: border-box;"> sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringBuilder</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Hello"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">reverse</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="com" style="box-sizing: border-box; color: #880000;">//in ra ket qua la olleH  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Phương thức
+capacity() của lớp StringBuffer trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Phương thức
+capacity() trả về dung lượng capacity hiện tại của bộ đệm. Dung lượng capacity
+mặc định của bộ đệm là 16. Nếu số ký tự tăng lên từ dung lượng hiện tại, nó
+tăng dung lượng theo công thức (oldcapacity*2)+2. Ví dụ, nếu dung lượng hiện tại
+là 16, nó sẽ là (16*2)+2=34. Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> VIETJACK</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringBuilder</span><span class="pln" style="box-sizing: border-box;"> sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringBuilder</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">capacity</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="com" style="box-sizing: border-box; color: #880000;">//mac dinh la 16  </span><span class="pln" style="box-sizing: border-box;">
+sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">append</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Hello"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">capacity</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="com" style="box-sizing: border-box; color: #880000;">//bay gio la 16  </span><span class="pln" style="box-sizing: border-box;">
+sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">append</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Java la mot ngon ngu lap trinh manh me"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">capacity</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="com" style="box-sizing: border-box; color: #880000;">//bay gio la (16*2)+2=34 vi du cua cong thuc (oldcapacity*2)+2  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;"> </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Phương thức
+ensureCapacity() của lớp StringBuffer trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Phương thức
+ensureCapcity() bảo đảm rằng capacity ít nhất bằng với minimum đã cho. Nếu nó lớn
+hơn capacity hiện tại, nó tăng capacity theo công thức (oldcapacity*2)+2. Ví dụ,
+nếu dung lượng hiện tại là 16, nó sẽ là (16*2)+2=34. Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> VIETJACK</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringBuilder</span><span class="pln" style="box-sizing: border-box;"> sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringBuilder</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">capacity</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="com" style="box-sizing: border-box; color: #880000;">//mac dinh la 16  </span><span class="pln" style="box-sizing: border-box;">
+sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">append</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Hello"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">capacity</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="com" style="box-sizing: border-box; color: #880000;">//bay gio la 16  </span><span class="pln" style="box-sizing: border-box;">
+sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">append</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Java la mot ngon ngu lap trinh manh me"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">capacity</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="com" style="box-sizing: border-box; color: #880000;">//bay gio la (16*2)+2=34 vi du cua cong thuc (oldcapacity*2)+2  </span><span class="pln" style="box-sizing: border-box;">
+sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">ensureCapacity</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="lit" style="box-sizing: border-box; color: #006666;">10</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="com" style="box-sizing: border-box; color: #880000;">//bay gio khong phai thay doi </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">capacity</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="com" style="box-sizing: border-box; color: #880000;">//bay gio la 34  </span><span class="pln" style="box-sizing: border-box;">
+sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">ensureCapacity</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="lit" style="box-sizing: border-box; color: #006666;">50</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="com" style="box-sizing: border-box; color: #880000;">//now (34*2)+2  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">capacity</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="com" style="box-sizing: border-box; color: #880000;">//bay gio la 70  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+}&nbsp;</span></pre><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span class="pln" style="box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; text-align: left;">&nbsp;&nbsp;</span><span style="font-size: medium;">&nbsp;</span></p>

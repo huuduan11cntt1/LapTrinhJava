@@ -1,0 +1,396 @@
+<p><span style="font-size: medium;"><b>&nbsp;Package trong Java</b></span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Một package
+trong Java là một nhóm các kiểu lớp, Interface và package con tương tự nhau.
+Package trong Java có thể được phân loại thành: Package đã xây dựng sẵn và
+package do người dùng định nghĩa. Có nhiều package đã xây dựng sẵn như java,
+lang, awt, javax, swing, net, io, util, sql, … Chương này chúng ta sẽ tìm hiểu
+cách tạo và sử dụng các package do người dùng tự định nghĩa.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Gói (package) được
+sử dụng trong Java để ngăn cản việc xung đột đặt tên, điều khiên truy cập, giúp
+việc tìm kiếm/lưu trữ và sử dụng lớp, interface, enumeration, annotation dễ
+dàng hơn.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Một package có
+thể được định nghĩa như một nhóm các kiểu có liên quan đến nhau (lớp,
+interface, enumeration và annotation) cung cấp việc bảo vệ truy cập và quản lý
+tên.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Một vài package
+có sẵn trong Java như:</i><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>java.lang&nbsp;</b>-
+Các lớp cơ bản<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>java.io</b>&nbsp;-
+Các lớp input và output cơ bản<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Lập trình viên
+có thể định nghĩa gói riêng để bao bọc một nhóm các class/interface. Trong thực
+tế, việc nhóm các class liên quan đến nhau giúp cho lập trình viên dễ dàng xác
+định class, interface, enumeration, annotation liên quan đến nhau.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Từ việc một gói
+tạo một không gian tên mới trong các package khác nhau có thể tránh việc xung đột
+đặt chung tên tại các gói khác nhau. Với việc sử dụng package, có thể dễ dàng
+cung cấp khả năng truy cập và nó dễ dàng để chứa các class liên quan đến nhau.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Tạo một package
+trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Khi tạo một
+package trong Java, bạn nên chọn tên cho package và đặt câu lệnh khai
+báo&nbsp;package&nbsp;ở trên cùng của source file.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Lệnh&nbsp;package&nbsp;nên
+đặt tại dòng code đầu tiên. Bạn chỉ có thể khai báo lệnh package này một lần
+trong một source file, và nó áp dụng tới tất cả các kiểu trong file.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Nếu một lệnh
+khai báo package không được sử dụng, kiểu class, interface, enumerations hoặc
+annotation sẽ được đặt vào package mặc định không có tên.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Cùng xem ví dụ về
+việc tạo một package tên là&nbsp;animals. Trong thực tế lập trình, việc sử dụng
+các package thường lấy tên viết thường để tránh xung đột giữa với tên class và
+tên interface.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Đặt một
+interface trong package&nbsp;animals:</i><o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" id="animal" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="com" style="box-sizing: border-box; color: #880000;">/* Ten File : Animal.java */</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">package</span><span class="pln" style="box-sizing: border-box;"> animals</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">interface</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Animal</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> eat</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> travel</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Lợi thế của
+package trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Java package được
+sử dụng để phân loại các lớp và các interface để mà chúng có thể được duy trì dễ
+dàng hơn.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Java package
+cung cấp bảo vệ truy cập.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Java package xóa
+bỏ các xung đột về đặt tên.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Ví dụ khác về
+package trong Java</i><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Từ khóa package
+được sử dụng để tạo một package trong Java.<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="com" style="box-sizing: border-box; color: #880000;">//Luu duoi dang Simple.java  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">package</span><span class="pln" style="box-sizing: border-box;"> mypack</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Simple</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+ </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">  
+    </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Chao mung ban den voi package trong Java"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Cách biên dịch
+Java package</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Nếu bạn không sử
+dụng bất cứ IDE nào, bạn cần theo cú pháp sau:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">javac </span><span class="pun" style="box-sizing: border-box; color: #666600;">-</span><span class="pln" style="box-sizing: border-box;">d thu_muc ten_javafile  </span></pre><p style="box-sizing: border-box; font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 18px; line-height: 24px; margin: 0px 0.2em 1em; overflow-wrap: break-word; padding: 0px; text-align: justify;">Ví dụ:</p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">javac </span><span class="pun" style="box-sizing: border-box; color: #666600;">-</span><span class="pln" style="box-sizing: border-box;">d </span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Simple</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">java  </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Tùy chọn –d xác
+định đích, là nơi để đặt class file đã tạo. Bạn có thể sử dụng bất cứ tên thư mục
+nào như /home (với Linux), d:/abc (với Windows), … Nếu bạn muốn giữ package bên
+trong cùng thư mục, bạn có thể sử dụng dấu chấm (.).<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Cách chạy chương
+trình Java package</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bạn cần sử dụng
+tên đầy đủ (ví dụ mypack.Simple) để chạy lớp đó.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Để biên dịch</b>:
+javac -d . Simple.java<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Để chạy</b>: java
+mypack.Simple<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">–d là một switch
+mà nói cho trình biên dịch Compiler nơi để đặt class file (nó biểu diễn đích đến).
+Dấu chấm (.) biểu diễn folder hiện tại.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Từ khóa import
+trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Nếu một class sử
+dụng một class khác cùng package, tên package không cần được sử dụng. Lớp trong
+cùng package tìm thấy nhau mà không cần cú pháp đặc biệt nào.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Tại đây, một lớp
+Boss được thêm vào một package payroll đã chứa Employee. Lớp Boss có thể ám chỉ
+đến lớp Employee mà không cần sử dụng tiền tố payroll, như được minh họa như
+sau bởi lớp Boss.<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">package</span><span class="pln" style="box-sizing: border-box;"> payroll</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Boss</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> payEmployee</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Employee</span><span class="pln" style="box-sizing: border-box;"> e</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+      e</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">mailCheck</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Nếu xảy ra trường
+hợp Boss không nằm trong payroll package, lớp Boss phải sử dụng một trong những
+kỹ thuật sau đây để tham chiếu đến class thuộc package khác.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Sử dụng tên đầy
+đủ của class có thể được sử dụng. Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">payroll</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Employee</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Package có thể
+được nhập bởi sử dụng từ khóa import và wild card (*). Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> payroll</span><span class="pun" style="box-sizing: border-box; color: #666600;">.*;</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Một class có thể
+import chính nó với từ khóa import. Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> payroll</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Employee</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ghi chú:&nbsp;Một
+class file có thể chứa bất kỳ số lệnh import nào. Lệnh import phải xuất hiện
+sau mỗi lệnh khai báo package và trước từ khóa khai báo lớp.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Cách truy cập
+package từ package khác?<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Có nhiều cách để
+truy cập package từ package bên ngoài, đó là:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Sử dụng
+tenpackage.*<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Nếu bạn sử dụng&nbsp;package.*,
+thì tất cả các lớp và interface của package này sẽ là có thể truy cập, nhưng
+không với các package con. Từ khóa import được sử dụng để làm cho các lớp và
+interface của package khác có thể truy cập tới package hiện tại. Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;"><span style="color: #880000;">//Luu duoi dang A.java&nbsp;&nbsp;</span><span style="color: #333333;">  
+</span></span><span class="kwd" style="box-sizing: border-box; color: #000088;">package</span><span class="pln" style="box-sizing: border-box; color: #333333;"> pack</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box; color: #333333;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box; color: #333333;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box; color: #333333;"> A</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box; color: #333333;">  
+  </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box; color: #333333;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box; color: #333333;"> msg</span><span class="pun" style="box-sizing: border-box; color: #666600;">(){</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box; color: #333333;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Hello"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);}</span><span class="pln" style="box-sizing: border-box; color: #333333;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box; color: #333333;">   </span></pre><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">//Luu duoi dang B.java 
+package</span><span class="pln" style="box-sizing: border-box;"> mypack</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> pack</span><span class="pun" style="box-sizing: border-box; color: #666600;">.*;</span><span class="pln" style="box-sizing: border-box;">  
+  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> B</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+  </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">  
+   A obj </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> A</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">  
+   obj</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">msg</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">  
+  </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Sử dụng
+tenpackage.tenlop<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Nếu bạn import
+tenpackage.tenlop, thì chỉ có lớp được khai báo của package này sẽ là có thể
+truy cập. Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="com" style="box-sizing: border-box; color: #880000;">//Luu duoi dang A.java  </span><span class="pln" style="box-sizing: border-box;">
+  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">package</span><span class="pln" style="box-sizing: border-box;"> pack</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> A</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+  </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> msg</span><span class="pun" style="box-sizing: border-box; color: #666600;">(){</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Hello"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  </span></pre>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="com" style="box-sizing: border-box; color: #880000;">//Luu duoi dang B.java  </span><span class="pln" style="box-sizing: border-box;">
+  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">package</span><span class="pln" style="box-sizing: border-box;"> mypack</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> pack</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">A</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> B</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+  </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">  
+   A obj </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> A</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">  
+   obj</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">msg</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">  
+  </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Sử dụng tên đầy
+đủ</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Nếu bạn sử dụng
+tên đầy đủ, thì chỉ có lớp được khai báo của package này sẽ là có thể truy cập.
+Bây giờ bạn không cần import. Nhưng bạn cần sử dụng tên đầy đủ mỗi khi bạn đang
+truy cập lớp hoặc interface. Nói chung, nó được sử dụng khi hai package có cùng
+tên lớp, ví dụ: hai package là java.util và java.sql chứa lớp Date. Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="com" style="box-sizing: border-box; color: #880000;">//Luu duoi dang A.java  </span><span class="pln" style="box-sizing: border-box;">
+  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">package</span><span class="pln" style="box-sizing: border-box;"> pack</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> A</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+  </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> msg</span><span class="pun" style="box-sizing: border-box; color: #666600;">(){</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Hello"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;"> </span></pre>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="com" style="box-sizing: border-box; color: #880000;">//Luu duoi dang B.java  </span><span class="pln" style="box-sizing: border-box;">
+  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">package</span><span class="pln" style="box-sizing: border-box;"> mypack</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> B</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+  </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">  
+   pack</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">A obj </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> pack</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">A</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="com" style="box-sizing: border-box; color: #880000;">//Su dung ten day du  </span><span class="pln" style="box-sizing: border-box;">
+   obj</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">msg</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">  
+  </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Ghi chú: </b>Nếu bạn
+import một package, thì các package con sẽ không được import.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Nếu bạn import một
+package, thì tất cả các lớp và interface của package đó sẽ được import ngoại trừ
+lớp và interface của package con. Vì thế, bạn cũng cần import cả các package con.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Package con
+trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Package mà bên
+trong package khác thì được gọi là package con (subpackage). Ví dụ: Sun
+Microsystem đã định nghĩa một package có tên là java chứa nhiều lớp như System,
+String, Reader, Writer, Socket, … Những lớp này biểu diễn một nhóm cụ thể, ví dụ
+như các lớp Reader và Writer là cho hoạt động I/O, các lớp Socket và
+ServerSocket là cho lập trình mạng, …. Vì thế, Sun đã lại phân loại java
+package thành các subpackage như lang, net, io, … và đặt các lớp liên quan tới
+IO vào io package, …<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Ví dụ về
+subpackage</i><o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">package</span><span class="pln" style="box-sizing: border-box;"> com</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">vietjack</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">core</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Simple</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+  </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">  
+   </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Hello subpackage"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+  </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Để biên dịch:</b>&nbsp;javac
+-d . Simple.java<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Để chạy:</b>&nbsp;java
+com.vietjack.core.Simple<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Cách gửi class
+file tới thư mục hoặc drive khác?<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Giả sử một tình
+huống, bạn muốn đặt class file của A.java source file trong thư mục classes của
+c: drive. Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="com" style="box-sizing: border-box; color: #880000;">//Luu duoi dang Simple.java  </span><span class="pln" style="box-sizing: border-box;">
+  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">package</span><span class="pln" style="box-sizing: border-box;"> mypack</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Simple</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+ </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">  
+    </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Chao mung den voi package"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Để biên dịch</b>:&nbsp;e:\sources&gt;
+javac -d c:\classes Simple.java<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Để chạy</b>:&nbsp;Để
+chạy chương trình này từ thư mục e:\source, bạn cần thiết lập classpath của thư
+mục, nơi mà class file ở đó.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">e:\sources&gt;
+set classpath=c:\classes;.;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">e:\sources&gt;
+java mypack.Simple<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Cách khác với
+-classpath switch<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bạn có thể sử dụng
+–class switch với javac và java tool. Để chạy chương trình từ thư mục
+e:\source, bạn có thể sử dụng –class switch của java mà nói cho nó biết nơi để
+tìm class file. Ví dụ:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">e:\sources&gt;
+java -classpath c:\classes mypack.Simple<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Cách để tải
+class file hoặc jar file<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Cách để tải
+class file hoặc jar file:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Tạm thời: bởi
+thiết lập classpath trong command prompt hoặc bởi –classpath switch.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Vĩnh viễn: bởi
+thiết lập classpath trong biến môi trường hoặc bởi tạo jar file, chứa tất cả
+class file, và sao chép jar file trong thư mục jre/lib/ext.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Qui tắc: Chỉ có
+một lớp public trong một java source file và nó phải được lưu trữ bởi tên lớp
+public.<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="com" style="box-sizing: border-box; color: #880000;">//Luu duoi dang C.java neu khong se gay ra Compilte Time Error  </span><span class="pln" style="box-sizing: border-box;">
+  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> A</span><span class="pun" style="box-sizing: border-box; color: #666600;">{}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> B</span><span class="pun" style="box-sizing: border-box; color: #666600;">{}</span><span class="pln" style="box-sizing: border-box;"> 
+public<span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;</span><span class="kwd" style="box-sizing: border-box; color: #000088; white-space: normal;">class</span><span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;C</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">{}</span><span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;</span><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: large; text-align: justify; white-space: normal;">&nbsp;&nbsp;</span> &nbsp;</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Cách đặt hai lớp
+public trong một package?</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Nếu bạn muốn đặt
+hai lớp public trong một package, bạn có hai java source file chứa một lớp
+public nhưng giữ tên package là giống nhau. Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="com" style="box-sizing: border-box; color: #880000;">//Luu duoi dang A.java  </span><span class="pln" style="box-sizing: border-box;">
+  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">package</span><span class="pln" style="box-sizing: border-box;"> vietjack</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> A</span><span class="pun" style="box-sizing: border-box; color: #666600;">{}</span><span class="pln" style="box-sizing: border-box;">   </span></pre><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="com" style="box-sizing: border-box; color: #880000;">//Luu duoi dang B.java  </span><span class="pln" style="box-sizing: border-box;">
+
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">package</span><span class="pln" style="box-sizing: border-box;"> vietjack</span><span class="pun" style="box-sizing: border-box; color: #666600;">;
+</span><span class="pln" style="box-sizing: border-box;">public<span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;</span><span class="kwd" style="box-sizing: border-box; color: #000088; white-space: normal;">class</span><span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;B</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">{}</span><span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;&nbsp;</span>  &nbsp;</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Thiết lập biến hệ
+thống CLASSPATH trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Để hiển thị biến
+CLASSPATH hiện tại, bạn sử dụng các lệnh sau trong Windows và UNIX (Bourne
+shell):<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Trong Windows
+-&gt; C:\&gt; set CLASSPATH<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Trong UNIX -&gt;
+% echo $CLASSPATH<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Để xóa các nội
+dung hiện tại trong biến CLASSPATH, bạn sử dụng:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Trong Windows
+-&gt; C:\&gt; set CLASSPATH=<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Trong UNIX -&gt;
+% unset CLASSPATH; export CLASSPATH<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Để thiết lập biến
+CLASSPATH:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Trong Windows
+-&gt; set CLASSPATH=C:\users\jack\java\classes<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Trong UNIX -&gt;
+% CLASSPATH=/home/jack/java/classes; export CLASSPATH</span><o:p></o:p></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><br /></span></p>

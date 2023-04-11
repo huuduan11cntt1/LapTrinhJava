@@ -1,0 +1,818 @@
+<p><span style="font-size: medium;"><b>&nbsp;Regular Expression trong Java</b></span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Java cung cấp&nbsp;java.util.regex&nbsp;package
+cho pattern so khớp với các Regular Expression. Các Regular Expression trong
+Java là tương tự với Ngôn ngữ lập trình Perl và rất dễ dàng để học.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Một Regular
+Expression là một dãy liên tục của các ký tự đặc biệt mà giúp bạn so khớp hoặc
+tìm kiếm chuỗi hoặc tập hợp các chuỗi khác, sử dụng một cú pháp riêng biệt
+trong một pattern. Chúng có thể được sử dụng để tìm, chỉnh sửa và thao tác text
+và dữ liệu.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Để hiểu sâu hơn
+các khái niệm được trình bày trong chương này, mời bạn tham khảo loạt
+bài:&nbsp;Ví dụ về Regular Expression trong Java.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Gói
+java.util.regex chủ yếu chứa 3 lớp sau:</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Lớp
+Pattern:</b>&nbsp;Một đối tượng Pattern là một phép biểu diễn được biên dịch của một
+Regular Expression. Lớp Pattern không cung cấp một public constructor nào. Để tạo
+một pattern, bạn đầu tiên phải gọi một trong các phương thức biên dịch static
+chung của nó, mà sau đó sẽ trả về một đối tượng Pattern. Những phương thức này
+chấp nhận một Regular Expression như là tham số đầu tiên.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Lớp
+Matcher:</b>&nbsp;Một đối tượng Matcher là phương tiện mà thông dịch pattern và thực
+hiện so khớp các hoạt động với một chuỗi đầu vào. Như lớp Pattern, Matcher
+không định nghĩa một public constructor nào. Bạn nhận được một đối tượng
+Matcher bằng việc gọi phương thức matcher trên một đối tượng Pattern.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>PatternSyntaxException:&nbsp;</b>Một
+đối tượng PatternSyntaxException là một exception (ngoại lệ) chưa được kiểm tra
+mà chỉ dẫn một lỗi cú pháp trong mẫu Regular Expression.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Capture các
+Group trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Capturing Groups
+là một cách coi nhiều ký tự như là một đơn vị đơn. Chúng được tạo bằng việc xác
+định vị trí của các ký tự để được nhóm vào trong một tập hợp các dấu ngoặc đơn.
+Ví dụ, Regular Expression (dog) tạo một group đơn chứa các chữ cái là
+"d", "o" và "g".<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Capturing Groups
+được đánh số bởi việc tính toán số dấu ngoặc đơn mở từ trái qua phải. Ví dụ,
+trong Expression ((A)(B(C))) có 4 nhóm:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">((A)(B(C)))<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">(A)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">(B(C))<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">(C)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Để tìm bao nhiêu
+group có mặt trong Expression đó, bạn gọi phương thức groupCount trên một đối
+tượng Matcher. Phương thức groupCount trả về một int minh họa số Capturing
+Groups có mặt trong mẫu của đối tượng Matcher.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Cũng có một
+group đặc biệt, là group 0, mà luôn luôn biểu diễn toàn bộ expression. Group
+này không được bao gồm trong kết quả của phương thức groupCount.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><u>Ví dụ:</u><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ sau minh họa
+cách để tìm một chuỗi chữ số từ chuỗi chữ-số đã cho:</span></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width:100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;"><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: justify; white-space: normal;">&nbsp;</span><span class="kwd" style="box-sizing: border-box; white-space: normal;">import</span><span class="pln" style="box-sizing: border-box; color: #333333; white-space: normal;">&nbsp;java</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">.</span><span class="pln" style="box-sizing: border-box; color: #333333; white-space: normal;">util</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">.</span><span class="pln" style="box-sizing: border-box; color: #333333; white-space: normal;">regex</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">.</span><span class="typ" style="box-sizing: border-box; color: #7f0055; white-space: normal;">Matcher</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">;</span>
+import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">util</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">regex</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">RegexMatches</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+    </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">){</span><span class="pln" style="box-sizing: border-box;">
+
+      </span><span class="com" style="box-sizing: border-box; color: #880000;">// String de duoc quet de tim pattern.</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> line </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"Vietjack xin chao cac ban. Day la vi du ve Regex! 1000  0USD"</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> pattern </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"(.*)(\\d+)(.*)"</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+
+      </span><span class="com" style="box-sizing: border-box; color: #880000;">// Tao mot doi tuong Pattern</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pln" style="box-sizing: border-box;"> r </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">compile</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+
+      </span><span class="com" style="box-sizing: border-box; color: #880000;">// Tao doi tuong matcher.</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Matcher</span><span class="pln" style="box-sizing: border-box;"> m </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> r</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">matcher</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">line</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">if</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">m</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">find</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">))</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Gia tri duoc tim thay la: "</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;"> m</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">group</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="lit" style="box-sizing: border-box; color: #006666;">0</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Gia tri duoc tim thay la: "</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;"> m</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">group</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="lit" style="box-sizing: border-box; color: #006666;">1</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Gia tri duoc tim thay la: "</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;"> m</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">group</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="lit" style="box-sizing: border-box; color: #006666;">2</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">else</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Khong co ket noi"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre><p style="box-sizing: border-box; font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 18px; line-height: 24px; margin: 0px 0.2em 1em; overflow-wrap: break-word; padding: 0px; text-align: justify;">Nó sẽ cho kết quả sau:</p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width:100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">Gia</span><span class="pln" style="box-sizing: border-box;"> tri duoc tim thay la</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Vietjack</span><span class="pln" style="box-sizing: border-box;"> xin chao cac ban</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Day</span><span class="pln" style="box-sizing: border-box;"> la vi du ve </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Regex</span><span class="pun" style="box-sizing: border-box; color: #666600;">!</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">1000</span><span class="pln" style="box-sizing: border-box;">  </span><span class="lit" style="box-sizing: border-box; color: #006666;">0USD</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Gia</span><span class="pln" style="box-sizing: border-box;"> tri duoc tim thay la</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Vietjack</span><span class="pln" style="box-sizing: border-box;"> xin chao cac ban</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Day</span><span class="pln" style="box-sizing: border-box;"> la vi du ve </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Regex</span><span class="pun" style="box-sizing: border-box; color: #666600;">!</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">1000</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Gia</span><span class="pln" style="box-sizing: border-box;"> tri duoc tim thay la</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">0</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Cú pháp cho
+Regular Expression trong Java<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bảng dưới đây liệt
+kê tất cả các cú pháp siêu ký tự cho Regular Expression có sẵn trong Java.</span></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 100%;">
+ <tbody><tr style="height: 22.0pt; mso-yfti-firstrow: yes; mso-yfti-irow: 0;">
+  <td style="background: #EEEEEE; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>Subexpression<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>So khớp<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 1;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">^</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với phần bắt đầu của dòng (line)</p>
+  </td>
+ </tr>
+ <tr style="height: 21.45pt; mso-yfti-irow: 2;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">$</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với phần cuối của dòng</p>
+  </td>
+ </tr>
+ <tr style="height: 36.45pt; mso-yfti-irow: 3;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">.</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với bất kỳ ký tự đơn nào ngoại trừ newline (dòng mới).
+  Sử dụng tùy chọn m cũng cho phép nó so khớp với newline (dòng mới)</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 4;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">[...]</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với bất kỳ ký tự đơn nào trong dấu ngoặc vuông</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 5;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">[^...]</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với bất kỳ ký tự đơn nào không trong dấu ngoặc
+  vuông</p>
+  </td>
+ </tr>
+ <tr style="height: 21.45pt; mso-yfti-irow: 6;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">\A</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">Phần bắt đầu của cả chuỗi</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 7;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">\z</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">Phần cuối của cả chuỗi</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 8;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">\Z</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">Phần cuối của cả chuỗi</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 9;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">re*</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với 0 hoặc nhiều sự xuất hiện của expression đặt
+  trước</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 10;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">re+</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với 1 hoặc nhiều của cái gì đó ở trước</p>
+  </td>
+ </tr>
+ <tr style="height: 21.45pt; mso-yfti-irow: 11;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">re?</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với 0 hoặc 1 sự xuất hiện của expression đặt trước</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 12;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">re{ n}</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp một cách chính xác với n lần xuất hiện của
+  Expression đặt trước</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 13;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">re{ n,}</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với n lần xuất hiện hoặc nhiều hơn của Expression
+  đặt trước</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 14;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">re{ n, m}</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với ít nhất n và nhiều nhất m lần xuất hiện của
+  Expression đặt trước</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 15;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">a| b</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với hoặc a hoặc b</p>
+  </td>
+ </tr>
+ <tr style="height: 22.45pt; mso-yfti-irow: 16;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">(re)</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">Nhóm các Regular Expression và ghi nhớ text đã so khớp</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 17;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">(?: re)</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">Nhóm các Regular Expression mà không ghi nhớ text đã so khớp</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 18;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">(?&gt; re)</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với patter độc lập mà không truy tích ngược
+  (backtrack)</p>
+  </td>
+ </tr>
+ <tr style="height: 21.45pt; mso-yfti-irow: 19;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">\w</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với các ký tự từ</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 20;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">\W</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với các ký tự không phải từ</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 21;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">\s</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với khoảng trống trắng. Tương đương với
+  [\t\n\r\f].</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 22;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">\S</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với các ký tự không là khoảng trống trắng</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 23;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">\d</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với các chữ số. Tương đương với [0-9].</p>
+  </td>
+ </tr>
+ <tr style="height: 21.45pt; mso-yfti-irow: 24;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">\D</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với ký tự không là chữ số</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 25;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">\A</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với phần bắt đầu của chuỗi</p>
+  </td>
+ </tr>
+ <tr style="height: 36.45pt; mso-yfti-irow: 26;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">\Z</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với phần kết thúc của chuỗi. Nếu một newline (dòng
+  mới) tồn tại, nó so khớp với ngay trước newline (dòng mới).</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 27;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">\z</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với phần kết thúc của chuỗi</p>
+  </td>
+ </tr>
+ <tr style="height: 21.45pt; mso-yfti-irow: 28;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">\G</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với điểm, nơi mà so khớp cuối cùng kết thúc</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 29;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">\n</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">Tham chiếu ngược để capture group số "n"</p>
+  </td>
+ </tr>
+ <tr style="height: 36.45pt; mso-yfti-irow: 30;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">\b</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với các giới hạn từ bên ngoài dấu ngoặc vuông. So
+  khớp với phím lùi (0x08) khi ở trong dấu ngoặc vuông</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 31;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">\B</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp các giới hạn không phải từ</p>
+  </td>
+ </tr>
+ <tr style="height: 21.45pt; mso-yfti-irow: 32;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">\n, \t, etc.</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">So khớp với các newline (dòng mới), carriage return, tab,
+  …</p>
+  </td>
+ </tr>
+ <tr style="height: 23.0pt; mso-yfti-irow: 33;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 23.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">\Q</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 23.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">Thoát (trích dẫn) tất cả ký tự tới \E</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 34; mso-yfti-lastrow: yes;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">\E</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">Kết thúc trích dẫn bắt đầu từ \Q</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Các phương thức
+của lớp Matcher trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Dưới đây là danh
+sách các phương thức hữu ích:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Các phương thức
+về Index trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Các phương thức
+về index cung cấp các giá trị chỉ mục hữu ích giúp tìm kiếm sự so khớp chính
+xác trong chuỗi đầu vào.</span></p><table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 100%;">
+ <tbody><tr style="height: 22.6pt; mso-yfti-firstrow: yes; mso-yfti-irow: 0;">
+  <td style="background: #EEEEEE; border: solid #DDDDDD 1.0pt; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>STT<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>Phương thức và Miêu tả<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style="height: 45.25pt; mso-yfti-irow: 1;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 45.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">1</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 45.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public int start()</b></p>
+  <p class="MsoNormal">Trả về chỉ mục bắt đầu của so khớp trước</p>
+  </td>
+ </tr>
+ <tr style="height: 45.25pt; mso-yfti-irow: 2;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 45.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">2</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 45.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public int start(int group)</b></p>
+  <p class="MsoNormal">Trả về chỉ mục bắt đầu của dãy phụ được nắm bắt bởi group
+  đã cho trong hoạt động so khớp trước.</p>
+  </td>
+ </tr>
+ <tr style="height: 45.25pt; mso-yfti-irow: 3;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 45.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">3</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 45.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public int end()</b></p>
+  <p class="MsoNormal">Trả về offset sau ký tự cuối cùng được so khớp</p>
+  </td>
+ </tr>
+ <tr style="height: 60.15pt; mso-yfti-irow: 4; mso-yfti-lastrow: yes;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 60.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">4</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 60.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public int end(int group)</b></p>
+  <p class="MsoNormal">Trả về offset sau ký tự cuối cùng của dãy phụ được nắm bắt
+  bởi group đã cho trong hoạt động so khớp trước</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Các phương thức
+Study trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Các phương thức
+Study duyệt lại chuỗi input và trả về một Boolean chỉ rằng có hay không pattern
+được tìm thấy.<o:p></o:p></span></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 100%;">
+ <tbody><tr style="height: 22.7pt; mso-yfti-firstrow: yes; mso-yfti-irow: 0;">
+  <td style="background: #EEEEEE; border: solid #DDDDDD 1.0pt; height: 22.7pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>STT<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; height: 22.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>Phương thức và Miêu tả<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style="height: 45.4pt; mso-yfti-irow: 1;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 45.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">1</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 45.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public boolean lookingAt()</b></p>
+  <p class="MsoNormal">So khớp với dãy input, bắt đầu từ khu vực đó, với pattern</p>
+  </td>
+ </tr>
+ <tr style="height: 45.4pt; mso-yfti-irow: 2;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 45.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">2</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 45.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public boolean find()</b></p>
+  <p class="MsoNormal">Tìm dãy tiếp theo của dãy input mà so khớp với pattern</p>
+  </td>
+ </tr>
+ <tr style="height: 60.35pt; mso-yfti-irow: 3;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 60.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">3</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 60.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public boolean find(int start</b></p>
+  <p class="MsoNormal">Đặt lại Matcher này và sau đó cố gắng tìm dãy tiếp theo của
+  dãy input mà so khớp với pattern, bắt đầu từ chỉ mục đã xác định</p>
+  </td>
+ </tr>
+ <tr style="height: 45.4pt; mso-yfti-irow: 4; mso-yfti-lastrow: yes;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 45.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">4</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 45.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public boolean matches()</b></p>
+  <p class="MsoNormal">So khớp toàn bộ khu vực với pattern</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Các phương thức
+thay thế vị trí trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Các phương thức
+này rất hữu ích để thay thế text trong một chuỗi input:</span></p><table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 100%;">
+ <tbody><tr>
+  <td style="background: #EEEEEE; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>STT<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>Phương thức và Miêu tả<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">1</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public Matcher appendReplacement(StringBuffer sb,
+  String replacement)</b></p>
+  <p class="MsoNormal">Triển khai một bước phụ thêm-và-thay thế có giới hạn</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">2</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public StringBuffer appendTail(StringBuffer sb)</b></p>
+  <p class="MsoNormal">Triển khai một bước phụ thêm-và-thay thế không giới hạn</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">3</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public String replaceAll(String replacement)</b></p>
+  <p class="MsoNormal">Thay thế mỗi dãy phụ của dãy input mà so khớp pattern với
+  chuỗi thay thế đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">4</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public String replaceFirst(String replacement)</b></p>
+  <p class="MsoNormal">Thay thế dãy phụ đầu tiên của dãy input mà so khớp pattern
+  với chuỗi thay thế đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">5</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public static String quoteReplacement(String s)</b></p>
+  <p class="MsoNormal">Trả về một String thay thế cho String đã xác định. Phương
+  thức này tạo một String mà sẽ làm việc như là một sự thay thế literal trong
+  phương thức appendReplacement của lớp Matcher.</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ về
+Metacharacter<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width:100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">util</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">regex</span><span class="pun" style="box-sizing: border-box; color: #666600;">.*;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">RegexExample5</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"cac metacharacter d...."</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="com" style="box-sizing: border-box; color: #880000;">//d nghia la ky so (digit) </span><span class="pln" style="box-sizing: border-box;">
+  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">matches</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"\\d"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"abc"</span><span class="pun" style="box-sizing: border-box; color: #666600;">));</span><span class="com" style="box-sizing: border-box; color: #880000;">//false (non-digit)  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">matches</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"\\d"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"1"</span><span class="pun" style="box-sizing: border-box; color: #666600;">));</span><span class="com" style="box-sizing: border-box; color: #880000;">//true (digit va xuat hien mot lan)  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">matches</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"\\d"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"4443"</span><span class="pun" style="box-sizing: border-box; color: #666600;">));</span><span class="com" style="box-sizing: border-box; color: #880000;">//false (digit nhung xuat hien nhieu hon mot lan)  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">matches</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"\\d"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"323abc"</span><span class="pun" style="box-sizing: border-box; color: #666600;">));</span><span class="com" style="box-sizing: border-box; color: #880000;">//false (digit va char)  </span><span class="pln" style="box-sizing: border-box;">
+  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"cac metacharacter D...."</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="com" style="box-sizing: border-box; color: #880000;">//D nghia la khong phai ky so (non-digit)  </span><span class="pln" style="box-sizing: border-box;">
+  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">matches</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"\\D"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"abc"</span><span class="pun" style="box-sizing: border-box; color: #666600;">));</span><span class="com" style="box-sizing: border-box; color: #880000;">//false (non-digit nhung xuat hien nhieu hon mot lan)  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">matches</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"\\D"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"1"</span><span class="pun" style="box-sizing: border-box; color: #666600;">));</span><span class="com" style="box-sizing: border-box; color: #880000;">//false (digit)  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">matches</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"\\D"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"4443"</span><span class="pun" style="box-sizing: border-box; color: #666600;">));</span><span class="com" style="box-sizing: border-box; color: #880000;">//false (digit)  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">matches</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"\\D"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"323abc"</span><span class="pun" style="box-sizing: border-box; color: #666600;">));</span><span class="com" style="box-sizing: border-box; color: #880000;">//false (digit va char)  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">matches</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"\\D"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"m"</span><span class="pun" style="box-sizing: border-box; color: #666600;">));</span><span class="com" style="box-sizing: border-box; color: #880000;">//true (non-digit va xuat hien mot lan)  </span><span class="pln" style="box-sizing: border-box;">
+  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"cac metacharacter D voi quantifier...."</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">matches</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"\\D*"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"mak"</span><span class="pun" style="box-sizing: border-box; color: #666600;">));</span><span class="com" style="box-sizing: border-box; color: #880000;">//true (non-digit va co the xuat hien 0 hoac nhie lan)  </span><span class="pln" style="box-sizing: border-box;">
+  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}}</span><span class="pln" style="box-sizing: border-box;">  </span></pre><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">cac metacharacter d</span><span class="pun" style="box-sizing: border-box; color: #666600;">....</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">false</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">true</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">false</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">false</span><span class="pln" style="box-sizing: border-box;">
+cac metacharacter D</span><span class="pun" style="box-sizing: border-box; color: #666600;">....</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">false</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">false</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">false</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">false</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">true</span><span class="pln" style="box-sizing: border-box;">
+cac metacharacter D voi quantifier</span><span class="pun" style="box-sizing: border-box; color: #666600;">....</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">true</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Các phương thức&nbsp;start&nbsp;và&nbsp;end&nbsp;trong
+Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ đơn giản
+sau tính toán số lần mà từ "cats" xuất hiện trong chuỗi input:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width:100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">util</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">regex</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Matcher</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">util</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">regex</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">RegexMatches</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+    </span><span class="kwd" style="box-sizing: border-box; color: #000088;">private</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">final</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> REGEX </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"\\bplay\\b"</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+    </span><span class="kwd" style="box-sizing: border-box; color: #000088;">private</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">final</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> INPUT </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;">
+                                    </span><span class="str" style="box-sizing: border-box; color: #008800;">"play play play football tennis play"</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+
+    </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">){</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pln" style="box-sizing: border-box;"> p </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">compile</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">REGEX</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Matcher</span><span class="pln" style="box-sizing: border-box;"> m </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> p</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">matcher</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">INPUT</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;"> </span><span class="com" style="box-sizing: border-box; color: #880000;">// Lay mot doi tuong matcher</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="kwd" style="box-sizing: border-box; color: #000088;">int</span><span class="pln" style="box-sizing: border-box;"> count </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">0</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+
+       </span><span class="kwd" style="box-sizing: border-box; color: #000088;">while</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">m</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">find</span><span class="pun" style="box-sizing: border-box; color: #666600;">())</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+         count</span><span class="pun" style="box-sizing: border-box; color: #666600;">++;</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"So ket noi "</span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;">count</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"start(): "</span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;">m</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">start</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"end(): "</span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;">m</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">end</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre><p style="box-sizing: border-box; font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 18px; line-height: 24px; margin: 0px 0.2em 1em; overflow-wrap: break-word; padding: 0px; text-align: justify;">Nó sẽ cho kết quả:</p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width:100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">So</span><span class="pln" style="box-sizing: border-box;"> ket noi </span><span class="lit" style="box-sizing: border-box; color: #006666;">1</span><span class="pln" style="box-sizing: border-box;">
+start</span><span class="pun" style="box-sizing: border-box; color: #666600;">():</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">0</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">end</span><span class="pun" style="box-sizing: border-box; color: #666600;">():</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">4</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">So</span><span class="pln" style="box-sizing: border-box;"> ket noi </span><span class="lit" style="box-sizing: border-box; color: #006666;">2</span><span class="pln" style="box-sizing: border-box;">
+start</span><span class="pun" style="box-sizing: border-box; color: #666600;">():</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">5</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">end</span><span class="pun" style="box-sizing: border-box; color: #666600;">():</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">9</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">So</span><span class="pln" style="box-sizing: border-box;"> ket noi </span><span class="lit" style="box-sizing: border-box; color: #006666;">3</span><span class="pln" style="box-sizing: border-box;">
+start</span><span class="pun" style="box-sizing: border-box; color: #666600;">():</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">10</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">end</span><span class="pun" style="box-sizing: border-box; color: #666600;">():</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">14</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">So</span><span class="pln" style="box-sizing: border-box;"> ket noi </span><span class="lit" style="box-sizing: border-box; color: #006666;">4</span><span class="pln" style="box-sizing: border-box;">
+start</span><span class="pun" style="box-sizing: border-box; color: #666600;">():</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">31</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">end</span><span class="pun" style="box-sizing: border-box; color: #666600;">():</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">35</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bạn có thể thấy
+rằng ví dụ này sử dụng các giới hạn từ để bảo đảm rằng chữ cái "c"
+"a" "t" không đơn thuần là một chuỗi phụ trong một từ dài
+hơn. Nó cũng cung cấp một số thông tin hữu ích về nơi nào trong chuỗi input xuất
+hiện sự so khớp.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Phương thức&nbsp;start&nbsp;trả
+về chỉ mục bắt đầu của dãy phụ được nắm bắt bởi group đã cho trong hoạt động so
+khớp trước, và phương thức&nbsp;end&nbsp;trả về chỉ mục của ký tự cuối cùng được
+so khớp, cộng với 1.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Các phương thức&nbsp;matches&nbsp;và&nbsp;lookingAt&nbsp;trong
+Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Cả hai phương thức&nbsp;matches
+và lookingAt&nbsp;so khớp một dãy input với một pattern. Tuy nhiên, sư khác
+nhau ở đây là phương thức matches yêu cầu toàn bộ dãy input để được so khớp,
+trong khi phương thức lookingAt thì không.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Cả hai phương thức
+luôn luôn bắt đầu tại điểm bắt đầu của chuỗi input. Dưới đây là ví dụ giải
+thích tính năng này:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">util</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">regex</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Matcher</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">util</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">regex</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">RegexMatches</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+    </span><span class="kwd" style="box-sizing: border-box; color: #000088;">private</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">final</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> REGEX </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"it"</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+    </span><span class="kwd" style="box-sizing: border-box; color: #000088;">private</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">final</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> INPUT </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"itttttttttttttgaphot"</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+    </span><span class="kwd" style="box-sizing: border-box; color: #000088;">private</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pln" style="box-sizing: border-box;"> pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+    </span><span class="kwd" style="box-sizing: border-box; color: #000088;">private</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Matcher</span><span class="pln" style="box-sizing: border-box;"> matcher</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+
+    </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">){</span><span class="pln" style="box-sizing: border-box;">
+       pattern </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">compile</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">REGEX</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+       matcher </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">matcher</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">INPUT</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+
+       </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"REGEX hien tai la: "</span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;">REGEX</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"INPUT hien tai la: "</span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;">INPUT</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+
+       </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"lookingAt(): "</span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;">matcher</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">lookingAt</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"matches(): "</span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;">matcher</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">matches</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre><p style="box-sizing: border-box; font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 18px; line-height: 24px; margin: 0px 0.2em 1em; overflow-wrap: break-word; padding: 0px; text-align: justify;">Nó sẽ cho kết quả sau:</p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width:100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">REGEX hien tai la</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> it
+INPUT hien tai la</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> itttttttttttttgaphot
+lookingAt</span><span class="pun" style="box-sizing: border-box; color: #666600;">():</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">true</span><span class="pln" style="box-sizing: border-box;">
+matches</span><span class="pun" style="box-sizing: border-box; color: #666600;">():</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">false</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Các phương thức&nbsp;replaceFirst&nbsp;và&nbsp;replaceAll&nbsp;trong
+Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Các phương thức&nbsp;replaceFirst
+và replaceAll&nbsp;trong Java thay thế text mà so khớp với một Regular
+Expression đã cho. Như tên của chúng đã cho biết, phương thức replaceFirst thay
+thế sự xuất hiện so khớp đầu tiên, trong khi phương thức replaceAll thay thế tất
+cả so khớp.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ sau đây giải
+thích tính năng này:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">util</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">regex</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Matcher</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">util</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">regex</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">RegexMatches</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+    </span><span class="kwd" style="box-sizing: border-box; color: #000088;">private</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> REGEX </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"HaDong"</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+    </span><span class="kwd" style="box-sizing: border-box; color: #000088;">private</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> INPUT </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"HaDong nam o mien nam. "</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;">
+                                    </span><span class="str" style="box-sizing: border-box; color: #008800;">"HaDong la thanh pho cua BinhDuong."</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+    </span><span class="kwd" style="box-sizing: border-box; color: #000088;">private</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> REPLACE </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"BinhDuong"</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+
+    </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pln" style="box-sizing: border-box;"> p </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">compile</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">REGEX</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="com" style="box-sizing: border-box; color: #880000;">// lay mot doi tuong matcher</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Matcher</span><span class="pln" style="box-sizing: border-box;"> m </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> p</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">matcher</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">INPUT</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;"> 
+       INPUT </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> m</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">replaceAll</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">REPLACE</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">INPUT</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre><p style="box-sizing: border-box; font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 18px; line-height: 24px; margin: 0px 0.2em 1em; overflow-wrap: break-word; padding: 0px; text-align: justify;">Nó sẽ cho kết quả sau:</p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width:100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">BinhDuong</span><span class="pln" style="box-sizing: border-box;"> nam o mien nam</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">BinhDuong</span><span class="pln" style="box-sizing: border-box;"> la thanh pho cua </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">BinhDuong</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Các phương thức&nbsp;appendReplacement&nbsp;và&nbsp;appendTail&nbsp;trong
+Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Lớp Matcher cũng
+cũng cung cấp hai phương thức&nbsp;appendReplacement và appendTail&nbsp;để thay
+thế văn bản.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ sau giải
+thích tính năng này:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width:100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">util</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">regex</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Matcher</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">util</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">regex</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">RegexMatches</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">private</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> REGEX </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"a*b"</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">private</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> INPUT </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"aabfooaabfooabfoob"</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">private</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> REPLACE </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"-"</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pln" style="box-sizing: border-box;"> p </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Pattern</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">compile</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">REGEX</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="com" style="box-sizing: border-box; color: #880000;">// lay mot doi tuong matcher</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Matcher</span><span class="pln" style="box-sizing: border-box;"> m </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> p</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">matcher</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">INPUT</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringBuffer</span><span class="pln" style="box-sizing: border-box;"> sb </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">StringBuffer</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">while</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">m</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">find</span><span class="pun" style="box-sizing: border-box; color: #666600;">()){</span><span class="pln" style="box-sizing: border-box;">
+         m</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">appendReplacement</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;">REPLACE</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+      m</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">appendTail</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">sb</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">toString</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre><p style="box-sizing: border-box; font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 18px; line-height: 24px; margin: 0px 0.2em 1em; overflow-wrap: break-word; padding: 0px; text-align: justify;">Nó sẽ cho kết quả sau:</p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width:100%; word-break: break-all;"><span class="pun" style="box-sizing: border-box; color: #666600;">-</span><span class="pln" style="box-sizing: border-box;">foo</span><span class="pun" style="box-sizing: border-box; color: #666600;">-</span><span class="pln" style="box-sizing: border-box;">foo</span><span class="pun" style="box-sizing: border-box; color: #666600;">-</span><span class="pln" style="box-sizing: border-box;">foo</span><span class="pun" style="box-sizing: border-box; color: #666600;">-</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Các phương thức
+lớp PatternSyntaxException trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Một lớp
+PatternSyntaxException là một exception chưa được kiểm tra mà chỉ dẫn lỗi cú
+pháp (syntax error) trong một mẫu Regular Expression. Lớp
+PatternSyntaxException cung cấp các phương thức sau để giúp bạn xác định cái gì
+gây ra lỗi.</span><o:p></o:p></p><table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 100%;">
+ <tbody><tr style="height: 22.9pt; mso-yfti-firstrow: yes; mso-yfti-irow: 0;">
+  <td style="background: #EEEEEE; border: solid #DDDDDD 1.0pt; height: 22.9pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>STT<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; height: 22.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>Phương thức và Miêu tả<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style="height: 45.8pt; mso-yfti-irow: 1;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 45.8pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">1</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 45.8pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public String getDescription()</b></p>
+  <p class="MsoNormal">Thu nhận sự miêu tả về lỗi</p>
+  </td>
+ </tr>
+ <tr style="height: 45.8pt; mso-yfti-irow: 2;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 45.8pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">2</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 45.8pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public int getIndex()</b></p>
+  <p class="MsoNormal">Thu nhận chỉ mục của lỗi</p>
+  </td>
+ </tr>
+ <tr style="height: 45.8pt; mso-yfti-irow: 3;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 45.8pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">3</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 45.8pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public String getPattern()</b></p>
+  <p class="MsoNormal">Thu nhận mẫu Regular Expression sai sót</p>
+  </td>
+ </tr>
+ <tr style="height: 60.9pt; mso-yfti-irow: 4; mso-yfti-lastrow: yes;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 60.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">4</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 60.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public String getMessage()</b></p>
+  <p class="MsoNormal">Trả về một chuỗi nhiều dòng chứa sự mô tả về syntax error
+  và chỉ mục của nó, mẫu Regular Expression sai sót, và chỉ dẫn có thể nhìn thấy
+  của chỉ mục lỗi trong pattern đó.</p>
+  </td>
+ </tr>
+</tbody></table><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><br /></span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><br /></span></p>

@@ -1,0 +1,111 @@
+<p style="text-align: justify;"></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Lớp Wrapper trong Java</b><br /><u>Lớp Wrapper
+trong Java</u> cung cấp kỹ thuật để chuyển đổi kiểu gốc primitive thành đối tượng
+và từ đối tượng thành kiểu gốc. Từ J2SE 5.0, đặc điểm autoboxing và unboxing sẽ
+tự động chuyển đổi primitive thành object (là autoboxing) và từ object thành
+primitive (là unboxing). Một trong 8 lớp của&nbsp;<b>java.lang package</b>&nbsp;là
+lớp Wrapper trong Java. Bảng dưới đây liệt kê danh sách 8 lớp Wrapper:<o:p></o:p></span></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 398px;">
+ <tbody><tr style="height: 18.05pt; mso-yfti-firstrow: yes; mso-yfti-irow: 0;">
+  <td style="background: #EEEEEE; border: solid #DDDDDD 1.0pt; height: 18.05pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p align="center" class="MsoNormal" style="line-height: 150%; text-align: center;"><b><span style="font-size: medium;">Kiểu
+  gốc<o:p></o:p></span></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; height: 18.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p align="center" class="MsoNormal" style="line-height: 150%; text-align: center;"><b><span style="font-size: medium;">Lớp
+  Wrapper<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style="height: 18.05pt; mso-yfti-irow: 1;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 18.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">boolean<o:p></o:p></span></p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 18.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Boolean<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 17.65pt; mso-yfti-irow: 2;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 17.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">char<o:p></o:p></span></p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 17.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Character<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 18.05pt; mso-yfti-irow: 3;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 18.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">byte<o:p></o:p></span></p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 18.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Byte<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 18.05pt; mso-yfti-irow: 4;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 18.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">short<o:p></o:p></span></p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 18.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Short<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 18.05pt; mso-yfti-irow: 5;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 18.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">int<o:p></o:p></span></p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 18.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Integer<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 18.05pt; mso-yfti-irow: 6;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 18.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">long<o:p></o:p></span></p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 18.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Long<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 17.65pt; mso-yfti-irow: 7;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 17.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">float<o:p></o:p></span></p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 17.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Float<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 18.45pt; mso-yfti-irow: 8; mso-yfti-lastrow: yes;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 18.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">double<o:p></o:p></span></p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 18.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Double<o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ: chuyển đổi
+từ&nbsp;<b>kiểu gốc Primitive thành Wrapper</b><o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; text-align: start; width: 726.4px; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">WrapperExample1</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="com" style="box-sizing: border-box; color: #880000;">//Chuyen doi int thanh Integer  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">int</span><span class="pln" style="box-sizing: border-box;"> a</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="lit" style="box-sizing: border-box; color: #006666;">20</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Integer</span><span class="pln" style="box-sizing: border-box;"> i</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Integer</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">valueOf</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">a</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="com" style="box-sizing: border-box; color: #880000;">//Chuyen doi int thanh Integer  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Integer</span><span class="pln" style="box-sizing: border-box;"> j</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;">a</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="com" style="box-sizing: border-box; color: #880000;">//Day la autoboxing, bay gio compiler se viet la Integer.valueOf(a)  </span><span class="pln" style="box-sizing: border-box;">
+  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">a</span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="str" style="box-sizing: border-box; color: #008800;">" "</span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;">i</span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="str" style="box-sizing: border-box; color: #008800;">" "</span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;">j</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}}</span><span class="pln" style="box-sizing: border-box;"> </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ: chuyển đổi
+từ&nbsp;<b>Wrapper thành kiểu gốc Primitive</b><o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; text-align: start; width: 726.4px; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">WrapperExample2</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">    
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">    
+</span><span class="com" style="box-sizing: border-box; color: #880000;">//Chuyen doi Integer thanh int    </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Integer</span><span class="pln" style="box-sizing: border-box;"> a</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Integer</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="lit" style="box-sizing: border-box; color: #006666;">3</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">    
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">int</span><span class="pln" style="box-sizing: border-box;"> i</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;">a</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">intValue</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="com" style="box-sizing: border-box; color: #880000;">//Chuyen doi Integer thanh int </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">int</span><span class="pln" style="box-sizing: border-box;"> j</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;">a</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="com" style="box-sizing: border-box; color: #880000;">//Day la unboxing, bay gio compiler se viet la a.intValue()    </span><span class="pln" style="box-sizing: border-box;">
+    
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">a</span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="str" style="box-sizing: border-box; color: #008800;">" "</span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;">i</span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="str" style="box-sizing: border-box; color: #008800;">" "</span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;">j</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">    
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}}</span><span class="pln" style="box-sizing: border-box;">    </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><o:p><span style="font-size: medium;">&nbsp;</span></o:p></p><p></p>

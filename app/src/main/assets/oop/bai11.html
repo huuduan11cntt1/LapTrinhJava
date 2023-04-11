@@ -1,0 +1,32 @@
+<p><span style="font-size: medium;"><b>&nbsp;Kiểu trả về covariant trong Java</b></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Kiểu trả về
+covariant xác định rằng kiểu trả về có thể thay đổi trong lớp con. Tức là một
+phương thức có thể trả về kiểu hẹp hơn khi phương thức đó được override ở class
+con.Trước Java5, nó là không thể để ghi đè bất cứ phương thức nào bằng cách
+thay đổi kiểu trả về. Nhưng bây giờ, từ Java5, nó là có thể để ghi đè phương thức
+bằng cách thay đổi kiểu trả về nếu lớp con ghi đè bất cứ phương thức nào mà có
+kiểu trả về là không phải kiểu gốc. Bạn theo dõi ví dụ đơn giản sau:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width:100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;"><span class="kwd" style="box-sizing: border-box; color: #000088; white-space: normal;">class</span><span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;A</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">{</span>
+A </span><span class="kwd" style="box-sizing: border-box; color: #000088;">get</span><span class="pun" style="box-sizing: border-box; color: #666600;">(){</span><span class="kwd" style="box-sizing: border-box; color: #000088;">return</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">this</span><span class="pun" style="box-sizing: border-box; color: #666600;">;}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> B1 </span><span class="kwd" style="box-sizing: border-box; color: #000088;">extends</span><span class="pln" style="box-sizing: border-box;"> A</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+B1 </span><span class="kwd" style="box-sizing: border-box; color: #000088;">get</span><span class="pun" style="box-sizing: border-box; color: #666600;">(){</span><span class="kwd" style="box-sizing: border-box; color: #000088;">return</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">this</span><span class="pun" style="box-sizing: border-box; color: #666600;">;}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> message</span><span class="pun" style="box-sizing: border-box; color: #666600;">(){</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Chao mung den voi kieu tra ve covariant"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);}</span><span class="pln" style="box-sizing: border-box;">  
+  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> B1</span><span class="pun" style="box-sizing: border-box; color: #666600;">().</span><span class="kwd" style="box-sizing: border-box; color: #000088;">get</span><span class="pun" style="box-sizing: border-box; color: #666600;">().</span><span class="pln" style="box-sizing: border-box;">message</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Như bạn thấy
+trong ví dụ trên, kiểu trả về của phương thức get() của lớp A là A, nhưng kiểu
+trả về của phương thức get() của lớp B là B. Cả hai phương thức có kiểu trả về
+khác nhau và nó là ghi đè phương thức. Đây còn được biết đến như là kiểu trả về
+covariant.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Ghi chú: </b>Nếu bạn
+là người mới học thì nên bỏ qua chương này và tiếp tục theo dõi chương tiếp
+theo.</span><o:p></o:p></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><br /></span></p>

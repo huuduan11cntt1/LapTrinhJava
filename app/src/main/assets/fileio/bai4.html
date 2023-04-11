@@ -1,0 +1,143 @@
+<p style="text-align: justify;"><span style="font-size: medium;"><b>&nbsp;ByteArrayOutputStream trong Java</b></span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Lớp
+ByteArrayOutputStream trong Java tạo một&nbsp;buffer&nbsp;trong bộ nhớ và tất cả
+dữ liệu được gửi tới stream này được lưu trong buffer. Có các mẫu constructor
+sau để tạo đối tượng ByteArrayOutputStream trong Java.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Constructor sau
+tạo một buffer 32 byte:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">OutputStream</span><span class="pln" style="box-sizing: border-box;"> bOut </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">ByteArrayOutputStream</span><span class="pun" style="box-sizing: border-box; color: #666600;">()</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Constructor sau
+tạo một buffer có kích cỡ là int a:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">OutputStream</span><span class="pln" style="box-sizing: border-box;"> bOut </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">ByteArrayOutputStream</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="kwd" style="box-sizing: border-box; color: #000088;">int</span><span class="pln" style="box-sizing: border-box;"> a</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Khi bạn có đối
+tượng&nbsp;ByteArrayOutputStream, thì có một số phương thức có thể được sử dụng
+để ghi stream đó hoặc để thực hiện các hoạt động khác trên stream đó.<o:p></o:p></span></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 100%;">
+ <tbody><tr>
+  <td style="background: rgb(238, 238, 238); border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>STT<o:p></o:p></b></p>
+  </td>
+  <td style="background: rgb(238, 238, 238); border-left: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>Phương thức và Miêu tả<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">1</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>public void reset()</b></p>
+  <p class="MsoNormal">Phương thức này reset số lượng valid byte của mảng byte
+  trong output stream zero, vì thế tất cả các output tích lũy trong stream sẽ bị
+  loại bỏ</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">2</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>public byte[] toByteArray()</b></p>
+  <p class="MsoNormal">Phương thức này tạo một mảng byte được cấp phát mới. Kích
+  cỡ của nó sẽ là kích cỡ hiện tại của output stream và nội dung của buffer sẽ
+  được sao chép vào trong đó. Trả về nội dung hiện tại của output stream dưới dạng
+  một mảng byte</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">3</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>public String toString()</b></p>
+  <p class="MsoNormal">Biến đổi nội dung buffer thành một chuỗi. Việc biến đổi sẽ
+  được thực hiện theo mã hóa ký tự mặc định. Trả về String đã được biến đổi từ
+  nội dung của buffer</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">4</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>public void write(int w)</b></p>
+  <p class="MsoNormal">Ghi mảng đã xác định tới output stream</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">5</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>public void write(byte []b, int of, int len)</b></p>
+  <p class="MsoNormal">Ghi&nbsp;<b>len</b>&nbsp;byte bắt đầu từ offset off tới
+  stream</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">6</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>public void writeTo(OutputStream outSt)</b></p>
+  <p class="MsoNormal">Ghi toàn bộ nội dung của Stream này tới tham số stream đã
+  xác định</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Sau đây là ví dụ
+minh họa ByteArrayOutputStream trong Java:</span><o:p></o:p></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"></span></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">io</span><span class="pun" style="box-sizing: border-box; color: #666600;">.*;</span><span class="pln" style="box-sizing: border-box;">
+
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">ByteStreamTest</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[])</span><span class="kwd" style="box-sizing: border-box; color: #000088;">throws</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">IOException</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">ByteArrayOutputStream</span><span class="pln" style="box-sizing: border-box;"> bOutput </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">ByteArrayOutputStream</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="lit" style="box-sizing: border-box; color: #006666;">12</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">while</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;"> bOutput</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">size</span><span class="pun" style="box-sizing: border-box; color: #666600;">()!=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">10</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="com" style="box-sizing: border-box; color: #880000;">// Nhan input tu nguoi dung</span><span class="pln" style="box-sizing: border-box;">
+         bOutput</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">write</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">in</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">read</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="pln" style="box-sizing: border-box;"> 
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">byte</span><span class="pln" style="box-sizing: border-box;"> b </span><span class="pun" style="box-sizing: border-box; color: #666600;">[]</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> bOutput</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">toByteArray</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"In noi dung"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">for</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="kwd" style="box-sizing: border-box; color: #000088;">int</span><span class="pln" style="box-sizing: border-box;"> x</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">0</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;"> x </span><span class="pun" style="box-sizing: border-box; color: #666600;">&lt;</span><span class="pln" style="box-sizing: border-box;"> b</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">length</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;"> x</span><span class="pun" style="box-sizing: border-box; color: #666600;">++)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="com" style="box-sizing: border-box; color: #880000;">//In cac ky tu</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">print</span><span class="pun" style="box-sizing: border-box; color: #666600;">((</span><span class="kwd" style="box-sizing: border-box; color: #000088;">char</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;">b</span><span class="pun" style="box-sizing: border-box; color: #666600;">[</span><span class="pln" style="box-sizing: border-box;">x</span><span class="pun" style="box-sizing: border-box; color: #666600;">]</span><span class="pln" style="box-sizing: border-box;">  </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"   "</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;"> 
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"   "</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">int</span><span class="pln" style="box-sizing: border-box;"> c</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">ByteArrayOutputStream</span><span class="pln" style="box-sizing: border-box;"> bInput </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">ByteArrayOutputStream</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">b</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Chuyen doi cac ky tu thanh chu hoa "</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">for</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="kwd" style="box-sizing: border-box; color: #000088;">int</span><span class="pln" style="box-sizing: border-box;"> y </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">0</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;"> y </span><span class="pun" style="box-sizing: border-box; color: #666600;">&lt;</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">1</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;"> y</span><span class="pun" style="box-sizing: border-box; color: #666600;">++</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="kwd" style="box-sizing: border-box; color: #000088;">while</span><span class="pun" style="box-sizing: border-box; color: #666600;">((</span><span class="pln" style="box-sizing: border-box;"> c</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> bInput</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">read</span><span class="pun" style="box-sizing: border-box; color: #666600;">())!=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">-</span><span class="lit" style="box-sizing: border-box; color: #006666;">1</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+            </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Character</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">toUpperCase</span><span class="pun" style="box-sizing: border-box; color: #666600;">((</span><span class="kwd" style="box-sizing: border-box; color: #000088;">char</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;">c</span><span class="pun" style="box-sizing: border-box; color: #666600;">));</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+         bInput</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">reset</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;"> 
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre><p style="box-sizing: border-box; font-size: 18px; line-height: 24px; margin: 0px 0.2em 1em; overflow-wrap: break-word; padding: 0px; text-align: justify;"><span style="font-family: times;">Chạy mẫu chương trình sau sẽ cho kết quả sau:</span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"></span></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">asdfghjkly
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">In</span><span class="pln" style="box-sizing: border-box;"> noi dung
+a   s   d   f   g   h   j   k   l   y
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Chuyen</span><span class="pln" style="box-sizing: border-box;"> doi cac ky tu thanh chu hoa
+A
+S
+D
+F
+G
+H
+J
+K
+L
+Y</span></pre><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><br /></span></p>

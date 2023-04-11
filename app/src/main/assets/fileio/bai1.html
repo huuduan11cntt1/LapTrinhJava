@@ -1,0 +1,522 @@
+<p style="text-align: justify;"></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>File và I/O trong Java</b></span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Gói&nbsp;java.io&nbsp;chứa
+gần như tất cả các lớp bạn cần để thực hiện input và output (I/O) trong Java. Tất
+cả những stream này biểu diễn một nguồn input và một đích đến output. Stream
+trong java.io package hỗ trợ nhiều như liệu như các kiểu gốc, Object, các ký tự
+nội bộ, …<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Một stream có thể
+được định nghĩa như là một dãy liên tục dữ liệu.&nbsp;InputStream&nbsp;được sử
+dụng để đọc dữ liệu từ một nguồn và&nbsp;OutputStream&nbsp;được sử dụng để ghi
+dữ liệu tới một đích đến.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Java cung cấp sự
+hỗ trợ mạnh mẽ nhưng linh hoạt cho I/O liên quan tới các File và các mạng nhưng
+trong phần hướng dẫn này, chúng tôi chỉ bàn luận tính năng cơ bản liên quan tới
+các stream và I/O. Chúng ta sẽ xem xét từng ví dụ được sử dụng phổ biến nhất.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Để hiểu sâu hơn
+các khái niệm được trình bày trong chương này, mời bạn tham khảo loạt
+bài:&nbsp;Ví dụ về File trong Java.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Byte Stream
+trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Byte Stream
+trong Java được sử dụng để thực hiện input và output của các byte (8 bit). Mặc
+dù có nhiều lớp liên quan tới byte stream nhưng các lớp thường được sử dụng nhất
+là:&nbsp;FileInputStream&nbsp;và&nbsp;FileOutputStream. Sau đây là một ví dụ sử
+dụng hai lớp này để sao chép một input file vào trong một output file:</span></p><p></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">import<span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;java</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">.</span><span class="pln" style="box-sizing: border-box; white-space: normal;">io</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">.*;</span>
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">CopyFile</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[])</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">throws</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">IOException</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">FileInputStream</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">in</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">null</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">FileOutputStream</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">null</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">try</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="kwd" style="box-sizing: border-box; color: #000088;">in</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">FileInputStream</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"input.txt"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">FileOutputStream</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"output.txt"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+         
+         </span><span class="kwd" style="box-sizing: border-box; color: #000088;">int</span><span class="pln" style="box-sizing: border-box;"> c</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="kwd" style="box-sizing: border-box; color: #000088;">while</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">((</span><span class="pln" style="box-sizing: border-box;">c </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">in</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">read</span><span class="pun" style="box-sizing: border-box; color: #666600;">())</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">!=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">-</span><span class="lit" style="box-sizing: border-box; color: #006666;">1</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+            </span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">write</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">c</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="kwd" style="box-sizing: border-box; color: #000088;">finally</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="kwd" style="box-sizing: border-box; color: #000088;">if</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="kwd" style="box-sizing: border-box; color: #000088;">in</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">!=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">null</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+            </span><span class="kwd" style="box-sizing: border-box; color: #000088;">in</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">close</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="kwd" style="box-sizing: border-box; color: #000088;">if</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">!=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">null</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+            </span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">close</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre><p style="text-align: justify;">
+
+</p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bây giờ giả sử
+chúng ta có một file là&nbsp;input.txt&nbsp;có nội dung sau:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; text-align: start; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">Day</span><span class="pln" style="box-sizing: border-box;"> la vi du ve sao chep file</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Trong bước tiếp
+theo, biên dịch chương trình trên và thực thi nó, sẽ cho kết quả là tạo một
+file là&nbsp;output.txt&nbsp;có cùng nội dung như chúng ta có trong input.txt.
+Vì thế, bạn đặt code trên vào trong CopyFile.java file và làm như sau:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; text-align: start; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">$javac </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">CopyFile</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">java
+$java </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">CopyFile</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Character Stream
+trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Byte&nbsp;Stream
+trong Java được sử dụng để thực hiện input và output của các byte (8 bit),
+trong khi đó,&nbsp;Character&nbsp;Stream trong Java được sử dụng để thực hiện
+input và output cho Unicode 16 bit. Mặc dù có nhiều lớp liên quan tới character
+stream nhưng các lớp thường dùng nhất
+là&nbsp;FileReader&nbsp;và&nbsp;FileWriter… Mặc dù trong nội tại, FileReader sử
+dụng FileInputStream và FileWriter sử dụng FileOutputStream, nhưng có một điểm
+khác biệt lớn ở đây là FileReader đọc hai byte cùng một thời điểm và FileWriter
+ghi 2 byte cùng một lúc.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Chúng ta có thể
+viết lại ví dụ trên mà sử dụng hai lớp này để sao chép một input file (có các
+ký tự Unicode) vào trong một output file.</span></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">import<span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;java</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">.</span><span class="pln" style="box-sizing: border-box; white-space: normal;">io</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">.*;</span>
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">CopyFile</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[])</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">throws</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">IOException</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">FileReader</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">in</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">null</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">FileWriter</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">null</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">try</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="kwd" style="box-sizing: border-box; color: #000088;">in</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">FileReader</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"input.txt"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">FileWriter</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"output.txt"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+         
+         </span><span class="kwd" style="box-sizing: border-box; color: #000088;">int</span><span class="pln" style="box-sizing: border-box;"> c</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="kwd" style="box-sizing: border-box; color: #000088;">while</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">((</span><span class="pln" style="box-sizing: border-box;">c </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">in</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">read</span><span class="pun" style="box-sizing: border-box; color: #666600;">())</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">!=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">-</span><span class="lit" style="box-sizing: border-box; color: #006666;">1</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+            </span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">write</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">c</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="kwd" style="box-sizing: border-box; color: #000088;">finally</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="kwd" style="box-sizing: border-box; color: #000088;">if</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="kwd" style="box-sizing: border-box; color: #000088;">in</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">!=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">null</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+            </span><span class="kwd" style="box-sizing: border-box; color: #000088;">in</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">close</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="kwd" style="box-sizing: border-box; color: #000088;">if</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">!=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">null</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+            </span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">close</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Giả sử chúng ta
+có&nbsp;<b>input.txt&nbsp;</b>có nội dung sau:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">Day</span><span class="pln" style="box-sizing: border-box;"> la vi du ve sao chep file</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Trong bước tiếp
+theo, biên dịch chương trình trên và thực thi nó, sẽ cho kết quả là tạo một
+file là output.txt có cùng nội dung như chúng ta có trong input.txt. Vì thế, bạn
+đặt code trên vào trong CopyFile.java file và làm như sau:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">$javac </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">CopyFile</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">java
+$java </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">CopyFile</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Standard Stream
+trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Tất cả các Ngôn
+ngữ lập trình cung cấp sự hỗ trợ cho I/O chuẩn, tại đây chương trình của người
+sử dụng có thể nhận đầu vào từ một bàn phím và sau đó tạo kết quả trên màn hình
+máy tính. Nếu bạn đã biết về các ngôn ngữ C/C++, thì bạn phải biết về 3 thiết bị
+chuẩn là STDIN, STDOUT, và STDERR. Theo cách tương tự, Java cung cấp 3 Standard
+Stream sau:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Đầu vào chuẩn
+(Standard Input):</b>&nbsp;Nó được sử dụng để truyền dữ liệu tới chương trình của
+người dùng và thường thì một bàn phím được sử dụng như là đầu vào chuẩn và được
+biểu diễn như&nbsp;System.in.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Đầu ra chuẩn
+(Standard Output):</b>&nbsp;Nó được sử dụng để hiển thị kết quả đầu ra từ chương
+trình của người dùng và thường thì một màn hình máy tính được sử dụng như là đầu
+ra chuẩn và được biểu diễn như là&nbsp;System.out.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Lỗi chuẩn
+(Standard Error):</b>&nbsp;Được sử dụng để hiển thị các lỗi trong chương trình của
+người dùng và thường thì một màn hình máy tính được sử dụng như là lỗi chuẩn và
+được biểu diễn như là&nbsp;System.err.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Sau đây là một
+chương trình đơn giản tạo&nbsp;InputStreamReader&nbsp;để đọc luồng đầu vào chuẩn
+tới khi người sử dụng gõ một "q".</span></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">import<span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;java</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">.</span><span class="pln" style="box-sizing: border-box; white-space: normal;">io</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">.*;</span>
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">ReadConsole</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[])</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">throws</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">IOException</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">InputStreamReader</span><span class="pln" style="box-sizing: border-box;"> cin </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">null</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">try</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+         cin </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">InputStreamReader</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">in</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Nhap cac ky tu, 'q' de thoat."</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="kwd" style="box-sizing: border-box; color: #000088;">char</span><span class="pln" style="box-sizing: border-box;"> c</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="kwd" style="box-sizing: border-box; color: #000088;">do</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+            c </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="kwd" style="box-sizing: border-box; color: #000088;">char</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> cin</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">read</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+            </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">print</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">c</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">while</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">c </span><span class="pun" style="box-sizing: border-box; color: #666600;">!=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">'q'</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="kwd" style="box-sizing: border-box; color: #000088;">finally</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="kwd" style="box-sizing: border-box; color: #000088;">if</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">cin </span><span class="pun" style="box-sizing: border-box; color: #666600;">!=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">null</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+            cin</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">close</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Giữ code trên
+trong ReadConsole.java file và thực thi và biên dịch nó như dưới đây. Chương
+trình này tiếp tục đọc và hiển thị kết quả tới khi chúng ta nhấn phím
+"q".</span></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">$javac&nbsp;<span class="typ" style="box-sizing: border-box; color: #7f0055; white-space: normal;">ReadConsole</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">.</span><span class="pln" style="box-sizing: border-box; white-space: normal;">java</span>
+$java </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">ReadConsole</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Nhap</span><span class="pln" style="box-sizing: border-box;"> cac ky tu</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">'q'</span><span class="pln" style="box-sizing: border-box;"> de thoat</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="lit" style="box-sizing: border-box; color: #006666;">1</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="lit" style="box-sizing: border-box; color: #006666;">1</span><span class="pln" style="box-sizing: border-box;">
+e
+e
+q
+q</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Đọc và Ghi File
+trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Như đã miêu tả
+trước đó, một Stream có thể được định nghĩa như là một dãy liên tục của dữ liệu.&nbsp;InputStream&nbsp;được
+sử dụng để đọc dữ liệu từ một nguồn và&nbsp;OutputStream&nbsp;được sử dụng để
+ghi dữ liệu tới một đích.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Dưới đây là một
+cấu trúc có thứ tự của các lớp để xử lý các luồng Input và Output.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Java I/O Streams</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Hai luồng quan
+trọng nhất là&nbsp;FileInputStream&nbsp;và&nbsp;FileOutputStream, sẽ được bàn
+luận sau đây:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>FileInputStream
+trong Java:</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Luồng này được sử
+dụng để đọc dữ liệu từ các file. Các đối tượng có thể được tạo bởi sử dụng từ
+khóa new và có một số kiểu constructor có sẵn.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Constructor sau
+đây nhận tên file như là một chuỗi để tạo một đối tượng Input Stream để đọc
+file:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">InputStream</span><span class="pln" style="box-sizing: border-box;"> f </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">FileInputStream</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"C:/java/hello"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Constructor sau
+nhận một đối tượng File để tạo một đối tượng Input Stream để đọc file. Đầu tiên
+chúng ta tạo một đối tượng file bởi sử dụng phương thức File() như sau:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">File</span><span class="pln" style="box-sizing: border-box;"> f </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">File</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"C:/java/hello"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">InputStream</span><span class="pln" style="box-sizing: border-box;"> f </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">FileInputStream</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">f</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Khi chúng ta có
+đối tượng&nbsp;InputStream, thì khi đó có một danh sách các phương thức có thể
+được sử dụng để đọc stream hoặc để thực hiện hoạt động nào khác trên stream
+này.<o:p></o:p></span></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 100%;">
+ <tbody><tr style="height: 22.55pt; mso-yfti-firstrow: yes; mso-yfti-irow: 0;">
+  <td style="background: #EEEEEE; border: solid #DDDDDD 1.0pt; height: 22.55pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>STT<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; height: 22.55pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>Phương thức và Miêu tả<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style="height: 59.95pt; mso-yfti-irow: 1;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 59.95pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">1</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 59.95pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public void close() throws IOException{}</b></p>
+  <p class="MsoNormal">Phương thức này đóng output stream. Giải phóng bất kỳ nguồn
+  hệ thống nào liên kết với file. Ném một IOException</p>
+  </td>
+ </tr>
+ <tr style="height: 59.45pt; mso-yfti-irow: 2;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 59.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">2</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 59.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>protected void finalize()throws IOException {}</b></p>
+  <p class="MsoNormal">Phương thức này xóa sự kết nối tới File đó. Bảo đảm rằng
+  phương thức close của output stream này được gọi khi không có tham chiếu nào
+  nữa tới stream này. Ném một IOException</p>
+  </td>
+ </tr>
+ <tr style="height: 59.95pt; mso-yfti-irow: 3;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 59.95pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">3</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 59.95pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public int read(int r)throws IOException{}</b></p>
+  <p class="MsoNormal">Phương thức này đọc byte dữ liệu đã xác định từ
+  InputStream. Trả về một int. Trả về byte dữ liệu tiếp theo và -1 sẽ được trả
+  về nếu kết thúc file.</p>
+  </td>
+ </tr>
+ <tr style="height: 59.95pt; mso-yfti-irow: 4;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 59.95pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">4</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 59.95pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public int read(byte[] r) throws IOException{}</b></p>
+  <p class="MsoNormal">Phương thức này đọc r byte từ input stream vào trong một mảng.
+  Trả về tổng số byte đã đọc. Nếu kết thúc file, -1 được trả về.</p>
+  </td>
+ </tr>
+ <tr style="height: 45.1pt; mso-yfti-irow: 5; mso-yfti-lastrow: yes;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 45.1pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">5</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 45.1pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public int available() throws IOException{}</b></p>
+  <p class="MsoNormal">Cung cấp số byte mà được đọc từ input stream này. Trả về một
+  int</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Có một số input
+stream quan trọng khác có sẵn, để biết thêm chi tiết, bạn tham khảo theo link
+sau:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i><u>ByteArrayInputStream<o:p></o:p></u></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i><u>DataInputStream</u></i><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>FileOutputStream
+trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">FileOutputStream
+được sử dụng để tạo một file và ghi dữ liệu vào trong nó. Luồng này sẽ tạo một
+file, nếu nó đã không tồn tại, trước khi mở nó để ghi output.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Dưới đây là hai
+constructor mà có thể được sử dụng để tạo một đối tượng FileOutputStream trong
+Java.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Constructor sau
+nhận một tên file như là một chuỗi để tạo một đối tượng input stream để ghi
+file.<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">OutputStream</span><span class="pln" style="box-sizing: border-box;"> f </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">FileOutputStream</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"C:/java/hello"</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Constructor sau
+nhận một đối tượng file để tạo một đối tượng output stream để ghi file.<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">File</span><span class="pln" style="box-sizing: border-box;"> f </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">File</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"C:/java/hello"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">OutputStream</span><span class="pln" style="box-sizing: border-box;"> f </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">FileOutputStream</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">f</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Khi bạn có đối
+tượng&nbsp;OutputStream&nbsp;này, thì sau đây có các phương thức có thể được sử
+dụng để ghi stream hoặc để thực hiện các hoạt động khác trên stream này:<o:p></o:p></span></p>
+
+<table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width:100%;">
+ <tbody><tr>
+  <td style="background: #EEEEEE; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>STT<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>Phương thức và Miêu tả<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">1</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public void close() throws IOException{}</b></p>
+  <p class="MsoNormal">Phương thức này đóng output stream. Giải phóng bất kỳ nguồn
+  hệ thống nào liên kết với file. Ném một IOException</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">2</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>protected void finalize()throws IOException {}</b></p>
+  <p class="MsoNormal">Phương thức này xóa sự kết nối tới File đó. Bảo đảm rằng
+  phương thức close của output stream này được gọi khi không có tham chiếu nào
+  nữa tới stream này. Ném một IOException</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">3</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public void write(int w)throws IOException{}</b></p>
+  <p class="MsoNormal">Phương thức này ghi byte đã xác định tới output stream</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">4</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>public void write(byte[] w)</b></p>
+  <p class="MsoNormal">Ghi w byte từ mảng byte đã đề cập tới OutputStream.</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ngoài ra cũng có
+một số output stream quan trọng khác, bạn tham khảo theo link sau:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><u>ByteArrayOutputStream<o:p></o:p></u></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><u>DataOutputStream</u><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Ví dụ:</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ sau minh họa
+InputStream và OutputStream:</span></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">import<span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;java</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">.</span><span class="pln" style="box-sizing: border-box; white-space: normal;">io</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">.*;</span>
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> fileStreamTest</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">
+   
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">try</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">byte</span><span class="pln" style="box-sizing: border-box;"> bWrite </span><span class="pun" style="box-sizing: border-box; color: #666600;">[]</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="lit" style="box-sizing: border-box; color: #006666;">11</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="lit" style="box-sizing: border-box; color: #006666;">21</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="lit" style="box-sizing: border-box; color: #006666;">3</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="lit" style="box-sizing: border-box; color: #006666;">40</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="lit" style="box-sizing: border-box; color: #006666;">5</span><span class="pun" style="box-sizing: border-box; color: #666600;">};</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">OutputStream</span><span class="pln" style="box-sizing: border-box;"> os </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">FileOutputStream</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"test.txt"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">for</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="kwd" style="box-sizing: border-box; color: #000088;">int</span><span class="pln" style="box-sizing: border-box;"> x</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="lit" style="box-sizing: border-box; color: #006666;">0</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;"> x </span><span class="pun" style="box-sizing: border-box; color: #666600;">&lt;</span><span class="pln" style="box-sizing: border-box;"> bWrite</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">length </span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;"> x</span><span class="pun" style="box-sizing: border-box; color: #666600;">++){</span><span class="pln" style="box-sizing: border-box;">
+         os</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">write</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;"> bWrite</span><span class="pun" style="box-sizing: border-box; color: #666600;">[</span><span class="pln" style="box-sizing: border-box;">x</span><span class="pun" style="box-sizing: border-box; color: #666600;">]</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;"> </span><span class="com" style="box-sizing: border-box; color: #880000;">// writes the bytes</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+      os</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">close</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+     
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">InputStream</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">is</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">FileInputStream</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"test.txt"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">int</span><span class="pln" style="box-sizing: border-box;"> size </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">is</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">available</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">for</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="kwd" style="box-sizing: border-box; color: #000088;">int</span><span class="pln" style="box-sizing: border-box;"> i</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="lit" style="box-sizing: border-box; color: #006666;">0</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;"> i</span><span class="pun" style="box-sizing: border-box; color: #666600;">&lt;</span><span class="pln" style="box-sizing: border-box;"> size</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;"> i</span><span class="pun" style="box-sizing: border-box; color: #666600;">++){</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">print</span><span class="pun" style="box-sizing: border-box; color: #666600;">((</span><span class="kwd" style="box-sizing: border-box; color: #000088;">char</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="kwd" style="box-sizing: border-box; color: #000088;">is</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">read</span><span class="pun" style="box-sizing: border-box; color: #666600;">()</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"  "</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">is</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">close</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="kwd" style="box-sizing: border-box; color: #000088;">catch</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">IOException</span><span class="pln" style="box-sizing: border-box;"> e</span><span class="pun" style="box-sizing: border-box; color: #666600;">){</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">print</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Exception"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">	
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Code trên tạo
+test.txt file và sẽ ghi các số đã cho trong định dạng nhị phân. Kết quả tương tự
+trên màn hình stdout.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Điều hướng file
+và I/O trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Có một số lớp
+khác chúng ta cần tìm hiểu để biết các khái niệm cơ bản về Điều hướng file và
+I/O.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Lớp File trong
+Java<o:p></o:p></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Lớp FileReader
+trong Java<o:p></o:p></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Lớp FileWriter
+trong Java</i><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Thư mục trong
+Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Một thư mục là
+File mà có thể giữ một danh sách các file và thư mục khác. Bạn sử dụng đối tượng&nbsp;File&nbsp;để
+tạo các thư mục, để liệt kê các file có sẵn trong một thư mục. Để hiểu chi tiết,
+bạn kiểm tra các phương thức mà bạn có thể gọi trên đối tượng File và những gì
+liên quan tới thư mục.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Để hiểu sâu hơn
+các khái niệm được trình bày trong chương này, mời bạn tham khảo loạt
+bài:&nbsp;Ví dụ về Thư mục trong Java.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Tạo thư mục
+trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Có hai phương thức
+tiện ích&nbsp;File&nbsp;hữu ích, mà có thể được sử dụng để tạo các thư mục:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Phương thức&nbsp;mkdir()&nbsp;tạo
+một thư mục, trả về true nếu thành công và false nếu thất bại. Việc thất bại là
+do đường truyền đã xác định trong đối tượng File đã tồn tại, hoặc là do thư mục
+không thể được tạo vì cả đường truyền không tồn tại.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Phương thức&nbsp;mkdirs()&nbsp;tạo
+cả một thư mục và tất cả các thư mục cha của nó.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Ví dụ sau tạo
+thư mục /tmp/user/java/bin</i><o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">io</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">File</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">CreateDir</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[])</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> dirname </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"/tmp/user/java/bin"</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">File</span><span class="pln" style="box-sizing: border-box;"> d </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">File</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">dirname</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="com" style="box-sizing: border-box; color: #880000;">// Bay gio tao thu muc.</span><span class="pln" style="box-sizing: border-box;">
+      d</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">mkdirs</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+  </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Biên dịch và thực
+thi code trên sẽ tạo thư mục /tmp/user/java/bin</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ghi
+chú:&nbsp;Java tự động chăm sóc các bộ tách đường truyền trên UNIX và Windows
+theo qui ước tương ứng của từng hệ thống. Nếu bạn sử dụng một dấu gạch chéo (/)
+trên phiên bản Windows của Java, đường truyền sẽ vẫn giải quyết một cách chính
+xác.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Liệt kê thư mục
+trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bạn có thể sử dụng
+phương thức&nbsp;list()&nbsp;được cung cấp bởi đối tượng File để liệt kê tất cả
+các file và thư mục có sẵn trong một thư mục như sau:</span></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">import<span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;java</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">.</span><span class="pln" style="box-sizing: border-box; white-space: normal;">io</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">.</span><span class="typ" style="box-sizing: border-box; color: #7f0055; white-space: normal;">File</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">;</span>
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">ReadDir</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+      
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">File</span><span class="pln" style="box-sizing: border-box;"> file </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">null</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]</span><span class="pln" style="box-sizing: border-box;"> paths</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+            
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">try</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">      
+         </span><span class="com" style="box-sizing: border-box; color: #880000;">// Tao doi tuong file moi</span><span class="pln" style="box-sizing: border-box;">
+         file </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">File</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"/tmp"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+                                 
+         </span><span class="com" style="box-sizing: border-box; color: #880000;">// mang cac file va thu muc</span><span class="pln" style="box-sizing: border-box;">
+         paths </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> file</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">list</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+            
+         </span><span class="com" style="box-sizing: border-box; color: #880000;">// voi moi ten trong path array</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="kwd" style="box-sizing: border-box; color: #000088;">for</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> path</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;">paths</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+            </span><span class="com" style="box-sizing: border-box; color: #880000;">// in ten file va ten thu muc</span><span class="pln" style="box-sizing: border-box;">
+            </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">path</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="kwd" style="box-sizing: border-box; color: #000088;">catch</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Exception</span><span class="pln" style="box-sizing: border-box;"> e</span><span class="pun" style="box-sizing: border-box; color: #666600;">){</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="com" style="box-sizing: border-box; color: #880000;">// neu co bat cu error nao xuat hien</span><span class="pln" style="box-sizing: border-box;">
+         e</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">printStackTrace</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Nó sẽ cho kết quả
+sau dựa trên các thư mục và file có sẵn trong thư mục&nbsp;/tmp&nbsp;của bạn:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">test1</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">txt
+test2</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">txt
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">ReadDir</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">java
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">ReadDir</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ps: Về cơ bản, để
+đọc file binary( file ảnh, phim...) nên dùng InputStream, còn đọc file text
+(txt) nên dùng FileReader. Các bạn nhớ file docx không phải là file binary mà
+là file nhị phân.<o:p></o:p></span></p><br /><p></p>

@@ -1,0 +1,1347 @@
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Date và Time trong Java</b></span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Java cung cấp lớp&nbsp;Date&nbsp;có
+sẵn trong&nbsp;java.util&nbsp;package, lớp này tóm lược ngày tháng và thời gian
+hiện tại.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Để hiểu sâu hơn
+các khái niệm được trình bày trong chương này, mời bạn tham khảo loạt
+bài:&nbsp;Ví dụ về Date &amp; Time trong Java.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Lớp Date hỗ trợ
+hai constructor. Constructor đầu tiên khởi tạo đối tượng với ngày và thời gian
+hiện tại.<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Constructor sau
+chấp nhận một tham số bằng số mili giây đã trôi qua từ nửa đêm ngày 1/1/1970.<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="kwd" style="box-sizing: border-box; color: #000088;">long</span><span class="pln" style="box-sizing: border-box;"> millisec</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Một khi bạn có một
+đối tượng Date có sẵn, bạn có thể gọi bất kỳ phương thức hỗ trợ nào để thao tác
+với ngày tháng này:</span></p><table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 100%;">
+ <tbody><tr>
+  <td style="background: rgb(238, 238, 238); border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>STT<o:p></o:p></b></p>
+  </td>
+  <td style="background: rgb(238, 238, 238); border-left: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>Phương thức và Miêu tả<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">1</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>boolean after(Date date)</b></p>
+  <p class="MsoNormal">Trả về true nếu gọi đối tượng Date chứa một ngày mà chậm
+  hơn ngày đã xác định, nếu không là false.</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">2</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>boolean before(Date date)</b></p>
+  <p class="MsoNormal">Trả về true nếu gọi đối tượng Date chứa một ngày mà sớm
+  hơn ngày đã xác định, nếu không là false.</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">3</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>Object clone( )</b></p>
+  <p class="MsoNormal">Sao chép đối tượng Date đang gọi</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">4</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>int compareTo(Date date)</b></p>
+  <p class="MsoNormal">So sánh giá trị đối tượng đang gọi với giá trị đó của
+  date. Trả về 0 nếu các giá trị này là cân bằng. Trả về một giá trị âm nếu đối
+  tượng đang gọi là sớm hơn date. Trả về một giá trị dương nếu đối tượng đang gọi
+  chậm hơn date.</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">5</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>int compareTo(Object obj)</b></p>
+  <p class="MsoNormal">Tiến hành tương tự như compareTo(Date) nếu đối tượng là của
+  lớp Date. Nếu không thì, nó cho một ClassCastException.</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">6</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>boolean equals(Object date)</b></p>
+  <p class="MsoNormal">Trả về true nếu đối tượng Date đang gọi chứa thời gian và
+  ngày tháng giống như date đã cho, nếu không là false.</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">7</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>long getTime( )</b></p>
+  <p class="MsoNormal">Trả về số mili giây đã trôi qua từ 1/1/1970</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">8</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>int hashCode( )</b></p>
+  <p class="MsoNormal">Trả về một mã hóa băm (hash code) cho đối tượng đang gọi</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">9</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>void setTime(long time)</b></p>
+  <p class="MsoNormal">Thiết lập ngày tháng và thời gian như time đã cho, mà biểu
+  diễn một time đã trôi qua (giá trị mili giây) từ nửa đêm 1/1/1970</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">10</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>String toString( )</b></p>
+  <p class="MsoNormal">Biến đổi đối tượng Date đang gọi thành một chuỗi và trả về
+  kết quả</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Nhận Date và
+Time hiện tại trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Thực sự dễ dàng
+để nhận date và time hiện tại trong Java. Bạn có thể sử dụng một đối tượng Date
+đơn giản với phương thức&nbsp;toString()&nbsp;để in date và time hiện tại như
+sau:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">util</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">DateDemo</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[])</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="com" style="box-sizing: border-box; color: #880000;">// khoi tao mot doi tuong Date</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pln" style="box-sizing: border-box;"> date </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+        
+       </span><span class="com" style="box-sizing: border-box; color: #880000;">// hien thi date va time boi su dung toString()</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">date</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">toString</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Nó sẽ cho kết quả
+sau:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">Mon</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">May</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">04</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">09</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="lit" style="box-sizing: border-box; color: #006666;">51</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="lit" style="box-sizing: border-box; color: #006666;">52</span><span class="pln" style="box-sizing: border-box;"> CDT </span><span class="lit" style="box-sizing: border-box; color: #006666;">2009</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>So sánh Date
+trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><u>Có 3 cách để so
+sánh hai date trong Java:</u><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bạn có thể sử dụng
+getTime() để nhận số mili giây đã trôi qua từ nửa đêm 1/1/1970 cho cả hai đối
+tượng và sau đó so sánh hai giá trị này.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bạn có thể sử dụng
+các phương thức before(), after() và equals(). Bởi vì tháng thứ 12 ở trước
+tháng thứ 18, ví dụ, new Date(99, 2, 12).before(new Date(99, 2, 18)) trả về
+true.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bạn có thể sử dụng
+phương thức compareTo(), mà được định nghĩa bởi Comparable interface và được
+thi hành bởi Date.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Định dạng Date bởi
+sử dụng SimpleDateFormat trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">SimpleDateFormat
+là một lớp cố định (cụ thể) để định dạng và parse các date theo một phương thức
+nhạy cảm với locale. SimpleDateFormat cho phép bạn bắt đầu bởi việc họn bất kỳ
+pattern đã được định nghĩa bởi người dùng cho định dạng date-time. Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">util</span><span class="pun" style="box-sizing: border-box; color: #666600;">.*;</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">text</span><span class="pun" style="box-sizing: border-box; color: #666600;">.*;</span><span class="pln" style="box-sizing: border-box;">
+
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">DateDemo</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[])</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pln" style="box-sizing: border-box;"> dNow </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">SimpleDateFormat</span><span class="pln" style="box-sizing: border-box;"> ft </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> 
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">SimpleDateFormat</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"E yyyy.MM.dd 'at' hh:mm:ss a zzz"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Date hien tai: "</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;"> ft</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">format</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">dNow</span><span class="pun" style="box-sizing: border-box; color: #666600;">));</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Nó sẽ cho kết quả:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pln" style="box-sizing: border-box;"> hien tai</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Sun</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">2004.07</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="lit" style="box-sizing: border-box; color: #006666;">18</span><span class="pln" style="box-sizing: border-box;"> at </span><span class="lit" style="box-sizing: border-box; color: #006666;">04</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="lit" style="box-sizing: border-box; color: #006666;">14</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="lit" style="box-sizing: border-box; color: #006666;">09</span><span class="pln" style="box-sizing: border-box;"> PM PDT</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Mã hóa định dạng
+SimpleDateFormat trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Để xác định định
+dạng thời gian, sử dụng một chuỗi time mẫu. Trong pattern này, tất cả chữ cái
+ASCII được dự trữ (dành riêng) như là các ký tự pattern, mà được định nghĩa như
+sau:</span></p><table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 100%;">
+ <tbody><tr style="height: 21.9pt; mso-yfti-firstrow: yes; mso-yfti-irow: 0;">
+  <td style="background: rgb(238, 238, 238); border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p align="center" class="MsoNormal" style="text-align: center;"><b>Ký tự<o:p></o:p></b></p>
+  </td>
+  <td style="background: rgb(238, 238, 238); border-left: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p align="center" class="MsoNormal" style="text-align: center;"><b>Miêu tả<o:p></o:p></b></p>
+  </td>
+  <td style="background: rgb(238, 238, 238); border-left: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p align="center" class="MsoNormal" style="text-align: center;"><b>Ví dụ<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 1;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">G</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Tên mệnh danh của thời đại</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">AD</p>
+  </td>
+ </tr>
+ <tr style="height: 21.4pt; mso-yfti-irow: 2;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">y</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Năm trong dạng 4 chữ số</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">2001</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 3;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">M</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Tháng trong năm</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">July or 07</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 4;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">d</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Ngày trong tháng</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">10</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 5;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">h</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Giờ trong dạng A.M./P.M. (1~12)</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">12</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 6;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">H</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Giờ trong ngày (0~23)</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">22</p>
+  </td>
+ </tr>
+ <tr style="height: 21.4pt; mso-yfti-irow: 7;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">m</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Phút trong giờ</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">30</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 8;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">s</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Giây trong phút</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">55</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 9;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">S</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Số mili giây</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">234</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 10;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">E</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Ngày trong tuần</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Tuesday</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 11;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">D</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Ngày trong năm</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">360</p>
+  </td>
+ </tr>
+ <tr style="height: 21.4pt; mso-yfti-irow: 12;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">F</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Ngày của tuần trong tháng</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">2 (Wed thứ hai trong July)</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 13;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">w</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Tuần trong năm</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">40</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 14;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">W</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Tuần trong tháng</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">1</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 15;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">a</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">A.M./P.M.</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">PM</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 16;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">k</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Giờ trong ngày (1~24)</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">24</p>
+  </td>
+ </tr>
+ <tr style="height: 22.4pt; mso-yfti-irow: 17;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">K</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Giờ dạng A.M./P.M. (0~11)</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">10</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 18;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">z</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Time zone</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Eastern Standard Time</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 19;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">'</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Dãy thoát cho văn bản</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Dấu giới hạn</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 20; mso-yfti-lastrow: yes;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">"</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Trích dẫn đơn</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">`</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Định dạng Date sử
+dụng printf trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Định dạng date
+và time có thể được thực hiện một cách đơn giản bởi sử dụng phương thức&nbsp;printf&nbsp;trong
+Java. Bạn sử dụng một định dạng hai chữ cái, bắt đầu với&nbsp;t&nbsp;và kết
+thúc với một trong các ký tự trong bảng dưới. Ví dụ:</span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">util</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">DateDemo</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+
+  </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[])</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+     </span><span class="com" style="box-sizing: border-box; color: #880000;">// khoi tao mot doi tuong Date</span><span class="pln" style="box-sizing: border-box;">
+     </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pln" style="box-sizing: border-box;"> date </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+
+     </span><span class="com" style="box-sizing: border-box; color: #880000;">// Hien thi date va time boi su dung toString()</span><span class="pln" style="box-sizing: border-box;">
+     </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> str </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">format</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Date hien tai/Time : %tc"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> date </span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+
+     </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">printf</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">str</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+  </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre><p style="box-sizing: border-box; font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 18px; line-height: 24px; margin: 0px 0.2em 1em; overflow-wrap: break-word; padding: 0px; text-align: justify;">Nó sẽ cho kết quả:</p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pln" style="box-sizing: border-box;"> hien tai</span><span class="pun" style="box-sizing: border-box; color: #666600;">/</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Time</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Sat</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Dec</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">15</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">16</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="lit" style="box-sizing: border-box; color: #006666;">37</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="lit" style="box-sizing: border-box; color: #006666;">57</span><span class="pln" style="box-sizing: border-box;"> MST </span><span class="lit" style="box-sizing: border-box; color: #006666;">2012</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Nó sẽ là khá ngờ
+nghệch nếu bạn phải cung cấp cho date nhiều time để định dạng mỗi phần. Với lý
+do này, một chuỗi định dạng có thể chỉ dẫn chỉ mục của tham số để được định dạng.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Chỉ mục phải
+ngay lập tức theo sau bởi dấu % và nó phải được kết thúc bởi một dấu $. Ví dụ:</span><span style="font-size: large;">&nbsp; &nbsp; &nbsp;&nbsp;</span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">util</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">DateDemo</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[])</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="com" style="box-sizing: border-box; color: #880000;">// khoi tao mot doi tuong Date</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pln" style="box-sizing: border-box;"> date </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+        
+       </span><span class="com" style="box-sizing: border-box; color: #880000;">// Hien thi date va time boi su dung toString()</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">printf</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"%1$s %2$tB %2$td, %2$tY"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> 
+                         </span><span class="str" style="box-sizing: border-box; color: #008800;">"Date la:"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> date</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre><p style="box-sizing: border-box; font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 18px; line-height: 24px; margin: 0px 0.2em 1em; overflow-wrap: break-word; padding: 0px; text-align: justify;">Nó sẽ cho kết quả:</p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pln" style="box-sizing: border-box;"> la</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">February</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">09</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">2004</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bạn cũng có thể
+sử dụng ký hiệu &lt;. Nó chỉ dẫn tham số tương tự như trong định dạng trước. Ví
+dụ:</span><span style="font-size: large;">&nbsp; &nbsp; &nbsp;</span></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">import<span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;java</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">.</span><span class="pln" style="box-sizing: border-box; white-space: normal;">util</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">.</span><span class="typ" style="box-sizing: border-box; color: #7f0055; white-space: normal;">Date</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">;</span>
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">DateDemo</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[])</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="com" style="box-sizing: border-box; color: #880000;">// khoi tao mot doi tuong Date</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pln" style="box-sizing: border-box;"> date </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+        
+       </span><span class="com" style="box-sizing: border-box; color: #880000;">// Hien thi date da duoc dinh dang</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">printf</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"%s %tB %&lt;te, %&lt;tY"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> 
+                         </span><span class="str" style="box-sizing: border-box; color: #008800;">"Date la:"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> date</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre><p style="box-sizing: border-box; font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 18px; line-height: 24px; margin: 0px 0.2em 1em; overflow-wrap: break-word; padding: 0px; text-align: justify;">Nó sẽ cho kết quả:</p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pln" style="box-sizing: border-box;"> la</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">February</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">09</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">2004</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Các ký tự biến đổi
+Date và Time trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">&nbsp;</span></p><table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 100%;">
+ <tbody><tr style="height: 22.6pt; mso-yfti-firstrow: yes; mso-yfti-irow: 0;">
+  <td style="background: rgb(238, 238, 238); border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p align="center" class="MsoNormal" style="text-align: center;"><b>Ký tự<o:p></o:p></b></p>
+  </td>
+  <td style="background: rgb(238, 238, 238); border-left: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p align="center" class="MsoNormal" style="text-align: center;"><b>Miêu tả<o:p></o:p></b></p>
+  </td>
+  <td style="background: rgb(238, 238, 238); border-left: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p align="center" class="MsoNormal" style="text-align: center;"><b>Ví dụ<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 1;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">c</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Ngày tháng đầy đủ</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Mon May 04 09:51:52 CDT 2009</p>
+  </td>
+ </tr>
+ <tr style="height: 22.05pt; mso-yfti-irow: 2;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">F</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Định dạng ngày ISO 8601</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">2004-02-09</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 3;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">D</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Định dạng ngày theo U.S. (month/day/year)</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">02/09/2004</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 4;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">T</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Thời gian dạng 24 giờ</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">18:05:19</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 5;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">r</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Thời gian dạng 12 giờ</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">06:05:19 pm</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 6;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">R</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Thời gian dạng 24 giờ, không có giây</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">18:05</p>
+  </td>
+ </tr>
+ <tr style="height: 22.05pt; mso-yfti-irow: 7;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Y</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Số năm 4 chữ số (bắt đầu từ 0)</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">2004</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 8;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">y</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">2 số cuối của năm (bắt đầu từ 0)</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">04</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 9;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">C</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">2 số đầu của năm (bắt đầu từ 0)</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">20</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 10;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">B</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Tên tháng đầy đủ</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">February</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 11;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">b</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Tên tháng viết tắt</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Feb</p>
+  </td>
+ </tr>
+ <tr style="height: 22.05pt; mso-yfti-irow: 12;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">m</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Tháng dạng 2 chữ số (bắt đầu từ 0)</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">02</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 13;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">d</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Ngày dạng 2 chữ số (bắt đầu từ 0)</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">03</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 14;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">e</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Ngày dạng hai chữ số (không bắt đầu từ 0)</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">9</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 15;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">A</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Tên ngày trong tuần đầy đủ</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Monday</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 16;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">a</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Tên ngày trong tuần viết tắt</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Mon</p>
+  </td>
+ </tr>
+ <tr style="height: 23.1pt; mso-yfti-irow: 17;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 23.1pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">j</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 23.1pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Ngày trong năm dạng 3 chữ số (bắt đầu từ 0)</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 23.1pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">069</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 18;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">H</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Giờ dạng hai chữ số (bắt đầu từ 0), giữa 0 và 23</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">18</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 19;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">k</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Giờ dạng hai chữ số (không bắt đầu từ 0), giữa 0 và 23</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">18</p>
+  </td>
+ </tr>
+ <tr style="height: 22.05pt; mso-yfti-irow: 20;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">I</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Giờ dạng hai chữ số (bắt đầu từ 0), giữa 0 và 12</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">06</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 21;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">l</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Giờ dạng hai chữ số (không bắt đầu từ 0), giữa 0 và 12</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">6</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 22;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">M</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Phút dạng hai chữ số (bắt đầu từ 0)</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">05</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 23;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">S</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Giây dạng hai chữ số (bắt đầu từ 0)</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">19</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 24;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">L</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Mili giây dạng ba chữ số (bắt đầu từ 0)</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">047</p>
+  </td>
+ </tr>
+ <tr style="height: 22.05pt; mso-yfti-irow: 25;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">N</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Nano giây dạng 9 chữ số (bắt đầu từ 0)</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">047000000</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 26;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">P</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Sáng hoặc chiều dạng chữ hoa</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">PM</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 27;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">p</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Sáng hoặc chiều dạng chữ thường</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">pm</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 28;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">z</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Offset dạng số RFC 822 từ GMT</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">-0800</p>
+  </td>
+ </tr>
+ <tr style="height: 22.6pt; mso-yfti-irow: 29;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Z</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Time zone</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.6pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">PST</p>
+  </td>
+ </tr>
+ <tr style="height: 22.05pt; mso-yfti-irow: 30;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 22.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">s</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Số giây từ 1/1/1970 00:00:00 GMT</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 22.05pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">1078884319</p>
+  </td>
+ </tr>
+ <tr style="height: 23.1pt; mso-yfti-irow: 31; mso-yfti-lastrow: yes;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 23.1pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Q</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 23.1pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">Số mili giây từ 1/1/1970 00:00:00 GMT</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 23.1pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">1078884319047</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Có một số lớp hữu
+ích khác liên quan tới Date và time. Để biết thêm chi tiết, bạn tham khảo văn
+kiện chuẩn của Java (Java Standard Documentation).<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Parse các String
+vào trong các Date trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Lớp
+SimpleDateFormat có một số phương thức bổ sung, đáng kể nhất là&nbsp;parse(),
+mà parse một chuỗi theo định dạng được lưu giữ trong đối tượng SimpleDateFormat
+đã cho. Ví dụ:</span></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;"><span class="kwd" style="box-sizing: border-box; white-space: normal;">import</span><span class="pln" style="box-sizing: border-box; color: #333333; white-space: normal;">&nbsp;java</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">.</span><span class="pln" style="box-sizing: border-box; color: #333333; white-space: normal;">util</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">.*;</span>
+import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">text</span><span class="pun" style="box-sizing: border-box; color: #666600;">.*;</span><span class="pln" style="box-sizing: border-box;">
+  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">DateDemo</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[])</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">SimpleDateFormat</span><span class="pln" style="box-sizing: border-box;"> ft </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">SimpleDateFormat</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"yyyy-MM-dd"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;"> 
+
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> input </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">length </span><span class="pun" style="box-sizing: border-box; color: #666600;">==</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">0</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">?</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"1818-11-11"</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[</span><span class="lit" style="box-sizing: border-box; color: #006666;">0</span><span class="pun" style="box-sizing: border-box; color: #666600;">];</span><span class="pln" style="box-sizing: border-box;"> 
+
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">print</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">input </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">" Duoc parse thanh dang "</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;"> 
+
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pln" style="box-sizing: border-box;"> t</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;"> 
+
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">try</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;"> 
+          t </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> ft</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">parse</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">input</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;"> 
+          </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">t</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;"> 
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">catch</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">ParseException</span><span class="pln" style="box-sizing: border-box;"> e</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;"> 
+          </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Khong the parse duoc boi su dung "</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;"> ft</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;"> 
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Chạy mẫu chương
+trình trên sẽ cho kết quả sau:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">$ java </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">DateDemo</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="lit" style="box-sizing: border-box; color: #006666;">1818</span><span class="pun" style="box-sizing: border-box; color: #666600;">-</span><span class="lit" style="box-sizing: border-box; color: #006666;">11</span><span class="pun" style="box-sizing: border-box; color: #666600;">-</span><span class="lit" style="box-sizing: border-box; color: #006666;">11</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Duoc</span><span class="pln" style="box-sizing: border-box;"> parse thanh dang </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Wed</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Nov</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">11</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">00</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="lit" style="box-sizing: border-box; color: #006666;">00</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="lit" style="box-sizing: border-box; color: #006666;">00</span><span class="pln" style="box-sizing: border-box;"> GMT </span><span class="lit" style="box-sizing: border-box; color: #006666;">1818</span><span class="pln" style="box-sizing: border-box;">
+$ java </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">DateDemo</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">2007</span><span class="pun" style="box-sizing: border-box; color: #666600;">-</span><span class="lit" style="box-sizing: border-box; color: #006666;">12</span><span class="pun" style="box-sizing: border-box; color: #666600;">-</span><span class="lit" style="box-sizing: border-box; color: #006666;">01</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="lit" style="box-sizing: border-box; color: #006666;">2007</span><span class="pun" style="box-sizing: border-box; color: #666600;">-</span><span class="lit" style="box-sizing: border-box; color: #006666;">12</span><span class="pun" style="box-sizing: border-box; color: #666600;">-</span><span class="lit" style="box-sizing: border-box; color: #006666;">01</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Duoc</span><span class="pln" style="box-sizing: border-box;"> parse thanh dang </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Sat</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Dec</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">01</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">00</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="lit" style="box-sizing: border-box; color: #006666;">00</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="lit" style="box-sizing: border-box; color: #006666;">00</span><span class="pln" style="box-sizing: border-box;"> GMT </span><span class="lit" style="box-sizing: border-box; color: #006666;">2007</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Đình chỉ trong
+chốc lát (sleep for a while) trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bạn có thể ngừng
+bất kỳ chu kỳ thời gian nào từ một mili giây tới một vòng đời lifetime của máy
+tính. Ví dụ, chương trình sau sẽ đình chỉ trong 10 giây:</span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">util</span><span class="pun" style="box-sizing: border-box; color: #666600;">.*;</span><span class="pln" style="box-sizing: border-box;">
+  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">SleepDemo</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[])</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">try</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;"> 
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"\n"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;"> 
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Thread</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">sleep</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="lit" style="box-sizing: border-box; color: #006666;">5</span><span class="pun" style="box-sizing: border-box; color: #666600;">*</span><span class="lit" style="box-sizing: border-box; color: #006666;">60</span><span class="pun" style="box-sizing: border-box; color: #666600;">*</span><span class="lit" style="box-sizing: border-box; color: #006666;">10</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;"> 
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"\n"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;"> 
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">catch</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Exception</span><span class="pln" style="box-sizing: border-box;"> e</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;"> 
+          </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Nhan mot exception!"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;"> 
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre><p style="box-sizing: border-box; font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 18px; line-height: 24px; margin: 0px 0.2em 1em; overflow-wrap: break-word; padding: 0px; text-align: justify;">Nó sẽ cho kết quả:</p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">Sun</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">May</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">03</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">18</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="lit" style="box-sizing: border-box; color: #006666;">04</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="lit" style="box-sizing: border-box; color: #006666;">41</span><span class="pln" style="box-sizing: border-box;"> GMT </span><span class="lit" style="box-sizing: border-box; color: #006666;">2009</span><span class="pln" style="box-sizing: border-box;">
+
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Sun</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">May</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">03</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">18</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="lit" style="box-sizing: border-box; color: #006666;">04</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="lit" style="box-sizing: border-box; color: #006666;">51</span><span class="pln" style="box-sizing: border-box;"> GMT </span><span class="lit" style="box-sizing: border-box; color: #006666;">2009</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Đo lường thời
+gian đã trôi qua trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Đôi khi, bạn có
+thể cần đo lường thời gian tại một thời điểm với giá trị mili giây. Chúng ta viết
+lại ví dụ trên như sau:</span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">util</span><span class="pun" style="box-sizing: border-box; color: #666600;">.*;</span><span class="pln" style="box-sizing: border-box;">
+  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">DiffDemo</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[])</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">try</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="kwd" style="box-sizing: border-box; color: #000088;">long</span><span class="pln" style="box-sizing: border-box;"> start </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">currentTimeMillis</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"\n"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Thread</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">sleep</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="lit" style="box-sizing: border-box; color: #006666;">5</span><span class="pun" style="box-sizing: border-box; color: #666600;">*</span><span class="lit" style="box-sizing: border-box; color: #006666;">60</span><span class="pun" style="box-sizing: border-box; color: #666600;">*</span><span class="lit" style="box-sizing: border-box; color: #006666;">10</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"\n"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="kwd" style="box-sizing: border-box; color: #000088;">long</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">end</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">currentTimeMillis</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="kwd" style="box-sizing: border-box; color: #000088;">long</span><span class="pln" style="box-sizing: border-box;"> diff </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">end</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">-</span><span class="pln" style="box-sizing: border-box;"> start</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Khac nhau la : "</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;"> diff</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">catch</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Exception</span><span class="pln" style="box-sizing: border-box;"> e</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Nhan mot exception!"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre><p style="box-sizing: border-box; font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 18px; line-height: 24px; margin: 0px 0.2em 1em; overflow-wrap: break-word; padding: 0px; text-align: justify;">Nó sẽ cho kết quả:</p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">Sun</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">May</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">03</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">18</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="lit" style="box-sizing: border-box; color: #006666;">16</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="lit" style="box-sizing: border-box; color: #006666;">51</span><span class="pln" style="box-sizing: border-box;"> GMT </span><span class="lit" style="box-sizing: border-box; color: #006666;">2009</span><span class="pln" style="box-sizing: border-box;">
+
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Sun</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">May</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">03</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">18</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="lit" style="box-sizing: border-box; color: #006666;">16</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="lit" style="box-sizing: border-box; color: #006666;">57</span><span class="pln" style="box-sizing: border-box;"> GMT </span><span class="lit" style="box-sizing: border-box; color: #006666;">2009</span><span class="pln" style="box-sizing: border-box;">
+
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Difference</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">is</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">5993</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Lớp
+GregorianCalendar trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">GregorianCalendar
+là một sự bổ sung cụ thể của một lớp Calendar mà thực hiện lịch Gregorian chuẩn.
+Chúng tối không đề cập lớp Calendar trong loạt bài này, bạn có thể tìm hiểu nó
+trong văn kiện chuẩn của Java.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Phương thức&nbsp;getInstance()&nbsp;của
+Calendar trả về một GregorianCalendar được khởi tạo với date và time hiện tại
+theo localde và time zone mặc định. GregorianCalendar định nghĩa hai trường: AD
+và BC. Chúng biểu diễn hai thời đại được định nghĩa bởi GregorianCalendar.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><o:p></o:p></span></p><p><span style="font-size: medium;"><span style="text-align: justify;">Cũng có một số
+constructor cho các đối tượng GregorianCalendar:</span>&nbsp;</span></p><p><span style="font-size: medium;"></span></p><table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 100%;">
+ <tbody><tr style="height: 22.65pt; mso-yfti-firstrow: yes; mso-yfti-irow: 0;">
+  <td style="background: rgb(238, 238, 238); border: 1pt solid rgb(221, 221, 221); height: 22.65pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>STT<o:p></o:p></b></p>
+  </td>
+  <td style="background: rgb(238, 238, 238); border-left: none; border: 1pt solid rgb(221, 221, 221); height: 22.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>Constructor và miêu tả<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style="height: 60.2pt; mso-yfti-irow: 1;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 60.2pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">1</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 60.2pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>GregorianCalendar()</b></p>
+  <p class="MsoNormal">Xây dựng một GregorianCalendar mặc định bởi sử dụng time
+  hiện tại trong time zone mặc định với locale mặc định.</p>
+  </td>
+ </tr>
+ <tr style="height: 59.7pt; mso-yfti-irow: 2;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 59.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">2</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 59.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>GregorianCalendar(int year, int month, int date)</b></p>
+  <p class="MsoNormal">Xây dựng một GregorianCalendar với thiết lập date đã cho
+  trong time zone mặc định với locale mặc định.</p>
+  </td>
+ </tr>
+ <tr style="height: 60.2pt; mso-yfti-irow: 3;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 60.2pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">3</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 60.2pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>GregorianCalendar(int year, int month, int date, int
+  hour, int minute)</b></p>
+  <p class="MsoNormal">Xây dựng một GregorianCalendar với thiết lập date và time
+  đã cung cấp cho time zone mặc định với locale mặc định.</p>
+  </td>
+ </tr>
+ <tr style="height: 60.2pt; mso-yfti-irow: 4;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 60.2pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">4</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 60.2pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>GregorianCalendar(int year, int month, int date, int
+  hour, int minute, int second)</b></p>
+  <p class="MsoNormal">Xây dựng một GregorianCalendar với thiết lập date và time
+  đã cung cấp cho time zone mặc định với locale mặc định.</p>
+  </td>
+ </tr>
+ <tr style="height: 45.3pt; mso-yfti-irow: 5;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 45.3pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">5</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 45.3pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>GregorianCalendar(Locale aLocale)</b></p>
+  <p class="MsoNormal">Xây dựng một GregorianCalendar trên cơ sở time hiện tại
+  trong time zone mặc định với locale đã cho</p>
+  </td>
+ </tr>
+ <tr style="height: 60.2pt; mso-yfti-irow: 6;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 60.2pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">6</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 60.2pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>GregorianCalendar(TimeZone zone)</b></p>
+  <p class="MsoNormal">Xây dựng một GregorianCalendar trên cơ sở time hiện tại
+  trong time zone đã cung cấp với locale mặc định</p>
+  </td>
+ </tr>
+ <tr style="height: 60.2pt; mso-yfti-irow: 7; mso-yfti-lastrow: yes;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 60.2pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">7</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 60.2pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>GregorianCalendar(TimeZone zone, Locale aLocale)</b></p>
+  <p class="MsoNormal">Xây dựng một GregorianCalendar trên cơ sở time hiện tại
+  trong time zone đã cung cấp với locale đã cho</p>
+  </td>
+ </tr>
+</tbody></table><p><span style="font-size: medium;">Dưới đây liệt kê một số phương thức hỗ trợ hữu ích được cung cấp bởi lớp GregorianCalendar trong Java:</span></p><p><span style="font-size: medium;"></span></p><table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 100%;">
+ <tbody><tr style="height: 18.45pt; mso-yfti-firstrow: yes; mso-yfti-irow: 0;">
+  <td style="background: rgb(238, 238, 238); border: 1pt solid rgb(221, 221, 221); height: 18.45pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>STT<o:p></o:p></b></p>
+  </td>
+  <td style="background: rgb(238, 238, 238); border-left: none; border: 1pt solid rgb(221, 221, 221); height: 18.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>Phương thức và miêu tả<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 1;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">1</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>void add(int field, int amount)</b></p>
+  <p class="MsoNormal">Thêm số time đã xác định tới trường time đã cung cấp, dựa
+  trên các qui tắc của calendar đó.</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 2;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">2</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>protected void computeFields()</b></p>
+  <p class="MsoNormal">Biến đổi UTC dạng mili giây thành các giá trị trường time.</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 3;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">3</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>protected void computeTime()</b></p>
+  <p class="MsoNormal">Override các giá trị biến đổi trường time thành UTC dạng
+  mili giây.</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 4;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">4</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>boolean equals(Object obj)</b></p>
+  <p class="MsoNormal">So sánh GregorianCalendar với một tham chiếu đối tượng</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 5;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">5</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>int get(int field)</b></p>
+  <p class="MsoNormal">Nhận giá trị cho một trường time đã cung cấp</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 6;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">6</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>int getActualMaximum(int field)</b></p>
+  <p class="MsoNormal">Trả về giá trị lớn nhất mà trường này có thể có, đã cung cấp
+  date hiện tại</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 7;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">7</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>int getActualMinimum(int field)</b></p>
+  <p class="MsoNormal">Trả về giá trị nhỏ nhất mà trường này có thể có, đã cung cấp
+  date hiện tại</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 8;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">8</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>int getGreatestMinimum(int field)</b></p>
+  <p class="MsoNormal">Trả về giá trị tối thiểu cao nhất cho trường đã cung cấp nếu
+  nó biến đổi</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 9;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">9</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>Date getGregorianChange()</b></p>
+  <p class="MsoNormal">Nhận date thay đổi theo Gregorian Calendar</p>
+  </td>
+ </tr>
+ <tr style="height: 37.3pt; mso-yfti-irow: 10;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 37.3pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">10</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 37.3pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>int getLeastMaximum(int field)</b></p>
+  <p class="MsoNormal">Trả về giá trị tối đa thấp nhất cho trường đã cung cấp nếu
+  nó biến đổi</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 11;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">11</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>int getMaximum(int field)</b></p>
+  <p class="MsoNormal">Trả về giá trị tối đa cho trường đã cung cấp</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 12;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">12</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>Date getTime()</b></p>
+  <p class="MsoNormal">Nhận time hiện tại của Calendar này</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 13;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">13</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>long getTimeInMillis()</b></p>
+  <p class="MsoNormal">Nhận time hiện tại của Calendar này dạng long</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 14;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">14</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>TimeZone getTimeZone()</b></p>
+  <p class="MsoNormal">Nhận time zone.</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 15;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">15</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>int getMinimum(int field)</b></p>
+  <p class="MsoNormal">Trả về giá trị tối thiểu cho trường đã cung cấp</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 16;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">16</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>int hashCode()</b></p>
+  <p class="MsoNormal">Override mã hóa băm.</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 17;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">17</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>boolean isLeapYear(int year)</b></p>
+  <p class="MsoNormal">Xác định nếu năm đã cho là một leap year</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 18;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">18</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>void roll(int field, boolean up)</b></p>
+  <p class="MsoNormal">Cộng hoặc trừ một đơn vị đơn của time trên trường time đã
+  cho mà không thay đổi các trường lớn hơn</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 19;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">19</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>void set(int field, int value)</b></p>
+  <p class="MsoNormal">Thiết lập trường time với giá trị đã cho</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 20;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">20</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>void set(int year, int month, int date)</b></p>
+  <p class="MsoNormal">Thiết lập các giá trị cho các trường year, month, và date.</p>
+  </td>
+ </tr>
+ <tr style="height: 37.3pt; mso-yfti-irow: 21;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 37.3pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">21</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 37.3pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>void set(int year, int month, int date, int hour, int
+  minute)</b></p>
+  <p class="MsoNormal">Thiết lập các giá trị cho các trường year, month, date,
+  hour, và minute.</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 22;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">22</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>void set(int year, int month, int date, int hour, int
+  minute, int second)</b></p>
+  <p class="MsoNormal">Thiết lập các giá trị cho các trường year, month, date,
+  hour, minute và second.</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 23;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">23</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>void setGregorianChange(Date date)</b></p>
+  <p class="MsoNormal">Thiết lập ngày thay đổi theo GregorianCalendar</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 24;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">24</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>void setTime(Date date)</b></p>
+  <p class="MsoNormal">Thiết lập time hiện tại của Calendar này với Date đã cho</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 25;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">25</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>void setTimeInMillis(long millis)</b></p>
+  <p class="MsoNormal">Thiết lập time hiện tại của Calendar này từ giá trị long
+  đã cho</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 26;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">26</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>void setTimeZone(TimeZone value)</b></p>
+  <p class="MsoNormal">Thiết lập time zone với giá trị time zone đã cho</p>
+  </td>
+ </tr>
+ <tr style="height: 36.9pt; mso-yfti-irow: 27; mso-yfti-lastrow: yes;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal">27</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 36.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+  <p class="MsoNormal"><b>String toString()</b></p>
+  <p class="MsoNormal">Trả về một biểu diễn chuỗi của calendar này</p>
+  </td>
+ </tr>
+</tbody></table><p><span style="font-size: medium;">Ví dụ:</span></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">import</span><span class="pln" style="box-sizing: border-box;"> java</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">util</span><span class="pun" style="box-sizing: border-box; color: #666600;">.*;</span><span class="pln" style="box-sizing: border-box;">
+  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">GregorianCalendarDemo</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[])</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> months</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="str" style="box-sizing: border-box; color: #008800;">"Jan"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"Feb"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"Mar"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"Apr"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="str" style="box-sizing: border-box; color: #008800;">"May"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"Jun"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"Jul"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"Aug"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="str" style="box-sizing: border-box; color: #008800;">"Sep"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"Oct"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"Nov"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"Dec"</span><span class="pun" style="box-sizing: border-box; color: #666600;">};</span><span class="pln" style="box-sizing: border-box;">
+      
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">int</span><span class="pln" style="box-sizing: border-box;"> year</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="com" style="box-sizing: border-box; color: #880000;">// Tao mot Gregorian calendar duoc khoi tao</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="com" style="box-sizing: border-box; color: #880000;">// voi date va time hien tai trong</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="com" style="box-sizing: border-box; color: #880000;">// locale va timezone mac dinh.</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">GregorianCalendar</span><span class="pln" style="box-sizing: border-box;"> gcalendar </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">GregorianCalendar</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="com" style="box-sizing: border-box; color: #880000;">// Hien thi thon tin date va time hien tai.</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">print</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Date: "</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">print</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">months</span><span class="pun" style="box-sizing: border-box; color: #666600;">[</span><span class="pln" style="box-sizing: border-box;">gcalendar</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">get</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Calendar</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">MONTH</span><span class="pun" style="box-sizing: border-box; color: #666600;">)]);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">print</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">" "</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;"> gcalendar</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">get</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Calendar</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">DATE</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">" "</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">year </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> gcalendar</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">get</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Calendar</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">YEAR</span><span class="pun" style="box-sizing: border-box; color: #666600;">));</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">print</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Time: "</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">print</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">gcalendar</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">get</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Calendar</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">HOUR</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">":"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">print</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">gcalendar</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">get</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Calendar</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">MINUTE</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">":"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">gcalendar</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">get</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Calendar</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">SECOND</span><span class="pun" style="box-sizing: border-box; color: #666600;">));</span><span class="pln" style="box-sizing: border-box;">
+      
+      </span><span class="com" style="box-sizing: border-box; color: #880000;">// Kiem tra xem year hien tai co phai la leap year khong</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">if</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">gcalendar</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">isLeapYear</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">year</span><span class="pun" style="box-sizing: border-box; color: #666600;">))</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Year hien tai la mot leap year"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">else</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+         </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Year hien tai khong la mot leap year"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre><p style="box-sizing: border-box; font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 18px; line-height: 24px; margin: 0px 0.2em 1em; overflow-wrap: break-word; padding: 0px; text-align: justify;">Nó sẽ cho kết quả sau:</p><p><span style="font-size: medium;"></span></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">Date</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Apr</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">22</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">2009</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Time</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">11</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="lit" style="box-sizing: border-box; color: #006666;">25</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="lit" style="box-sizing: border-box; color: #006666;">27</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Year</span><span class="pln" style="box-sizing: border-box;"> hien tai khong la mot leap year</span></pre><div><span class="pln" style="box-sizing: border-box;">Để có danh sách đầy đủ các hằng có sẵn trong lớp Calendar, bạn tham khảo văn kiện Java chuẩn.</span></div><div><span class="pln" style="box-sizing: border-box;"><br /></span></div>

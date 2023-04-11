@@ -1,0 +1,170 @@
+<p style="text-align: justify;"></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Tính kế thừa trong Java - Từ khóa extends và implements trong Java</b></span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>[Tính kế thừa
+trong Java - Từ khóa extends và implements trong Java]</i>Tính kế thừa trong Java
+là môt kỹ thuật mà trong đó một đối tượng thu được tất cả thuộc tính và hành vi
+của đối tượng cha. Ý tưởng đằng sau tính kế thừa trong Java là bạn có thể tạo
+các lớp mới mà được xây dựng dựa trên các lớp đang tồn tại. Khi bạn kế thừa từ
+một lớp đang tồn tại, bạn có thể tái sử dụng các phương thức và các trường của
+lớp cha, và bạn cũng có thể bổ sung thêm các phương thức và các trường khác.
+Tính kế thừa biểu diễn mối quan hệ IS-A, còn được gọi là mối quan hệ cha-con.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Khi chúng ta nói
+về tính kế thừa, từ khóa thường xuyên nhất được sử dụng là&nbsp;extends trong
+java&nbsp;và&nbsp;implements trong java. Những từ khóa này có thể định nghĩa một
+kiểu là loại IS-A của loại khác. Sử dụng những từ khóa, chúng ta có thể tạo một
+đối tượng sử dụng thuộc tính của đối tượng khác. Chúng ta sử dụng từ khóa
+extends của lớp con để có thể kế thừa các thuộc tính của lớp cha trừ các thuộc
+tính private của lớp cha.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Tại sao sử dụng
+tính kế thừa trong Java?</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Để ghi đè phương
+thức (Method Overriding), do đó có thể thu được tính đa hình tại runtime.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Để làm tăng tính
+tái sử dụng của code.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Cú pháp của Tính
+kế thừa trong Java</b><o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; text-align: start; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> ten_lop_con </span><span class="kwd" style="box-sizing: border-box; color: #000088;">extends</span><span class="pln" style="box-sizing: border-box;"> ten_lop_cha  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+   </span><span class="com" style="box-sizing: border-box; color: #880000;">//cac phuong thuc va cac truong  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Từ khóa extends
+chỉ rằng bạn đang tạo một lớp mới mà kế thừa từ một lớp đang tồn tại. Trong
+Java, một lớp mà được kế thừa được gọi là một lớp cha. Lớp mới được gọi là lớp
+con.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Trong ví dụ sau,
+Programmer là lớp con và Employee là lớp cha. Mối quan hệ giữa hai lớp là
+Programmer IS-A Employee. Nghĩa là Programmer là một kiểu của Employee.<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; text-align: start; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Employee</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+ </span><span class="kwd" style="box-sizing: border-box; color: #000088;">float</span><span class="pln" style="box-sizing: border-box;"> salary</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="lit" style="box-sizing: border-box; color: #006666;">40000</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Programmer</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">extends</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Employee</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+ </span><span class="kwd" style="box-sizing: border-box; color: #000088;">int</span><span class="pln" style="box-sizing: border-box;"> bonus</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="lit" style="box-sizing: border-box; color: #006666;">10000</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+ </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">  
+   </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Programmer</span><span class="pln" style="box-sizing: border-box;"> p</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Programmer</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">  
+   </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Luong Lap trinh vien la:"</span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;">p</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">salary</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+   </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Bonus cua Lap trinh vien la:"</span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;">p</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">bonus</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ở trên, đối tượng
+Programmer có thể truy cập trường của riêng lớp nó cũng như của lớp Employee,
+đó là ví dụ cho tính tái sử dụng.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Các loại kế thừa
+trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Trên cơ sở các lớp
+thì có 3 loại kế thừa trong Java, đó là&nbsp;single (đơn), multilevel (nhiều tầng)
+và hierarchical (có cấu trúc). Trong lập trình Java,&nbsp;đa kế thừa (multiple)
+và kế thừa lai (hybrid)&nbsp;chỉ được hỗ trợ thông qua Interface. Chúng ta sẽ
+tìm hiểu về Interface trong chương sau đó.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Ghi chú:</b> Đa kế
+thừa không được hỗ trợ trong Java thông qua lớp. Khi một lớp kế thừa từ nhiều lớp,
+thì đây là đa kế thừa.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Câu hỏi: </b>Tại sao
+đa kế thừa không được hỗ trợ trong Java thông qua lớp?<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Trả lời: Để giảm
+tính phức tạp và làm đơn giản hóa ngôn ngữ, đa kế thừa không được hỗ trợ trong
+Java. Giả sử có tình huống có ba lớp là A, B và C. Lớp C kế thừa lớp A và B. Nếu
+các lớp A và B có cùng phương thức và bạn gọi nó từ đối tượng lớp con, thì điều
+này gây là tính lưỡng nghĩa là để gọi phương thức của lớp A hoặc lớp B.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bởi vì, compile
+time error thì tốt hơn là runtime error, Java sẽ thông báo một compile time
+error nếu bạn kế thừa 2 lớp. Do đó, dù bạn có hay không có cùng phương thức hay
+khác phương thức, thì đó cũng là một lỗi tại compile time.</span></p><p></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;"><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: justify; white-space: normal;">&nbsp;</span><span class="kwd" style="box-sizing: border-box; white-space: normal;">class</span><span class="pln" style="box-sizing: border-box; color: #333333; white-space: normal;">&nbsp;A</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">{</span>
+void</span><span class="pln" style="box-sizing: border-box;"> msg</span><span class="pun" style="box-sizing: border-box; color: #666600;">(){</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Hello"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> B</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> msg</span><span class="pun" style="box-sizing: border-box; color: #666600;">(){</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Welcome"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> C </span><span class="kwd" style="box-sizing: border-box; color: #000088;">extends</span><span class="pln" style="box-sizing: border-box;"> A</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;">B
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;"> </span><span class="com" style="box-sizing: border-box; color: #880000;">//gia su neu no da co  </span><span class="pln" style="box-sizing: border-box;">
+   
+ </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">  
+   C obj</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> C</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">  
+   obj</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">msg</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="com" style="box-sizing: border-box; color: #880000;">//Bay gio phuong thuc msg() nao se duoc goi?  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">  </span></pre><p style="text-align: justify;">
+
+</p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Chương trình
+trên sẽ cho một Compile Time Error.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Khi bạn đã hiểu
+rõ về từ khóa&nbsp;extends, chúng ta cùng tìm hiểu về từ
+khóa&nbsp;implements&nbsp;trong quan hệ IS-A.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Từ
+khóa&nbsp;implements&nbsp;được sử dụng bởi các lớp mà kế thừa từ Interface.
+Interface có thể không bao giờ được kết thừa bởi các lớp.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ:</span></p><p></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;"><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: justify; white-space: normal;">&nbsp;</span><span class="kwd" style="box-sizing: border-box; color: #000088; white-space: normal;">public</span><span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;</span><span class="kwd" style="box-sizing: border-box; color: #000088; white-space: normal;">interface</span><span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;A&nbsp;</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">{}</span>
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> B </span><span class="kwd" style="box-sizing: border-box; color: #000088;">implements</span><span class="pln" style="box-sizing: border-box;"> A</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> C </span><span class="kwd" style="box-sizing: border-box; color: #000088;">extends</span><span class="pln" style="box-sizing: border-box;"> B</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre><p style="text-align: justify;">
+
+</p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Từ khóa
+instanceof trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bây giờ chúng ta
+sẽ dùng toán tử&nbsp;instanceof&nbsp;để kiểm tra xem B có phải là một A và dog
+có phải là một A.</span></p><p></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;"><span class="kwd" style="box-sizing: border-box; color: #000088; white-space: normal;">interface</span><span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;A</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">{}</span>
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> B </span><span class="kwd" style="box-sizing: border-box; color: #000088;">implements</span><span class="pln" style="box-sizing: border-box;"> A</span><span class="pun" style="box-sizing: border-box; color: #666600;">{}</span><span class="pln" style="box-sizing: border-box;">
+
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> C </span><span class="kwd" style="box-sizing: border-box; color: #000088;">extends</span><span class="pln" style="box-sizing: border-box;"> B</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">
+
+      B m </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> B</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+      C d </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> C</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">m </span><span class="kwd" style="box-sizing: border-box; color: #000088;">instanceof</span><span class="pln" style="box-sizing: border-box;"> A</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">d </span><span class="kwd" style="box-sizing: border-box; color: #000088;">instanceof</span><span class="pln" style="box-sizing: border-box;"> B</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">d </span><span class="kwd" style="box-sizing: border-box; color: #000088;">instanceof</span><span class="pln" style="box-sizing: border-box;"> A</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;"> </span></pre><p style="box-sizing: border-box; font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 18px; line-height: 24px; margin: 0px 0.2em 1em; overflow-wrap: break-word; padding: 0px; text-align: justify;">Kết quả in ra sẽ như sau:</p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">true</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">true</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">true</span></pre><p style="text-align: justify;">
+
+</p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Quan hệ HAS-A
+trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Có những quan hệ
+chủ yếu dựa vào cách sử dụng. Nó xác định có hay không một lớp cụ thể HAS-A.
+Quan hệ này giúp chúng ta giảm được dư thừa trong code cũng như tránh các bug.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Cùng xem ví dụ
+dưới đây:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; text-align: start; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Vehicle</span><span class="pun" style="box-sizing: border-box; color: #666600;">{}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Speed</span><span class="pun" style="box-sizing: border-box; color: #666600;">{}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Van</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">extends</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Vehicle</span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+	</span><span class="kwd" style="box-sizing: border-box; color: #000088;">private</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Speed</span><span class="pln" style="box-sizing: border-box;"> sp</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;"> </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Điều này chỉ ra
+rằng lớp Van có quan hệ HAS-A với lớp Speed. Việc sử dụng lớp riêng rẽ cho lớp
+Speed, chúng ta không cần thiết phải đặt toàn bộ code của lớp Speed bên trong lớp
+Van, điều này tăng tính tái sử dụng của lớp Speed cho nhiều ứng dụng.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Một đặc điểm
+quan trọng nữa phải ghi nhớ là Java chỉ hỗ trợ kế thừa đơn. Điều này nghĩa là một
+lớp không thể kế thừa từ nhiều hơn một lớp. Do đó, đoạn code dưới đây là không
+hợp lệ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; text-align: start; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> C </span><span class="kwd" style="box-sizing: border-box; color: #000088;">extends</span><span class="pln" style="box-sizing: border-box;"> A</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> B</span><span class="pun" style="box-sizing: border-box; color: #666600;">{}</span><span class="pln" style="box-sizing: border-box;"> </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Mặc dù vậy một lớp
+vẫn có thể implement một hoặc nhiều interface. Điều này loại bỏ khả năng không
+thể đa kế thừa trong Java. <o:p></o:p></span></p><p style="text-align: justify;"><br /></p>

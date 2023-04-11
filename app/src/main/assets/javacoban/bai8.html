@@ -1,0 +1,484 @@
+<p><span style="font-family: times; font-size: medium;"><b>&nbsp;Cú pháp Java cơ bản</b></span></p>
+<p><span style="font-size: medium;">&nbsp;<span style="text-align: justify;">Chúng ta có thể
+coi chương trình Java như một tập hợp các đối tượng mà có thể trao đổi lẫn nhau
+dùng các phương thức. Dưới đây chúng ta sẽ nêu ra một số định nghĩa cơ bản của
+lớp, đối tượng, phương thức cũng như biến trong Java:</span></span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Đối tượng</b>
+-&nbsp;Đối tượng có các trạng thái và hành vi. Ví dụ: Một con chó có các trạng
+thái của màu da, tên tuổi, thức ăn cũng như các hành vi như sủa, ăn, vẫy đuôi.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Lớp</b> -&nbsp;Một lớp
+có thể được định nghĩa như một bản thiết kế, mẫu mà có thể mô tả các trạng
+thái, hành vi của một đối tượng mà nó hỗ trợ.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Phương thức
+</b>-&nbsp;Một phương thức đơn giản là một hành vi. Một lớp có thể bao gồm nhiều
+phương thức. Trong mỗi phương thức có những phép toán logic, dữ liệu được xử lý
+và tất cả các hành động được thực thi.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Biến</b> -&nbsp;Mỗi
+đối tượng có một tập các biến duy nhất. Mỗi trạng thái của đối tượng được khởi
+tạo bởi các giá trị và gán với những biến.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: large;"><b><i>Cú pháp cơ bản
+trong Java</i></b></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Về chương trình
+Java, khi bạn đặt tên cho bất cứ thành phần nào, bạn cần tuân theo qui ước đặt
+tên của chúng. Qui ước đặt tên trong Java là một qui tắc bạn cần theo khi quyết
+định đặt tên nào cho định danh (Identifier) của mình, chẳng hạn như đặt tên cho
+lớp, package, biến, hằng, phương thức, … Nhưng nó không bắt buộc để bạn phải
+theo. Vì thế nó được gọi là qui ước chứ không phải là qui tắc<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Java là chương
+trình phân biệt chữ hoa chữ thường, điều đó có nghĩa
+là&nbsp;ABC và&nbsp;abc mang những ý nghĩa khác nhau trong
+Java.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Tên Class
+-&nbsp;Tất cả các tên Class trong Java nên viết hoa chữ cái đầu tiên và là một
+danh từ.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Nếu không viết
+hoa, các trình IDE sẽ cảnh báo bạn (tất nhiên là Java vẫn chấp nhận nếu cố tình
+viết thường chữ cái đầu tiên).<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Ví dụ&nbsp;class
+System</i><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Tên Interface
+</b>-&nbsp;Nên bắt đầu với chữ hoa và là một tính từ, ví dụ: Runnable,
+ActionListener ...<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Tên phương thức</b>
+-&nbsp;Tất cả các tên phương thức nên bắt đầu với chữ thường và là một động từ.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ&nbsp;public
+void actionPerformed()<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Tên biến</b>
+-&nbsp;Nên bắt đầu với chữ thường, ví dụ: firstName, orderNumber ...<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Tên package</b>
+-&nbsp;Nên bắt đầu với chữ thường, ví dụ: java, lang, sql, util ...<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Tên hằng
+</b>-&nbsp;Nên bắt đầu với chữ hoa, ví dụ: RED, YELLOW, MAX_PRIORITY ...<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Tên file chương
+trình</b> -&nbsp;Tên file nên giống hệt tên class.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Khi bạn lưu
+file, bạn nên sử dụng tên class và thêm hậu tố&nbsp;.java.java.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ: với tên
+class&nbsp;MyfirstJavaProgramMyfirstJavaProgram, bạn nên lưu file dưới
+tên&nbsp;MyFirstJavaProgram.javaMyFirstJavaProgram.java<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>public static
+void main(String args[]) </b>-&nbsp;Chương trình Java bắt đầu bởi phương thức
+main() cho tất cả các chương trình J2SE.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>CamelCase trong
+Qui ước đặt tên Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Java theo cú
+pháp camelcase để đặt tên cho lớp, Interface, phương thức và biến. Nếu tên là tổ
+hợp của hai từ, thì từ thứ hai sẽ luôn bắt đầu với chữ hoa, ví dụ:
+actionPerformed(), firstName, ActionEvent, …<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Định danh
+(Identifier) trong Java:</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Tất cả các thành
+phần của Java đều yêu cầu tên. Tên được sử với các class, biến cũng như phương
+thức được gọi là Định danh (Identifier).<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Trong Java, có
+vài điểm quan trọng dưới đây bạn phải ghi nhớ với Định danh (Identifier):<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Tất cả các
+idenfier nên bắt đầu với một chữ cái (A tới Z hoặc a tới z), ký tự ($) hoặc ký
+tự gạch dưới (_).<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Sau kí tự đầu
+tiên có thể là bất kỳ ký tự nào.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Những key word
+trong Java không thể được sử dụng như một identifier.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Các identifier
+phân biệt chữ hoa thường.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Các trường hợp hợp
+lệ: tuoi, $ten, giatri, __1_giatri<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Các trường hợp
+không hợp lệ: 123abc, -hocphi<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Modifier trong
+Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Giống các ngôn
+ngữ khác, bạn có thể sửa đổi các lớp, phương thức, .., bởi sử dụng các
+Modifier. Trong Java, có hai loại Modifier:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Access
+Modifier</b>:&nbsp;Bao gồm default, public , protected, private<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Non-access
+Modifier</b>:&nbsp;Bao gồm final, abstract, strictfp<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bạn sẽ hiểu rõ về
+các Modifier này trong các bài hướng dẫn tiếp theo.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Biến trong Java<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Các loại biến
+trong Java như sau:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Biến Local<o:p></o:p></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Biến của class
+(biến static)<o:p></o:p></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Biến đối tượng
+(không phải biến static)</i><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Mảng trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Mảng là đối tượng
+lưu trữ nhiều biến với chung một kiểu dữ liệu. Mặc dù vậy, một mảng bản thân nó
+cũng là một đối tượng trong bộ nhớ. Chúng ta cũng sẽ tìm hiểu các khởi tạo,
+khai báo đối tượng này trong các chương sắp tới.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Java Enums</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Enums được giới
+thiệu bởi Java 5.0 Enums giới hạn số lượng các biến bởi cách định nghĩa trước.
+Các biến trong danh sách được liệt kê gọi là enums.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Với việc sử dụng
+enum sẽ có thể hạn chế số lượng các lỗi trong code.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ, chúng ta
+giả sử một ứng dụng cho cửa hàng nước ép hoa quả, có thể giới hạn các kiểu cỡ cốc
+gồm có cỡ nhỏ, vừa và lớn. Điều này có thể đảm bảo giúp để mọi người khác không
+thể thêm các cỡ khác ngoài nhở, vừa, lớn.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">&nbsp;</span></p><div style="background: rgb(238, 238, 238); border: 1pt solid rgb(214, 214, 214); mso-border-alt: solid #D6D6D6 .75pt; mso-element: para-border-div; padding: 4pt;">
+
+
+
+ <p class="MsoNormal" style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border: none; line-height: 12pt; margin-bottom: 7.5pt; padding: 0in; word-break: break-all;"><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span><span style="color: #000088; font-family: Consolas; font-size: 9pt;">class</span><span style="color: #333333; font-family: Consolas; font-size: 9pt;">&nbsp;</span><span style="color: #7f0055; font-family: Consolas; font-size: 9pt;">FreshJuice</span><span style="color: #333333; font-family: Consolas; font-size: 9pt;">&nbsp;</span><span style="color: #666600; font-family: Consolas; font-size: 9pt;">{</span></p>
+
+ <p class="MsoNormal" style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border: none; line-height: 12pt; margin-bottom: 7.5pt; padding: 0in; word-break: break-all;"><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp; </span><span style="color: #000088; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">enum</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"> </span><span style="color: #7f0055; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">FreshJuiceSize</span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">{</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"> SMALL</span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">,</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"> MEDIUM</span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">,</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"> LARGE </span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">}</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></p>
+
+ <p class="MsoNormal" style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border: none; line-height: 12pt; margin-bottom: 7.5pt; padding: 0in; word-break: break-all;"><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp; </span><span style="color: #7f0055; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">FreshJuiceSize</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"> size</span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">;</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></p>
+
+ <p class="MsoNormal" style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border: none; line-height: 12pt; margin-bottom: 7.5pt; padding: 0in; word-break: break-all;"><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">}</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></p>
+
+ <p class="MsoNormal" style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border: none; line-height: 12pt; margin-bottom: 7.5pt; padding: 0in; word-break: break-all;"><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span></p>
+
+ <p class="MsoNormal" style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border: none; line-height: 12pt; margin-bottom: 7.5pt; padding: 0in; word-break: break-all;"><span style="color: #000088; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">public</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"> </span><span style="color: #000088; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">class</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"> </span><span style="color: #7f0055; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">FreshJuiceTest</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"> </span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">{</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></p>
+
+ <p class="MsoNormal" style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border: none; line-height: 12pt; margin-bottom: 7.5pt; padding: 0in; word-break: break-all;"><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;</span></p>
+
+ <p class="MsoNormal" style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border: none; line-height: 12pt; margin-bottom: 7.5pt; padding: 0in; word-break: break-all;"><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp; </span><span style="color: #000088; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">public</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"> </span><span style="color: #000088; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">static</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"> </span><span style="color: #000088; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">void</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"> main</span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">(</span><span style="color: #7f0055; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">String</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"> args</span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">[]){</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></p>
+
+ <p class="MsoNormal" style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border: none; line-height: 12pt; margin-bottom: 7.5pt; padding: 0in; word-break: break-all;"><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #7f0055; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">FreshJuice</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"> juice </span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">=</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"> </span><span style="color: #000088; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">new</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"> </span><span style="color: #7f0055; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">FreshJuice</span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">();</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></p>
+
+ <p class="MsoNormal" style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border: none; line-height: 12pt; margin-bottom: 7.5pt; padding: 0in; word-break: break-all;"><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; juice</span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">.</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">size </span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">=</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"> </span><span style="color: #7f0055; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">FreshJuice</span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">.</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"> </span><span style="color: #7f0055; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">FreshJuiceSize</span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">.</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">MEDIUM </span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">;</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></p>
+
+ <p class="MsoNormal" style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border: none; line-height: 12pt; margin-bottom: 7.5pt; padding: 0in; word-break: break-all;"><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #7f0055; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">System</span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">.</span><span style="color: #000088; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">out</span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">.</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">println</span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">(</span><span style="color: #008800; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">"Size: "</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"> </span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">+</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"> juice</span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">.</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">size</span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">);</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></p>
+
+ <p class="MsoNormal" style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border: none; line-height: 12pt; margin-bottom: 7.5pt; padding: 0in; word-break: break-all;"><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp; </span><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">}</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></p>
+
+ <p class="MsoNormal" style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border: none; line-height: 12pt; margin-bottom: 7.5pt; padding: 0in; word-break: break-all;"><span style="color: #666600; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;">}</span><span style="color: #333333; font-family: Consolas; font-size: 9pt; mso-bidi-font-family: &quot;Courier New&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></p>
+
+</div>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p><span style="font-size: large; text-align: justify;">Chương trình sẽ
+in ra kết quả:</span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">Size</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> MEDIUM</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ghi
+chú:&nbsp;Các Enums có thể được khai báo như là của riêng chính nó hoặc bên
+trong một lớp. Các phương thức, biến, constructor cũng có thể được định nghĩa
+bên trong các Enum.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Các từ khóa
+trong Java:</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Danh sách dưới
+đây in ra những từ khóa được dành riêng trong Java. Những từ khóa dành riêng
+này không được sử dụng như một tên biến hoặc tên identifier.&nbsp;</span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"></span></p><table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 100%;">
+ <tbody><tr style="height: 21.9pt; mso-yfti-firstrow: yes; mso-yfti-irow: 0;">
+  <td style="border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">abstract</p>
+  </td>
+  <td style="border-left: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">assert</p>
+  </td>
+  <td style="border-left: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">boolean</p>
+  </td>
+  <td style="border-left: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">break</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 1;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">byte</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">case</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">catch</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">char</p>
+  </td>
+ </tr>
+ <tr style="height: 21.35pt; mso-yfti-irow: 2;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">class</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">const</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">continue</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">default</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 3;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">do</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">double</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">else</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">enum</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 4;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">extends</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">final</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">finally</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">float</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 5;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">for</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">goto</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">if</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">implements</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 6;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">import</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">instanceof</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">int</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">interface</p>
+  </td>
+ </tr>
+ <tr style="height: 21.35pt; mso-yfti-irow: 7;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">long</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">native</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">new</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">package</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 8;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">private</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">protected</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">public</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">return</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 9;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">short</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">static</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">strictfp</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">super</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 10;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">switch</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">synchronized</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">this</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">throw</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 11;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">throws</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">transient</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">try</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">void</p>
+  </td>
+ </tr>
+ <tr style="height: 21.9pt; mso-yfti-irow: 12; mso-yfti-lastrow: yes;">
+  <td style="border-top: none; border: 1pt solid rgb(221, 221, 221); height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">volatile</p>
+  </td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6pt;" valign="top">
+   <p class="MsoNormal">while</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border: none; height: 21.9pt; mso-border-bottom-alt: solid #DDDDDD .75pt; padding: 0.75pt;"></td>
+  <td style="border-bottom: 1pt solid rgb(221, 221, 221); border-left: none; border-right: 1pt solid rgb(221, 221, 221); border-top: none; height: 21.9pt; mso-border-bottom-alt: solid #DDDDDD .75pt; mso-border-right-alt: solid #DDDDDD .75pt; padding: 0.75pt;"></td>
+ </tr>
+ </tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Comment trong
+Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Java hỗ trợ việc
+comment trên 1 dòng lệnh hoặc nhiều dòng lệnh tương tự như C và C++. Tất cả các
+ký tự trong các dòng comment đều được bỏ qua bởi Java compiler.</span></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;"><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: justify; white-space: normal;">&nbsp;</span><span class="kwd" style="box-sizing: border-box; color: #000088; white-space: normal;">public</span><span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;</span><span class="kwd" style="box-sizing: border-box; color: #000088; white-space: normal;">class</span><span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;</span><span class="typ" style="box-sizing: border-box; color: #7f0055; white-space: normal;">MyFirstJavaProgram</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">{</span>
+   </span><span class="com" style="box-sizing: border-box; color: #880000;">/* Chuong trinh in Hello World.
+    * Day la vi du ve comment gom nhieu dong.
+    */</span><span class="pln" style="box-sizing: border-box;">
+
+    </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">[]</span><span class="pln" style="box-sizing: border-box;">args</span><span class="pun" style="box-sizing: border-box; color: #666600;">){</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="com" style="box-sizing: border-box; color: #880000;">// Vi du thu nhat ve comment co mot dong.</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="com" style="box-sizing: border-box; color: #880000;">/* Vi du thu hai ve comment co mot dong. */</span><span class="pln" style="box-sizing: border-box;">
+       </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Hello World"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+    </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;"> </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Sử dụng dòng trống
+trong Java</i><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Một dòng chỉ chứa
+khoảng trắng, có thể với một comment, được biết như là dòng trống, và Java hoàn
+toàn bỏ qua nó.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Tính kế thừa
+trong Java</i><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Trong Java, các
+Class có thể được suy ra từ các Class khác. Về cơ bản, nếu bạn cần tạo một
+Class mới và ở đây đã là một Class mà có một số đoạn code bạn cần, thì khi đó
+nó là có thể để suy ra một class mới từ code đã tồn tại.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Khái niệm này
+cho bạn khả năng tái sử dụng các trường và các phương thức của class đang tồn tại
+mà không cần phải viết lại code trong class mới. Trong tình huống này, class
+đang tồn tại được gọi là superclass và class được suy ra được gọi là subclass.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Interface trong
+Java</i><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Trong ngôn ngữ
+Java, một interface có thể được định nghĩa như là một contract giữa các đối tượng
+về cách giao tiếp với nhau. Các interface đóng vai trò thiết yếu khi nó đi với
+khái niệm về tính kế thừa.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Một interface định
+nghĩa các phương thức, các subclass nên sử dụng. Nhưng sự thực thi của các
+phương thức lại hoàn toàn là do các subclass.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Điểm khác nhau
+giữa println và print</i><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Java hỗ trợ hai
+lệnh là&nbsp;println&nbsp;và&nbsp;print&nbsp;để in thông tin trên màn hình chuẩn.
+Tuy nhiên giữa hai lệnh này có một điểm khác nhau nhỏ về con trỏ trong hai lệnh.
+Trong khi lệnh&nbsp;print&nbsp;giữ nguyên vị trí con trỏ trên cùng một dòng thì
+lệnh&nbsp;println&nbsp;di chuyển con trỏ xuống dòng tiếp theo (tương đương với
+ký tự newline (dòng mới)).<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bạn theo dõi ví
+dụ đơn giản sau để phân biệt hai lệnh này:</span></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;"><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: justify; white-space: normal;">&nbsp;</span><span class="kwd" style="box-sizing: border-box; color: #000088; white-space: normal;">package</span><span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;edu</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">.</span><span class="pln" style="box-sizing: border-box; white-space: normal;">doannhg</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">.</span><span class="pln" style="box-sizing: border-box; white-space: normal;">basic</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">;</span>
+</span><span class="com" style="box-sizing: border-box; color: #880000;">// vi du phan biet hai lenh print va println</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Test</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+	</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[])</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+
+		</span><span class="com" style="box-sizing: border-box; color: #880000;">// lenh print</span><span class="pln" style="box-sizing: border-box;">
+		</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">print</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"VietJack "</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+		</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">print</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"chuc cac ban "</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+		</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">print</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"hoc tot!!!"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+		</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">print</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"\n---------------\n"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+
+		</span><span class="com" style="box-sizing: border-box; color: #880000;">// lenh println</span><span class="pln" style="box-sizing: border-box;">
+		</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"VietJack "</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+		</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"chuc cac ban "</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+		</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"hoc tot!!!"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+
+	</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Chạy chương
+trình Java trên sẽ cho kết quả:</span></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pun" style="box-sizing: border-box; color: #666600;"><span style="background-color: transparent; font-size: medium; text-align: justify;">&nbsp;</span><span class="typ" style="background-color: transparent; box-sizing: border-box; color: #7f0055;">VietJack</span><span class="pln" style="background-color: transparent; box-sizing: border-box; color: #333333;">&nbsp;chuc cac ban hoc tot</span><span class="pun" style="background-color: transparent; box-sizing: border-box;">!!!</span>---------------</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">VietJack</span><span class="pln" style="box-sizing: border-box;">
+chuc cac ban
+hoc tot</span><span class="pun" style="box-sizing: border-box; color: #666600;">!!!</span></pre><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><br /></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><br /></p>

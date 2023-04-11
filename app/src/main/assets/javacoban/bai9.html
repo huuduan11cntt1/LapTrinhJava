@@ -1,0 +1,90 @@
+
+<p><span style="font-family: times; font-size: medium;"><b>&nbsp; JDK, JRE và JVM</b></span></p><p><span style="font-family: times; font-size: medium;"><b><br /></b></span></p>
+<p style="text-align: justify;"><span style="font-size: medium;">&nbsp;Hiểu rõ sự khác nhau giữa JDK, JRE
+và JVM là điều khá quan trọng trong Java. Ở đây, chúng tôi trình bày miêu tả ngắn
+gọn về JVM, để biết thêm chi tiết về nó, bạn truy cập vào chương tiếp theo. Đầu
+tiên chúng ta tìm hiểu sự khác nhau cơ bản giữa JDK, JRE và JVM.</span></p><p class="MsoNormal" style="line-height: 150%;"><span style="font-size: medium;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Sơ lược về JVM</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">JVM (viết tắt của Java Virtual
+Machine) là một thiết bị trừu tượng (ảo) có thể giúp máy tính chạy các chương
+trình Java. Nó cung cấp môi trường runtime mà trong đó Java Bytecode có thể được
+thực thi.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">JVM là có sẵn cho nhiều nền tảng (Windows,
+Linux...). JVM, JRE và JDK là phụ thuộc nền tảng, bởi vì cấu hình của mỗi OS (hệ
+điều hành) là khác nhau. Nhưng, Java là độc lập nền tảng.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>JVM là gì?</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">JVM thực hiện các tác vụ chính sau:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Tải code<o:p></o:p></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Kiểm tra code<o:p></o:p></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Thực thi code<o:p></o:p></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Cung cấp môi trường runtime</i><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">JVM cung cấp các định nghĩa cho:
+Khu vực bộ nhớ, định dạng class file, thiết lập Register, Heap cho Trình dọn
+rác và các báo cáo lỗi nghiêm trọng (Fatal Error), …<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Cấu trúc nội tại của JVM</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bạn theo dõi sơ đồ sau để hiểu cấu
+trúc nội tại của JVM. Nó gồm Classloader, Memory Area (khu vực bộ nhớ),
+Excetution Engine (phương tiện thực thi), …<o:p></o:p></span></p><p class="MsoNormal" style="line-height: 150%;"></p><div class="separator" style="clear: both; text-align: justify;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5b8of1ZOZBfK0hHEfidwLWGPt_ghSUYA8pcOxVtZyzfvs0LWhPKtjwU0gFBKsCsoNkTPNVTOuK0QTCrRND9n0pjdTkqAxlyFl79STKZj4nLDWopnaIAiei3DObq5bCQ5aNmubcWd-OM8Wak5EeALhINAI0rBf1AdQ232Nj2Buzm1hCy4n260e9SMPwA/s678/save.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="515" data-original-width="678" height="304" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5b8of1ZOZBfK0hHEfidwLWGPt_ghSUYA8pcOxVtZyzfvs0LWhPKtjwU0gFBKsCsoNkTPNVTOuK0QTCrRND9n0pjdTkqAxlyFl79STKZj4nLDWopnaIAiei3DObq5bCQ5aNmubcWd-OM8Wak5EeALhINAI0rBf1AdQ232Nj2Buzm1hCy4n260e9SMPwA/w400-h304/save.jpg" width="400" /></a></div><p></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Cấu trúc JVM trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Classloader</b>: Là một hệ thống con của
+JVM được sử dụng để tải class file.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Class (method) Area: Lưu trữ cấu
+trúc mỗi lớp, chẳng hạn như hằng, trường, dữ liệu phương thức, code của phương
+thức, …<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Heap:</b> Nó là khu vực dữ liệu runtime
+mà trong đó đối tượng được cấp phát.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Stack:</b> Stack trong Java lưu giữ các
+Frame. Nó giữ các biến cục bộ và các kết quả cục bộ, và thực hiện một phần nhiệm
+vụ trong phần triệu hồi và trả về phương thức. Mỗi Thread có một Stack riêng,
+được tạo tại cùng thời điểm với Thread.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Một Frame mới được tạo mỗi khi một
+phương thức được triệu hồi và bị hủy khi lời triệu hồi phương thức là kết thúc.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Program Counter Register: Nó chứa địa
+chỉ của chỉ lệnh JVM hiện tại đang được thực thi.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Native Method Stack: Bao gồm tất cả
+các phương thức tự nhiện được sử dụng trong ứng dụng.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Execution Engine: Phần này bao gồm:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Một bộ xử lý ảo Virtual Processor<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Một trình thông dịch Interpreter. Đọc
+Bytecode Stream sau đó thực thi các chỉ thị.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Just-In-Time (JIT) Compiler: được sử
+dụng để cải thiện hiệu suất. JIT biên dịch các phần của Bytecode mà có cùng
+tính năng tại cùng một thời điểm, và vì thế giảm lượng thời gian cần thiết để
+biên dịch. Ở đây khái niệm Compiler là một bộ biên dịch tập chỉ thị của JVM
+thành tập chỉ thị của một CPU cụ thể.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Giới thiệu JRE</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">JRE (là viết tắt của Java Runtime
+Environment) được sử dụng để cung cấp môi trường runtime. Nó là trình triển
+khai của JVM. JRE bao gồm tập hợp các thư viện và các file khác mà JVM sử dụng
+tại runtime. Trình triển khai của JVM cũng được công bố bởi các công ty khác
+ngoài Sun Micro Systems.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Sơ lược về JDK</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">JDK (là viết tắt của Java
+Development Kit) bao gồm JRE và các Development Tool.</span><o:p></o:p></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><br /></span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><br /></span></p>
+

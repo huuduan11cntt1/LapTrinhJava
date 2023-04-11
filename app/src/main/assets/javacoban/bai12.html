@@ -1,0 +1,828 @@
+
+<p><span style="font-family: times; font-size: medium;"><b>&nbsp; Toán tử  b></span></p><p><span style="font-family: times; font-size: medium;"><b><br /></b></span></p>
+<p style="text-align: justify;"><span style="font-size: medium;">&nbsp;Java cung cấp rất nhiều toán tử đa
+dạng để thao tác với các biến. Chúng ta có thể chia tất cả các toán tử trong
+Java thành các nhóm sau:</span></p><p class="MsoNormal" style="line-height: 150%;"><span style="font-size: medium;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Toán tử số học<o:p></o:p></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Toán tử quan hệ<o:p></o:p></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Toán tử thao tác bit<o:p></o:p></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Toán tử logic<o:p></o:p></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>ADVERTISING<o:p></o:p></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Toán tử gán<o:p></o:p></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Và các toán tử hỗn hợp</i><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Toán tử số học trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Các toán tử số học được sử dụng
+trong các biểu thức toán học theo cách tương tự như chúng được sử dụng trong đại
+số học. Bảng sau liệt kê các toán tử số học trong Java.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Giả sử biến A giữ giá trị 10, biến
+B giữ giá trị 20, thì:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ</span></p><table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 711px;">
+ <tbody><tr style="height: 35.55pt; mso-yfti-firstrow: yes; mso-yfti-irow: 0;">
+  <td style="background: #EEEEEE; border: solid #DDDDDD 1.0pt; height: 35.55pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;"><b>Toán tử<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; height: 35.55pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;"><b>Miêu tả<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; height: 35.55pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 104.1pt;" valign="top" width="174">
+   <p align="center" class="MsoNormal" style="text-align: center;"><b>Ví dụ<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 1;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">+</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Phép cộng</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">A + B sẽ cho kết quả 30</p>
+  </td>
+ </tr>
+ <tr style="height: 21.45pt; mso-yfti-irow: 2;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">-</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Phép trừ: trừ toán hạng trái cho toán hạng phải</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">A - B sẽ cho kết quả -10</p>
+  </td>
+ </tr>
+ <tr style="height: 21.45pt; mso-yfti-irow: 3;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">*</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Phép nhân</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">A * B sẽ cho kết quả 200</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 4;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">/</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Phép chia: chia toán hạng trái cho toán hạng phải</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">B / A sẽ cho kết quả 2</p>
+  </td>
+ </tr>
+ <tr style="height: 35.55pt; mso-yfti-irow: 5;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 35.55pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">%</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 35.55pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Phép chia lấy phần dư: Lấy phần dư của phép chia toán hạng
+    trái cho toán hạng phải</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 35.55pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">B % A sẽ cho kết quả 0</p>
+  </td>
+ </tr>
+ <tr style="height: 21.45pt; mso-yfti-irow: 6;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">++</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Phép lượng gia: lượng gia giá trị toán hạng thêm 1</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.45pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">B++ sẽ cho kết quả 21</p>
+  </td>
+ </tr>
+ <tr style="height: 22.0pt; mso-yfti-irow: 7; mso-yfti-lastrow: yes;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">--</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Phép lượng giảm: lượng giảm giá trị toán hạng đi 1</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">B-- sẽ cho kết quả 19</p>
+  </td>
+ </tr>
+ </tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Toán tử quan hệ trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bảng dưới liệt kê các toán tử quan
+hệ được hỗ trợ bởi Java.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Giả sử biến A giữ giá trị 10, biến
+B giữ giá trị 20, thì:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ</span></p><table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 782px;">
+ <tbody><tr style="height: 35.65pt; mso-yfti-firstrow: yes; mso-yfti-irow: 0;">
+  <td style="background: #EEEEEE; border: solid #DDDDDD 1.0pt; height: 35.65pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;"><b>Toán tử<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; height: 35.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;"><b>Miêu tả<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; height: 35.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 108.1pt;" valign="top" width="180">
+   <p align="center" class="MsoNormal" style="text-align: center;"><b>Ví dụ<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style="height: 35.65pt; mso-yfti-irow: 1;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 35.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">==</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 35.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Kiểm tra nếu giá trị của hai toán hạng có cân bằng hay
+    không, nếu có thì điều kiện là true.</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 35.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">(A == B) là không true.</p>
+  </td>
+ </tr>
+ <tr style="height: 36.25pt; mso-yfti-irow: 2;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">!=</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Kiểm tra nếu giá trị hai toán hạng là cân bằng hay không,
+    nếu không cân bằng, thì điều kiện là true</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">(A != B) là true.</p>
+  </td>
+ </tr>
+ <tr style="height: 35.65pt; mso-yfti-irow: 3;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 35.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">&gt;<o:p>&nbsp;</o:p></p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 35.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Kiểm tra nếu toán hạng trái có lớn hơn toán hạng phải hay
+    không, nếu có thì điều kiện là true</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 35.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">(A &gt; B) là không true.</p>
+  </td>
+ </tr>
+ <tr style="height: 35.65pt; mso-yfti-irow: 4;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 35.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">&lt;<o:p>&nbsp;</o:p></p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 35.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Kiểm tra nếu toán hạng phải có lớn hơn toán hạng trái hay
+    không, nếu có thì điều kiện là true</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 35.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">(A &lt; B) là true.</p>
+  </td>
+ </tr>
+ <tr style="height: 35.65pt; mso-yfti-irow: 5;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 35.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">&gt;=</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 35.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Kiểm tra nếu toán hạng trái có lớn hơn hoặc bằng toán hạng
+    phải hay không, nếu có thì điều kiện là true</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 35.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">(A &gt;= B) là không true.</p>
+  </td>
+ </tr>
+ <tr style="height: 36.25pt; mso-yfti-irow: 6; mso-yfti-lastrow: yes;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">&lt;=</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Kiểm tra nếu toán hạng phải có lớn hơn hoặc bằng toán hạng
+    trái hay không, nếu có thì điều kiện là true</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">(A &lt;= B) là true</p>
+  </td>
+ </tr>
+ </tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Toán tử thao tác bit trong Java<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Java định nghĩa một số toán tử thao
+tác bit có thể được áp dụng cho các kiểu giá trị integer, long, int, short,
+char, và byte.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Toán tử thao tác bit làm việc trên
+các bit. Giả sử nếu a = 60 và b = 13, thì trong định dạng nhị phân chúng sẽ như
+sau:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>a = 0011 1100<o:p></o:p></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>b = 0000 1101<o:p></o:p></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>-----------------<o:p></o:p></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>a&amp;b = 0000 1100<o:p></o:p></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>a|b = 0011 1101<o:p></o:p></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>a^b = 0011 0001<o:p></o:p></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>~a&nbsp; = 1100 0011</i><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bảng dưới đây liệt kê các toán tử
+bit được hỗ trợ trong Java:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Giả sử biến A giữ giá trị 60 và biến
+B giữ 13 thì khi đó:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">&nbsp;</span></p><table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 808px;">
+ <tbody><tr style="height: 36.8pt; mso-yfti-firstrow: yes; mso-yfti-irow: 0;">
+  <td style="background: #EEEEEE; border: solid #DDDDDD 1.0pt; height: 36.8pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;"><b>Toán tử<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; height: 36.8pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;"><b>Miêu tả<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; height: 36.8pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 202.4pt;" valign="top" width="337">
+   <p align="center" class="MsoNormal" style="text-align: center;"><b>Ví dụ<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style="height: 36.8pt; mso-yfti-irow: 1;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.8pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">&amp;</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.8pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Toán tử Và nhị phân sao chép một bit tới kết quả nếu nó tồn
+    tại trong cả hai toán hạng</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.8pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">(A &amp; B) sẽ cho kết quả 12, hay là 0000 1100</p>
+  </td>
+ </tr>
+ <tr style="height: 37.35pt; mso-yfti-irow: 2;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">|</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Toán tử Hoặc nhị phân sao chép một bit tới kết quả nếu nó
+    tồn tại trong một hoặc hai toán hạng</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.35pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">(A | B) sẽ cho kết quả 61, hay là 0011 1101</p>
+  </td>
+ </tr>
+ <tr style="height: 51.4pt; mso-yfti-irow: 3;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 51.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">^</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 51.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Toán tử Hoặc loại trừ nhị phân sao chép bit nếu nó được
+    thiết lập trong một toán hạng nhưng không phải trong cả hai</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 51.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">(A ^ B) sẽ cho kết quả 49, hay là 0011 0001</p>
+  </td>
+ </tr>
+ <tr style="height: 36.8pt; mso-yfti-irow: 4;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.8pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">~</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.8pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Toán tử đảo bit là toán tử một ngôi. Đảo bít 1 thành 0 và
+    ngược lại</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.8pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">(~A ) sẽ cho kết quả -61, hay là 1100 0011</p>
+  </td>
+ </tr>
+ <tr style="height: 51.4pt; mso-yfti-irow: 5;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 51.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">&lt;&lt;<o:p>&nbsp;</o:p></p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 51.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Toán tử dịch trái. Giá trị toán hạng trái được dịch chuyển
+    sang trái bởi số các bit được xác định bởi toán hạng bên phải.</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 51.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">A &lt;&lt; 2 sẽ cho kết quả 240, hay là 1111 0000</p>
+  </td>
+ </tr>
+ <tr style="height: 51.4pt; mso-yfti-irow: 6;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 51.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">&gt;&gt;<o:p>&nbsp;</o:p></p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 51.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Toán tử dịch phải. Giá trị toán hạng trái được dịch chuyển
+    sang phải bởi số các bit được xác định bởi toán hạng bên phải</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 51.4pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">A &gt;&gt; 2 sẽ cho kết quả 15, hay là 1111</p>
+  </td>
+ </tr>
+ <tr style="height: 22.75pt; mso-yfti-irow: 7; mso-yfti-lastrow: yes;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.75pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">&gt;&gt;&gt;<o:p>&nbsp;</o:p></p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.75pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Toán tử dịch phải và điền 0 vào chỗ trống</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.75pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">A &gt;&gt;&gt;2 sẽ cho kết quả 15, hay là 0000 1111</p>
+  </td>
+ </tr>
+ </tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Toán tử logic trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bảng dưới liệt kê đầy đủ các toán tử
+logic trong Java:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Giả sử biến A giữ true và biến B giữ
+false thì khi đó:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ</span></p><table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 704px;">
+ <tbody><tr style="height: 35.7pt; mso-yfti-firstrow: yes; mso-yfti-irow: 0;">
+  <td style="background: #EEEEEE; border: solid #DDDDDD 1.0pt; height: 35.7pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;"><b>Toán tử<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; height: 35.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;"><b>Miêu tả<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; height: 35.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 84.35pt;" valign="top" width="141">
+   <p align="center" class="MsoNormal" style="text-align: center;"><b>Ví dụ<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style="height: 35.7pt; mso-yfti-irow: 1;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 35.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">&amp;&amp;</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 35.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Toán tử Và logic. Nếu cả hai toán hạng là khác không, thì
+    khi đó điều kiện là true</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 35.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">(A &amp;&amp; B) là false.</p>
+  </td>
+ </tr>
+ <tr style="height: 22.1pt; mso-yfti-irow: 2;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.1pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">||</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.1pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Toán tử Hoặc logic. Nếu một trong hai toán tử khác 0, thì
+    điều kiện là true</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.1pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">(A || B) là true.</p>
+  </td>
+ </tr>
+ <tr style="height: 35.7pt; mso-yfti-irow: 3; mso-yfti-lastrow: yes;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 35.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">!</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 35.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Toán tử Phủ định logic. Sử dụng để đảo ngược lại trạng
+    thái logic của toán hạng đó. Nếu điều kiện toán hạng là true thì phủ định nó
+    sẽ là false</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 35.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">!(A &amp;&amp; B) là true.</p>
+  </td>
+ </tr>
+ </tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Các toán tử gán trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Dưới đây liệt kê các toán tử gán được
+hỗ trợ bởi Java:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">&nbsp;</span></p><table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 828px;">
+ <tbody><tr style="height: 36.65pt; mso-yfti-firstrow: yes; mso-yfti-irow: 0;">
+  <td style="background: #EEEEEE; border: solid #DDDDDD 1.0pt; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;"><b>Toán tử<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;"><b>Miêu tả<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 210.3pt;" valign="top" width="351">
+   <p align="center" class="MsoNormal" style="text-align: center;"><b>Ví dụ<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style="height: 36.65pt; mso-yfti-irow: 1;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">=</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Toán tử gán đơn giản. Gán giá trị toán hạng bên phải cho
+    toán hạng trái.</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">C = A + B sẽ gán giá trị của A + B vào cho C</p>
+  </td>
+ </tr>
+ <tr style="height: 37.25pt; mso-yfti-irow: 2;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 37.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">+=</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Thêm giá trị toán hạng phải tới toán hạng trái và gán giá
+    trị đó cho toán hạng trái.</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">C += A là tương đương với C = C + A</p>
+  </td>
+ </tr>
+ <tr style="height: 36.65pt; mso-yfti-irow: 3;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">-=</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Trừ đi giá trị toán hạng phải từ toán hạng trái và gán giá
+    trị này cho toán hạng trái.</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">C -= A là tương đương với C = C - A</p>
+  </td>
+ </tr>
+ <tr style="height: 36.65pt; mso-yfti-irow: 4;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">*=</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Nhân giá trị toán hạng phải với toán hạng trái và gán giá
+    trị này cho toán hạng trái.</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">C *= A là tương đương với C = C * A</p>
+  </td>
+ </tr>
+ <tr style="height: 36.65pt; mso-yfti-irow: 5;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">/=</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Chia toán hạng trái cho toán hạng phải và gán giá trị này
+    cho toán hạng trái.</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">C /= A là tương đương với C = C / A</p>
+  </td>
+ </tr>
+ <tr style="height: 37.25pt; mso-yfti-irow: 6;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 37.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">%=</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Lấy phần dư của phép chia toán hạng trái cho toán hạng phải
+    và gán cho toán hạng trái.</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 37.25pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">C %= A là tương đương với C = C % A</p>
+  </td>
+ </tr>
+ <tr style="height: 36.65pt; mso-yfti-irow: 7;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">&lt;&lt;=</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Dịch trái toán hạng trái sang số vị trí là giá trị toán hạng
+    phải.</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">C &lt;&lt;= 2 là giống như C = C &lt;&lt; 2</p>
+  </td>
+ </tr>
+ <tr style="height: 36.65pt; mso-yfti-irow: 8;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">&gt;&gt;=</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Dịch phải toán hạng trái sang số vị trí là giá trị toán hạng
+    phải.</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 36.65pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">C &gt;&gt;= 2 là giống như C = C &gt;&gt; 2</p>
+  </td>
+ </tr>
+ <tr style="height: 22.1pt; mso-yfti-irow: 9;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.1pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">&amp;=</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.1pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Phép AND bit</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.1pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">C &amp;= 2 là giống như C = C &amp; 2</p>
+  </td>
+ </tr>
+ <tr style="height: 22.7pt; mso-yfti-irow: 10;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">^=</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Phép OR loại trừ bit</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">C ^= 2 là giống như C = C ^ 2</p>
+  </td>
+ </tr>
+ <tr style="height: 22.1pt; mso-yfti-irow: 11; mso-yfti-lastrow: yes;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 22.1pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;">|=</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.1pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Phép OR bit.</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 22.1pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">C |= 2 là giống như C = C | 2</p>
+  </td>
+ </tr>
+ </tbody></table>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Toán tử hỗn hợp trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ngôn ngữ Java cũng hỗ trợ một số
+toán tử hỗn hợp khác.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Toán tử điều kiện (? :)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Toán tử này gồm ba toán hạng và được
+sử dụng để ước lượng các biểu thức quan hệ. Mục tiêu của toán tử là quyết định
+giá trị nào sẽ được gán cho biến. Toán tử này được viết như sau:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">bien x </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">bieu_thuc</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">?</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">giatri1 neu </span><span class="kwd" style="box-sizing: border-box; color: #000088;">true</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">giatri1 neu </span><span class="kwd" style="box-sizing: border-box; color: #000088;">true</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+
+</span><span class="com" style="box-sizing: border-box; color: #880000;">//hoac ban cung co the su dung trong cac lenh RETURN</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">return</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">bieu_thuc</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">?</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">giatri1 neu </span><span class="kwd" style="box-sizing: border-box; color: #000088;">true</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">giatri2 neu </span><span class="kwd" style="box-sizing: border-box; color: #000088;">false</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Tất nhiên, bạn không cần thiết phải
+sử dụng các dấu ngoặc đơn như trên. Mình viết như vậy để giúp các bạn dễ nhìn
+hơn. Sau đây là ví dụ minh họa toán tử điều kiện (? :) trong Java:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><br /></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width:100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;"><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: justify; white-space: normal;">&nbsp;</span><span class="kwd" style="box-sizing: border-box; color: #000088; white-space: normal;">public</span><span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;</span><span class="kwd" style="box-sizing: border-box; color: #000088; white-space: normal;">class</span><span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;</span><span class="typ" style="box-sizing: border-box; color: #7f0055; white-space: normal;">Test</span><span class="pln" style="box-sizing: border-box; white-space: normal;">&nbsp;</span><span class="pun" style="box-sizing: border-box; color: #666600; white-space: normal;">{</span>
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">int</span><span class="pln" style="box-sizing: border-box;"> a </span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="pln" style="box-sizing: border-box;"> b</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+      a </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">10</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+      b </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">a </span><span class="pun" style="box-sizing: border-box; color: #666600;">==</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">1</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">?</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">20</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">30</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;"> </span><span class="com" style="box-sizing: border-box; color: #880000;">//Day la vi du ve toan tu dieu kien.</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"Gia tri cua b la : "</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;">  b </span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+
+      b </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">a </span><span class="pun" style="box-sizing: border-box; color: #666600;">==</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">10</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">?</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">20</span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">30</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;"> </span><span class="com" style="box-sizing: border-box; color: #880000;">//Day la vi du ve toan tu dieu kien.</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"Gia tri cua b la : "</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="pln" style="box-sizing: border-box;"> b </span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Nó sẽ cho kết quả sau:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">Gia</span><span class="pln" style="box-sizing: border-box;"> tri cua b la </span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">30</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Gia</span><span class="pln" style="box-sizing: border-box;"> tri cua b la </span><span class="pun" style="box-sizing: border-box; color: #666600;">:</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">20</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Toán tử instanceof trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Toán tử này chỉ được sử dụng cho
+các biến tham chiếu đối tượng. Toán tử kiểm tra có hay không đối tượng là một
+kiểu cụ thể (kiểu class hoặc kiểu interface). Toán tử instanceof được viết như
+sau:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Object</span><span class="pln" style="box-sizing: border-box;"> reference variable </span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">instanceof</span><span class="pln" style="box-sizing: border-box;">  </span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pun" style="box-sizing: border-box; color: #666600;">/</span><span class="kwd" style="box-sizing: border-box; color: #000088;">interface</span><span class="pln" style="box-sizing: border-box;"> type</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Toán tử trả về true nếu toán hạng
+trái là biến thể hiện của toán hạng phải. Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Test</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> name </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="str" style="box-sizing: border-box; color: #008800;">"Doan"</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="com" style="box-sizing: border-box; color: #880000;">// Duoi day se tra ve true neu name la mot kieu String</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">boolean</span><span class="pln" style="box-sizing: border-box;"> result </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> name </span><span class="kwd" style="box-sizing: border-box; color: #000088;">instanceof</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;"> result </span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Nó sẽ cho kết quả:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">true</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Toán tử này sẽ cũng trả về true nếu
+đối tượng đang được so sánh là tham số tương thích với kiểu toán hạng phải. Dưới
+đây là một ví dụ khác:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Animal</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{}</span><span class="pln" style="box-sizing: border-box;">
+
+</span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">class</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Dog</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">extends</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Animal</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> args</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]){</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Animal</span><span class="pln" style="box-sizing: border-box;"> a </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Dog</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="kwd" style="box-sizing: border-box; color: #000088;">boolean</span><span class="pln" style="box-sizing: border-box;"> result </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;">  a </span><span class="kwd" style="box-sizing: border-box; color: #000088;">instanceof</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Dog</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+      </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;"> result </span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Nó sẽ cho kết quả:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">true</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Thứ tự ưu tiên của các toán tử
+trong Java:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Thứ tự ưu tiên của các toán tử xác
+định cách biểu thức được tính toán. Ví dụ: toán tử nhân có quyền ưu tiên hơn
+toán tử cộng.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ví dụ, x = 7 + 3 * 2; ở đây, x được
+gán giá trị 13, chứ không phải 20 bởi vì toán tử * có quyền ưu tiên cao hơn
+toán tử +, vì thế đầu tiên nó thực hiện phép nhân 3 * 2 và sau đó thêm với 7.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Bảng dưới đây liệt kê thứ tự ưu
+tiên của các toán tử. Các toán tử với quyền ưu tiên cao nhất xuất hiện trên
+cùng của bảng, và các toán tử có quyền ưu tiên thấp nhất thì ở bên dưới cùng của
+bảng. Trong một biểu thức, các toán tử có quyền ưu tiên cao nhất được tính toán
+đầu tiên.</span><o:p></o:p></p><table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 619px;">
+ <tbody><tr style="height: 21.15pt; mso-yfti-firstrow: yes; mso-yfti-irow: 0;">
+  <td style="background: #EEEEEE; border: solid #DDDDDD 1.0pt; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;"><b>Loại<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p align="center" class="MsoNormal" style="text-align: center;"><b>Toán tử<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt; width: 74.15pt;" valign="top" width="124">
+   <p align="center" class="MsoNormal" style="text-align: center;"><b>Thứ tự ưu tiên<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style="height: 21.7pt; mso-yfti-irow: 1;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Postfix&nbsp;</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">() [] . (toán tử dot)</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Trái sang phải</p>
+  </td>
+ </tr>
+ <tr style="height: 21.15pt; mso-yfti-irow: 2;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Unary&nbsp;</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">++ - - ! ~</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Phải sang trái</p>
+  </td>
+ </tr>
+ <tr style="height: 21.7pt; mso-yfti-irow: 3;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Tính nhân</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">* / %&nbsp;</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Trái sang phải</p>
+  </td>
+ </tr>
+ <tr style="height: 21.15pt; mso-yfti-irow: 4;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Tính cộng</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">+ -&nbsp;</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Trái sang phải</p>
+  </td>
+ </tr>
+ <tr style="height: 21.15pt; mso-yfti-irow: 5;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Dịch chuyển</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">&gt;&gt; &gt;&gt;&gt; &lt;&lt; &nbsp;</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Trái sang phải</p>
+  </td>
+ </tr>
+ <tr style="height: 21.7pt; mso-yfti-irow: 6;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Quan hệ</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">&gt; &gt;= &lt; &lt;= &nbsp;</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Trái sang phải</p>
+  </td>
+ </tr>
+ <tr style="height: 21.15pt; mso-yfti-irow: 7;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Cân bằng</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">== !=&nbsp;</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Trái sang phải</p>
+  </td>
+ </tr>
+ <tr style="height: 21.7pt; mso-yfti-irow: 8;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Phép AND bit</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">&amp;&nbsp;</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Trái sang phải</p>
+  </td>
+ </tr>
+ <tr style="height: 21.15pt; mso-yfti-irow: 9;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Phép XOR bit</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">^&nbsp;</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Trái sang phải</p>
+  </td>
+ </tr>
+ <tr style="height: 21.15pt; mso-yfti-irow: 10;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Phép OR bit</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">|&nbsp;</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Trái sang phải</p>
+  </td>
+ </tr>
+ <tr style="height: 21.7pt; mso-yfti-irow: 11;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Phép AND logic</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">&amp;&amp;&nbsp;</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Trái sang phải</p>
+  </td>
+ </tr>
+ <tr style="height: 21.15pt; mso-yfti-irow: 12;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Phép OR logic</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">||&nbsp;</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Trái sang phải</p>
+  </td>
+ </tr>
+ <tr style="height: 21.7pt; mso-yfti-irow: 13;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Điều kiện</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">?:&nbsp;</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Phải sang trái</p>
+  </td>
+ </tr>
+ <tr style="height: 21.15pt; mso-yfti-irow: 14;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Gán</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">= += -= *= /= %= &gt;&gt;= &lt;&lt;= &amp;= ^= |=&nbsp;</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.15pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Phải sang trái</p>
+  </td>
+ </tr>
+ <tr style="height: 21.7pt; mso-yfti-irow: 15; mso-yfti-lastrow: yes;">
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Dấu phảy</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">,&nbsp;</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; height: 21.7pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+   <p class="MsoNormal">Trái sang phải</p>
+  </td>
+ </tr>
+ </tbody></table><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><br /></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><br /></p>
+

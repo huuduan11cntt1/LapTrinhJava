@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_book"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_book"
+            android:title="@string/menu_gallery" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_book"
+            android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/nav_string_java"
+            android:icon="@drawable/ic_menu_book"
+            android:title="@string/menu_string_java" />
+        <item
+            android:id="@+id/nav_ngoai_le"
+            android:icon="@drawable/ic_menu_book"
+            android:title="@string/menu_ngoai_le" />
+        <item
+            android:id="@+id/nav_cau_truc_du_lieu"
+            android:icon="@drawable/ic_menu_book"
+            android:title="@string/menu_cau_truc_du_lieu" />
+        <item
+            android:id="@+id/nav_Collection"
+            android:icon="@drawable/ic_menu_book"
+            android:title="@string/menu_Collection" />
+        <item
+            android:id="@+id/nav_java_nang_cao"
+            android:icon="@drawable/ic_menu_book"
+            android:title="@string/menu_java_nang_cao" />
+        <item
+            android:id="@+id/nav_gioi_thieu"
+            android:icon="@drawable/ic_person"
+            android:title="@string/menu_gioi_thieu" />
+
+    </group>
+</menu>

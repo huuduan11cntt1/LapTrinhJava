@@ -1,0 +1,41 @@
+<p style="text-align: justify;"><span style="font-size: medium;"><b>&nbsp;Tạo lớp Immutable trong Java</b></span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Có nhiều lớp dạng&nbsp;Immutable&nbsp;(lớp
+mà không thể sửa đổi) trong Java như String, Boolean, Byte, Short, Integer,
+Long, Float, Double … Tóm lại, tất cả các lớp Wrapper và lớp String là không thể
+thay đổi. Chúng ta cũng có thể tạo các lớp mà không thể thay đổi bởi tạo lớp
+final mà có các thành viên dữ liệu là final như ví dụ dưới đây:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><u><i>Ví dụ tạo lớp
+immutable trong Java</i></u><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Trong ví dụ này
+chúng ta tạo lớp final có tên Employee. Nó có một thành viên dữ liệu là final,
+một constructor được tham số hóa và không có phương thức getter.<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;">public final class Employee{  
+final String IDno;  
+  
+public Employee(String IDno){  
+this.IDno=IDno;  
+}  
+  
+public String getIDno(){  
+return IDno;  
+}  
+  
+}  </pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Lớp trên là
+immutable, bởi vì:</i><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Biến instance của
+lớp là&nbsp;final, tức là chúng ta không thể thay đổi giá trị của nó sau khi tạo
+một đối tượng.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Lớp là final, vì
+thế bạn không thể tạo lớp con.</i><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Không có phương
+thức setter, do đó bạn không có tùy chọn để thay đổi giá trị của biến instance.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Các điểm này làm
+cho lớp Employee là immutable.</span><o:p></o:p></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><br /></span></p>

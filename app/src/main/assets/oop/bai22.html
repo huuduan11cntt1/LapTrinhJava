@@ -1,0 +1,61 @@
+<p><span style="font-size: medium;"><b>&nbsp;Các kiểu Modifier trong Java</b></span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Modifier là các
+từ khóa mà bạn thêm vào những định nghĩa để thay đổi ý nghĩa của chúng. Ngôn ngữ
+Java có hàng loạt các modifier, bao gồm:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Access Modifier
+trong Java<o:p></o:p></i></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><i>Non-Access
+Modifier trong Java</i><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Để sử dụng một
+Modifier, bạn bao từ khóa của nó trong định nghĩa của một lớp, phương thức, hoặc
+biến. Modifier đặt trước phần còn lại của lệnh, như trong ví dụ sau (các từ in
+nghiêng):</span></p><pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;"><span style="background-color: transparent; font-size: medium; text-align: justify;">&nbsp;</span><i style="background-color: transparent; box-sizing: border-box;"><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span></i><span class="pln" style="background-color: transparent; box-sizing: border-box;">&nbsp;</span><span class="kwd" style="background-color: transparent; box-sizing: border-box; color: #000088;">class</span><span class="pln" style="background-color: transparent; box-sizing: border-box;">&nbsp;tenClass&nbsp;</span><span class="pun" style="background-color: transparent; box-sizing: border-box; color: #666600;">{</span>  
+ </span><span class="com" style="box-sizing: border-box; color: #880000;">// ...</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span><span class="pln" style="box-sizing: border-box;">
+</span><i style="box-sizing: border-box;"><span class="kwd" style="box-sizing: border-box; color: #000088;">private</span></i><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">boolean</span><span class="pln" style="box-sizing: border-box;"> myFlag</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+</span><i style="box-sizing: border-box;"><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">final</span></i><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">double</span><span class="pln" style="box-sizing: border-box;"> weeks </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">9.5</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+</span><i style="box-sizing: border-box;"><span class="kwd" style="box-sizing: border-box; color: #000088;">protected</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">final</span></i><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">int</span><span class="pln" style="box-sizing: border-box;"> BOXWIDTH </span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;"> </span><span class="lit" style="box-sizing: border-box; color: #006666;">42</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">
+</span><i style="box-sizing: border-box;"><span class="kwd" style="box-sizing: border-box; color: #000088;">public</span><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">static</span></i><span class="pln" style="box-sizing: border-box;"> </span><span class="kwd" style="box-sizing: border-box; color: #000088;">void</span><span class="pln" style="box-sizing: border-box;"> main</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pun" style="box-sizing: border-box; color: #666600;">[]</span><span class="pln" style="box-sizing: border-box;"> arguments</span><span class="pun" style="box-sizing: border-box; color: #666600;">)</span><span class="pln" style="box-sizing: border-box;"> </span><span class="pun" style="box-sizing: border-box; color: #666600;">{</span><span class="pln" style="box-sizing: border-box;">
+   </span><span class="com" style="box-sizing: border-box; color: #880000;">// Phan than phuong thuc</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="pun" style="box-sizing: border-box; color: #666600;">}</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Access Modifier
+trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Java cung cấp một
+số Access Modifier để thiết lập chỉ định truy cập cho các lớp, các biến, các
+phương thức và constructor. Có 4 mức độ truy cập là:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Default: Truy cập
+trong nội bộ package<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Private: Truy cập
+trong nội bộ lớp<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Public: Thành phần
+công khai, truy cập tự do từ bên ngoài<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Protected: Thành
+phần được bảo vệ, bị hạn chế truy nhập từ bên ngoài.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Non Access
+Modifier trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Java cũng cung cấp
+một số Non-Access Modifier để thực hiện các tính năng khác:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Static&nbsp;Modifier
+để tạo các phương thức lớp và các biến.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Final&nbsp;Modifier
+để kết thúc sự thi hành của các lớp, các phương thức và các biến.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Abstract&nbsp;Modifier
+để tạo các lớp và các phương thức trừu tượng.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Synchronized&nbsp;Modifier
+và&nbsp;Volatile&nbsp;Modifier được sử dụng cho các Thread.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><br /></p>

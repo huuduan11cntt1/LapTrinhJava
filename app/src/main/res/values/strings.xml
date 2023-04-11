@@ -1,0 +1,105 @@
+<resources>
+    <string name="app_name">Lập Trình Java</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Java Cơ Bản</string>
+    <string name="menu_gallery">Hướng Đối Tượng</string>
+    <string name="menu_slideshow">File và I/O</string>
+
+
+    <string name="menu_string_java">String Trong Java</string>
+    <string name="menu_ngoai_le">Xử lý ngoại lệ</string>
+    <string name="menu_cau_truc_du_lieu">Cấu trúc dữ liệu</string>
+    <string name="menu_Collection">Collection trong Java</string>
+    <string name="menu_java_nang_cao">Java nâng cao</string>
+    <string name="menu_gioi_thieu">Giới thiệu</string>
+
+    <string-array name="stories_names">
+        <item>Java là gì?</item>
+        <item>Lịch sử Java</item>
+        <item>Tổng quan</item>
+        <item>Cài đặt Java</item>
+        <item>Cách thiết lập Path</item>
+        <item>Chương trình Hello World</item>
+        <item>Phân tích chương trình Hello World</item>
+        <item>Cú pháp Java cơ bản</item>
+        <item>JDK, JRE và JVM</item>
+        <item>Biến trong Java</item>
+        <item>Kiểu dữ liệu</item>
+        <item>Toán tử</item>
+        <item>Các kiểu vòng lặp</item>
+        <item>Lệnh if, switch</item>
+        <item>Đối tượng Number</item>
+        <item>Đối tượng Character</item>
+    </string-array>
+
+    <string-array name="stories_oop">
+        <item>Khái niệm OOP</item>
+        <item>Lớp và Đối tượng</item>
+        <item>Phương thức</item>
+        <item>Nạp chồng phương thức (Overloading)</item>
+        <item>Constructor</item>
+        <item>Từ khóa static</item>
+        <item>Từ khóa this</item>
+        <item>Tính kế thừa (IS-A)</item>
+        <item>Quan hệ (HAS-A)</item>
+        <item>Ghi đè phương thức (Overriding)</item>
+        <item>Kiểu trả về Covariant</item>
+        <item>Từ khóa super</item>
+        <item>Từ khóa final</item>
+        <item>Tính đa hình</item>
+        <item>Dynamic Binding</item>
+        <item>Toán tử instanceof</item>
+        <item>Tính trừu tượng</item>
+        <item>Lớp abstract</item>
+        <item>Interface</item>
+        <item>Lớp abstract vs Interface</item>
+        <item>Java Package</item>
+        <item>Các kiểu Modifier</item>
+        <item>Non-Access Modifier</item>
+        <item>Access Modifier</item>
+        <item>Tính bao đóng</item>
+        <item>Lớp Object</item>
+        <item>Nhân bản đối tượng</item>
+        <item>Mảng (Array)</item>
+        <item>Lớp Wrapper</item>
+        <item>Gọi bởi giá trị</item>
+        <item>Từ khóa strictfp</item>
+        <item>Date  Time</item>
+        <item>Regular Expression</item>
+    </string-array>
+
+
+    <string-array name="stories_file_io">
+        <item>File và I/O</item>
+        <item>ByteArrayInputStream</item>
+        <item>DataInputStream</item>
+        <item>ByteArrayOutputStream</item>
+        <item>DataOutputStream</item>
+        <item>Lớp File</item>
+        <item>Lớp FileReader</item>
+        <item>Lớp FileWriter</item>
+    </string-array>
+
+    <string-array name="stories_string">
+        <item>Đối tượng String</item>
+        <item>Immutable String</item>
+        <item>So sánh chuỗi</item>
+        <item>Nối chuỗi</item>
+        <item>Chuỗi con</item>
+        <item>Phương thức của lớp String</item>
+        <item>Lớp StringBuffer</item>
+        <item>Lớp StringBuilder</item>
+        <item>String vs StringBuffer</item>
+        <item>StringBuilder vs StringBuffer</item>
+        <item>Tạo Immutable String</item>
+        <item>Phương thức toString()</item>
+        <item>Lớp StringTokenizer</item>
+    </string-array>
+
+</resources>

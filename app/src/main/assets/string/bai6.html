@@ -1,0 +1,613 @@
+<p style="text-align: justify;"><span style="font-size: medium;"><b>&nbsp;Phương thức của lớp String trong Java</b></span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Lớp
+java.lang.String cung cấp rất nhiều phương thức để giúp bạn thao tác và xử lý
+các chuỗi. Bởi sự giúp đỡ của các phương thức này, chúng ta có thể thực hiện
+các hoạt động trên chuỗi như cắt chuỗi, nối chuỗi, chuyển đổi chuỗi, so sánh
+chuỗi, thay thế chuỗi, …<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Java String là một
+khái niệm mạnh mẽ bởi vì mọi thứ được đối xử như là một String nếu bạn đệ trình
+bất cứ form nào trong các ứng dụng dựa trên window, dựa trên web, mobile. Phần
+dưới đây chúng tôi sẽ trình bày cho bạn một số phương thức quan trọng của lớp
+String trong Java.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Phương thức
+toUpperCase() và toLowerCase() của lớp String trong Java<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Phương thức
+toUpperCase() để chuyển đổi chuỗi thành chữ hoa và phương thức toLowerCase() để
+chuyển đổi chuỗi thành chữ thường. Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> s</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="str" style="box-sizing: border-box; color: #008800;">"Vietjack"</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">s</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">toUpperCase</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="com" style="box-sizing: border-box; color: #880000;">//Chuyen doi thanh VIETJACK</span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">s</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">toLowerCase</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="com" style="box-sizing: border-box; color: #880000;">//Chuyen doi thanh vietjack  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">s</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="com" style="box-sizing: border-box; color: #880000;">//Vietjack(khong co thay doi nao)   </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Chương trình
+trên sẽ cho kết quả:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="pln" style="box-sizing: border-box;">VIETJACK
+vietjack
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">Vietjack</span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Phương thức
+trim() của lớp String trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Phương thức
+trim() trong Java loại bỏ các khoảng trống trắng ở trước và sau chuỗi (leading
+và trailing). Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> s</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="str" style="box-sizing: border-box; color: #008800;">"  Vietjack  "</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">s</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="com" style="box-sizing: border-box; color: #880000;">//in ra chuoi nhu ban dau  Vietjack  (van con khoang trang whitespace)    </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">s</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">trim</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="com" style="box-sizing: border-box; color: #880000;">//in ra chuoi sau khi da cat cac khoang trong trang Vietjack  </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Phương thức
+startWith() và endsWith() của lớp String trong Java</b><o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> s</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="str" style="box-sizing: border-box; color: #008800;">"Vietjack"</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+ </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">s</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">startsWith</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Vi"</span><span class="pun" style="box-sizing: border-box; color: #666600;">));</span><span class="com" style="box-sizing: border-box; color: #880000;">//true  </span><span class="pln" style="box-sizing: border-box;">
+ </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">s</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">endsWith</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"k"</span><span class="pun" style="box-sizing: border-box; color: #666600;">));</span><span class="com" style="box-sizing: border-box; color: #880000;">//true  </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Phương thức
+charAt() của lớp String trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Phương thức
+charAt() trả về ký tự tại chỉ mục đã cho. Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> s</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="str" style="box-sizing: border-box; color: #008800;">"Vietjack"</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">s</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">charAt</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="lit" style="box-sizing: border-box; color: #006666;">0</span><span class="pun" style="box-sizing: border-box; color: #666600;">));</span><span class="com" style="box-sizing: border-box; color: #880000;">//tra ve V  </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">s</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">charAt</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="lit" style="box-sizing: border-box; color: #006666;">3</span><span class="pun" style="box-sizing: border-box; color: #666600;">));</span><span class="com" style="box-sizing: border-box; color: #880000;">//tra ve t </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Phương thức
+length() của lớp String trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Phương thức
+length() trả về độ dài của chuỗi. Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> s</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="str" style="box-sizing: border-box; color: #008800;">"Vietjack"</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">s</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">length</span><span class="pun" style="box-sizing: border-box; color: #666600;">());</span><span class="com" style="box-sizing: border-box; color: #880000;">//tra ve do dai la 7  </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Phương thức
+intern của lớp String trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ban đầu, một
+Pool của các chuỗi là trống, được duy trì riêng cho lớp String. Khi phương thức
+intern được gọi, nếu Pool đã chứa một chuỗi bằng với đối tượng String như khi
+được xác định bởi phương thức equals(object), thì chuỗi từ Pool được trả về. Nếu
+không thì, đối tượng String này được thêm vào Pool và một tham chiếu tới đối tượng
+String này được trả về. Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> s</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="kwd" style="box-sizing: border-box; color: #000088;">new</span><span class="pln" style="box-sizing: border-box;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Vietjack"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> s2</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;">s</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">intern</span><span class="pun" style="box-sizing: border-box; color: #666600;">();</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">s2</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="com" style="box-sizing: border-box; color: #880000;">//tra ve Vietjack    </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Phương thức
+valueOf() của lớp String trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Phương thức
+valueOf() trả về biểu diễn chuỗi của giá trị đã cho. Phương thức này biến đổi
+kiểu đã cho như int, long, float, double, Boolean, char, và mảng char thành chuỗi.
+Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="kwd" style="box-sizing: border-box; color: #000088;">int</span><span class="pln" style="box-sizing: border-box;"> a</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="lit" style="box-sizing: border-box; color: #006666;">10</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> s</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">valueOf</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">a</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">s</span><span class="pun" style="box-sizing: border-box; color: #666600;">+</span><span class="lit" style="box-sizing: border-box; color: #006666;">10</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  </span><span class="com" style="box-sizing: border-box; color: #880000;">//In ra ket qua la 1010   </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Phương thức
+replace() của lớp String trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Phương thức
+replace() thay thế tất cả sự xuất hiện của dãy ký tự đầu bởi dãy ký tự thứ hai.
+Ví dụ:<o:p></o:p></span></p>
+
+<pre class="prettyprint notranslate prettyprinted" style="background-color: #eeeeee; border-radius: 0px; border: 1px solid rgb(214, 214, 214); box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; line-height: 16px; margin-bottom: 10px; margin-top: 0px; overflow-wrap: break-word; overflow: auto; padding: 5px; width: 100%; word-break: break-all;"><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> s1</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="str" style="box-sizing: border-box; color: #008800;">"Java la mot ngon ngu lap trinh. Java la mot nen tang. Java la mot hon dao."</span><span class="pun" style="box-sizing: border-box; color: #666600;">;</span><span class="pln" style="box-sizing: border-box;">    
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">String</span><span class="pln" style="box-sizing: border-box;"> replaceString</span><span class="pun" style="box-sizing: border-box; color: #666600;">=</span><span class="pln" style="box-sizing: border-box;">s1</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">replace</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="str" style="box-sizing: border-box; color: #008800;">"Java"</span><span class="pun" style="box-sizing: border-box; color: #666600;">,</span><span class="str" style="box-sizing: border-box; color: #008800;">"HaLong"</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="com" style="box-sizing: border-box; color: #880000;">//thay the tat ca su xuat hien cua "Java" thanh "HaLong"    </span><span class="pln" style="box-sizing: border-box;">
+</span><span class="typ" style="box-sizing: border-box; color: #7f0055;">System</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="kwd" style="box-sizing: border-box; color: #000088;">out</span><span class="pun" style="box-sizing: border-box; color: #666600;">.</span><span class="pln" style="box-sizing: border-box;">println</span><span class="pun" style="box-sizing: border-box; color: #666600;">(</span><span class="pln" style="box-sizing: border-box;">replaceString</span><span class="pun" style="box-sizing: border-box; color: #666600;">);</span><span class="pln" style="box-sizing: border-box;">  </span></pre>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Chương trình
+trên sẽ cho kết quả dạng:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">&nbsp;</span><span style="background-color: #d9ead3;"><span class="typ" style="box-sizing: border-box; color: #7f0055; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; text-align: left;">HaLong</span><span class="pln" style="box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; text-align: left;"> la mot ngon ngu lap trinh</span><span class="pun" style="box-sizing: border-box; color: #666600; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; text-align: left;">.</span><span class="pln" style="box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; text-align: left;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; text-align: left;">HaLong</span><span class="pln" style="box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; text-align: left;"> la mot nen tang</span><span class="pun" style="box-sizing: border-box; color: #666600; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; text-align: left;">.</span><span class="pln" style="box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; text-align: left;"> </span><span class="typ" style="box-sizing: border-box; color: #7f0055; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; text-align: left;">HaLong</span><span class="pln" style="box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; text-align: left;"> la mot hon dao</span><span class="pun" style="box-sizing: border-box; color: #666600; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; text-align: left;">.</span></span><span class="pln" style="box-sizing: border-box; color: #333333; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12px; text-align: left;"></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><b>Các phương thức
+của lớp String trong Java</b><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;">Ở trên, chúng ta
+đã tìm hiểu một số phương thức của lớp String trong Java. Bảng dưới đây sẽ liệt
+kê đầy đủ các phương thức được hỗ trợ bởi lớp String, bạn theo link để tìm hiểu
+chi tiết:</span><o:p></o:p></p><table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid #DDDDDD .75pt; mso-yfti-tbllook: 1184; width: 100%;">
+ <tbody><tr>
+  <td style="background: #EEEEEE; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>STT<o:p></o:p></b></p>
+  </td>
+  <td style="background: #EEEEEE; border-left: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>Phương thức và miêu tả<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">1</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>char
+  charAt(int index) trong Java</b></p>
+  <p class="MsoNormal">Trả về ký tự tại chỉ mục đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">2</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>int
+  compareTo(Object o) trong Java</b></p>
+  <p class="MsoNormal">So sánh String này với đối tượng Object khác</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">3</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>int
+  compareTo(String anotherString) trong Java</b></p>
+  <p class="MsoNormal">So sánh hai chuỗi theo từ điển</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">4</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>int
+  compareToIgnoreCase(String str) trong Java</b></p>
+  <p class="MsoNormal">So sánh hai chuỗi theo từ điển, bỏ qua các sự khác nhau về
+  kiểu chữ.</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">5</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>String
+  concat(String str) trong Java</b></p>
+  <p class="MsoNormal">Nối chuỗi đã cho vào phần cuối của chuỗi này</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">6</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>boolean
+  contentEquals(StringBuffer sb) trong Java</b></p>
+  <p class="MsoNormal">Trả về true nếu và chỉ nếu String này biểu diễn dãy liên tục
+  các ký tự giống như StringBuffer đã cho.</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">7</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>static
+  String copyValueOf(char[] data) trong Java</b></p>
+  <p class="MsoNormal">Trả về một String mà biểu diễn dãy ký tự trong mảng đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">8</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>static
+  String copyValueOf(char[] data, int offset, int count) trong Java</b></p>
+  <p class="MsoNormal">Trả về một String mà biểu diễn dãy ký tự trong mảng đã
+  cho.</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">9</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>boolean
+  endsWith(String suffix) trong Java</b></p>
+  <p class="MsoNormal">Kiểm tra nếu chuỗi này kết thúc với hậu tố đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">10</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>boolean
+  equals(Object anObject) trong Java</b></p>
+  <p class="MsoNormal">So sánh chuỗi này với Object đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">11</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>boolean
+  equalsIgnoreCase(String anotherString) trong Java</b></p>
+  <p class="MsoNormal">So sánh String với String khác, bỏ qua sự khác nhau về kiểu
+  chữ</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">12</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>byte
+  getBytes() trong Java</b></p>
+  <p class="MsoNormal">Mã hóa String này thành dãy các byte liên tục bởi sử dụng
+  bộ ký tự (charset) mặc định của platform, lưu giữ kết quả vào trong một mảng
+  byte mới.</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">13</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>byte[]
+  getBytes(String charsetName) trong Java</b></p>
+  <p class="MsoNormal">Mã hóa String này thành dãy các byte liên tục bởi sử dụng
+  bộ ký tự (charset) đã gắn tên, lưu giữ kết quả vào trong một mảng byte mới.</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">14</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>void
+  getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin) trong Java</b></p>
+  <p class="MsoNormal">Sao chép các ký tự từ chuỗi này vào trong mảng ký tự đích</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">15</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>int
+  hashCode() trong Java</b></p>
+  <p class="MsoNormal">Trả về một mã hóa băm (hash code) cho chuỗi này</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">16</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>int
+  indexOf(int ch) trong Java</b></p>
+  <p class="MsoNormal">Trả về chỉ mục trong chuỗi này với sự xuất hiện đầu tiên của
+  ký tự đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">17</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>int
+  indexOf(int ch, int fromIndex) trong Java</b></p>
+  <p class="MsoNormal">Trả về chỉ mục trong chuỗi này với sự xuất hiện đầu tiên của
+  ký tự đã cho, bắt đầu tìm kiếm tại chỉ mục đã cho.</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">18</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>int
+  indexOf(String str) trong Java</b></p>
+  <p class="MsoNormal">Trả về chỉ mục trong chuỗi này với sự xuất hiện đầu tiên của
+  chuỗi phụ đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">19</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>int
+  indexOf(String str, int fromIndex) trong Java</b></p>
+  <p class="MsoNormal">Trả về chỉ mục trong chuỗi này với sự xuất hiện đầu tiên của
+  chuỗi phụ đã cho, bắt đầu tìm kiếm tại chỉ mục đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">20</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>String
+  intern() trong Java</b></p>
+  <p class="MsoNormal">Trả về một sự biểu diễn đúng tiêu chuẩn (canonical) cho đối
+  tượng String này</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">21</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>int
+  lastIndexOf(int ch) trong Java</b></p>
+  <p class="MsoNormal">Trả về chỉ mục trong chuỗi này với sự xuất hiện cuối cùng
+  của ký tự đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">22</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>int
+  lastIndexOf(int ch, int fromIndex) trong Java</b></p>
+  <p class="MsoNormal">Trả về chỉ mục trong chuỗi này với sự xuất hiện cuối cùng
+  của ký tự đã cho, bắt đầu tìm kiếm ngược về trước tại chỉ mục đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">23</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>int
+  lastIndexOf(String str) trong Java</b></p>
+  <p class="MsoNormal">Trả về chỉ mục trong chuỗi này với sự xuất hiện cuối cùng
+  của chuỗi phụ đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">24</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>int
+  lastIndexOf(String str, int fromIndex) trong Java</b></p>
+  <p class="MsoNormal">Trả về chỉ mục trong chuỗi này với sự xuất hiện cuối cùng
+  của chuỗi phụ đã cho, bắt đầu tìm kiếm ngược về trước tại chỉ mục đã cho.</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">25</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>int length()
+  trong Java</b></p>
+  <p class="MsoNormal">Trả về độ dài của chuỗi này</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">26</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>boolean
+  matches(String regex) trong Java</b></p>
+  <p class="MsoNormal">Có hay không chuỗi này so khớp (match) với regular
+  expression đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">27</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>boolean
+  regionMatches(boolean ignoreCase, int toffset, String other, int ooffset, int
+  len) trong Java</b></p>
+  <p class="MsoNormal">Kiểm tra nếu hai chuỗi là bằng nhau</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">28</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>boolean
+  regionMatches(int toffset, String other, int ooffset, int len) trong Java</b></p>
+  <p class="MsoNormal">Kiểm tra nếu hai chuỗi là bằng nhau</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">29</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>String
+  replace(char oldChar, char newChar) trong Java</b></p>
+  <p class="MsoNormal">Trả về một chuỗi mới kết quả từ việc thay thế tất cả
+  oldchar trong chuỗi này bằng newchar</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">30</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>String
+  replaceAll(String regex, String replacement) trong Java</b></p>
+  <p class="MsoNormal">Thay thế mỗi chuỗi phụ trong chuỗi này mà so khớp với
+  regular expression với chuỗi thay thế đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">31</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>String
+  replaceFirst(String regex, String replacement) trong Java</b></p>
+  <p class="MsoNormal">Thay thế chuỗi phụ đầu tiên của chuỗi này mà so khớp với
+  regular expression đã cho với chuỗi thay thế đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">32</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>String[]
+  split(String regex) trong Java</b></p>
+  <p class="MsoNormal">Chia chuỗi này xung quanh các so khớp của Regex đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">33</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>String[]
+  split(String regex, int limit) trong Java</b></p>
+  <p class="MsoNormal">Chia chuỗi này xung quanh các so khớp của Regex đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">34</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>boolean
+  startsWith(String prefix) trong Java</b></p>
+  <p class="MsoNormal">Kiểm tra nếu chuỗi bắt đầu với tiền tố đã cho.</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">35</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>boolean
+  startsWith(String prefix, int toffset) trong Java</b></p>
+  <p class="MsoNormal">Kiểm tra nếu chuỗi bắt đầu với tiền tố đã cho bắt đầu từ
+  chỉ mục đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">36</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>CharSequence
+  subSequence(int beginIndex, int endIndex) trong Java</b></p>
+  <p class="MsoNormal">Trả về một dãy ký tự mới mà là một dãy phụ của dãy này</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">37</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>String
+  substring(int beginIndex) trong Java</b></p>
+  <p class="MsoNormal">Trả về một chuỗi mới mà là một chuỗi phụ của chuỗi này</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">38</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>String
+  substring(int beginIndex, int endIndex) trong Java</b></p>
+  <p class="MsoNormal">Trả về một chuỗi mới mà là một chuỗi phụ của chuỗi này</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">39</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>char[]
+  toCharArray() trong Java</b></p>
+  <p class="MsoNormal">Biến đổi chuỗi này thành một mảng ký tự mới</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">40</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>String
+  toLowerCase() trong Java</b></p>
+  <p class="MsoNormal">Biến đổi tất cả ký tự trong String này thành kiểu chữ thường
+  bởi sử dụng các qui tắc của locale mặc định</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">41</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>String
+  toLowerCase(Locale locale) trong Java</b></p>
+  <p class="MsoNormal">Biến đổi tất cả ký tự trong String này thành kiểu chữ thường
+  bởi sử dụng các qui tắc của locale đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">42</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>String
+  toString() trong Java</b></p>
+  <p class="MsoNormal">Đối tượng này (mà đã là một chuỗi) được trả về chính nó</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">43</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>String
+  toUpperCase() trong Java</b></p>
+  <p class="MsoNormal">Biến đổi tất cả ký tự trong String này thành kiểu chữ hoa
+  bởi sử dụng các qui tắc của locale mặc định</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">44</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>String
+  toUpperCase(Locale locale) trong Java</b></p>
+  <p class="MsoNormal">Biến đổi tất cả ký tự trong String này thành kiểu chữ hoa
+  bởi sử dụng các qui tắc của locale đã cho</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">45</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>String trim()
+  trong Java</b></p>
+  <p class="MsoNormal">Trả về một bản sao của chuỗi, với các khoảng trắng ban đầu
+  và kết thúc bị bỏ qua</p>
+  </td>
+ </tr>
+ <tr>
+  <td style="border-top: none; border: solid #DDDDDD 1.0pt; mso-border-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal">46</p>
+  </td>
+  <td style="border-bottom: solid #DDDDDD 1.0pt; border-left: none; border-right: solid #DDDDDD 1.0pt; border-top: none; mso-border-alt: solid #DDDDDD .75pt; mso-border-left-alt: solid #DDDDDD .75pt; mso-border-top-alt: solid #DDDDDD .75pt; padding: 6.0pt 6.0pt 6.0pt 6.0pt;" valign="top">
+  <p class="MsoNormal"><b>static
+  String valueOf(primitive data type x) trong Java</b></p>
+  <p class="MsoNormal">Trả về biểu diễn chuỗi của tham số kiểu dữ liệu đã truyền.</p>
+  </td>
+ </tr>
+</tbody></table><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><br /></span></p><p class="MsoNormal" style="line-height: 150%; text-align: justify;"><span style="font-size: medium;"><br /></span></p>
